@@ -2,3 +2,172 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* styling of body to have less work */
+body {
+min-height: 100vh;
+color: var(--color-text);
+background: var(--background-color);
+transition: color 0.5s, background-color 0.5s;
+line-height: 1.6;
+font-family: "signo", sans-serif;
+font-style: normal;
+list-style-type: none;
+font-weight: 400;
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+/*styling text*/
+h1, h2, h3, h4, h5 {
+    color: var(--black-headline);
+    font-family: var(--h-font);
+    font-weight: normal;
+} 
+
+h1 {
+font-size: 25px;
+font-weight: 400;
+}
+
+p {
+font-size: 16px;
+color: var(--black-text);
+font-family: var(--t-font);
+font-weight: 400;
+font-style: normal;
+}
+
+/* making all p responsive for smaller screens */
+@media only screen and (max-width: 850px) {
+    p {
+    font-size: 15px;
+    }
+}
+
+/*styling button*/
+.btn {
+    background-color: var(--tertiary-color);
+    padding: 10px 30px;
+    color: var(--white-headline);
+    font-size: 16px;
+    border: 0;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-hover);
+    transition: 0.3s;
+}
+
+#button1 {
+cursor: pointer;
+background-color: var(--tertiary-color);
+color: var(--white-headline);
+border: 0;
+transition: 0.3s;
+font-family: "signo", sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+text-decoration: none;
+padding: 10px 30px; 
+overflow: hidden;
+text-align: center;
+z-index: 1;
+}
+
+#button1:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* responsive button */
+@media only screen and (max-width: 850px) {
+    #button1 {
+        font-size: 15px;
+    }
+}
+
+
+/* 10% percent */
+.ten-percent {
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.ten-percent-m {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+
+/* classes for text colors  */
+.black-headline {
+    color: var(--black-headline);
+}
+
+.black-text {
+    color: var(--black-text);
+}
+
+.white-headline {
+    color: var(--white-headline);
+}
+
+.white-text {
+    color: var(--white-text);
+}
+
+
+/* white colored frame box */
+.bright-frame {
+    background-color: var(--white-headline);
+    padding: 15px;
+}
+
+.bright-frame-inside {
+    border: var(--dark-border);
+}
+
+
+/* primary colored frame box */
+.primary-frame {
+    background-color: var(--primary-color);
+    padding: 15px;
+}
+
+.primary-frame-inside {
+    border: var(--bright-border);
+}
+
+
+/* secondary colored frame box */
+.secondary-frame {
+    background-color: var(--secondary-color);
+    padding: 15px;
+}
+
+.secondary-frame-inside {
+    border: var(--bright-border);
+}
+
+
+/* background colors */
+
+.white-bg {
+    background-color: var(--white-headline);
+}
+
+.primary-bg {
+    background-color: var(--primary-color);
+}
+
+.secondary-bg {
+    background-color: var(--secondary-color);
+}
+
+.tertiary-bg {
+    background-color: var(--tertiary-color);
+}
