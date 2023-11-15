@@ -44,7 +44,7 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import portfoliodb from '../modules/portfoliodb'
+import usePortfolios from '../modules/usePortfolios'
 const { state } = portfoliodb()
 
 

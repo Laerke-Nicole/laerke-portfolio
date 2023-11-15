@@ -6,38 +6,27 @@
 
 /* styling of body to have less work */
 body {
-min-height: 100vh;
-color: var(--color-text);
-background: var(--background-color);
-transition: color 0.5s, background-color 0.5s;
-line-height: 1.6;
-font-family: "signo", sans-serif;
-font-style: normal;
-list-style-type: none;
-font-weight: 400;
-text-rendering: optimizeLegibility;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    background: var(--background-color);
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    font-family: "signo", sans-serif;
+    font-style: normal;
+    list-style-type: none;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /*styling text*/
-h1, h2, h3, h4, h5 {
-    color: var(--black-headline);
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--h-font);
-    font-weight: normal;
-} 
-
-h1 {
-font-size: 25px;
-font-weight: 400;
+    font-weight: 300;
 }
 
 p {
-font-size: 16px;
-color: var(--black-text);
-font-family: var(--t-font);
-font-weight: 400;
-font-style: normal;
+    font-size: 16px;
 }
 
 /* making all p responsive for smaller screens */
@@ -49,43 +38,23 @@ font-style: normal;
 
 /*styling button*/
 .btn {
-    background-color: var(--tertiary-color);
-    padding: 10px 30px;
+    background-color: var(--black-btn);
+    padding: 10px 40px;
     color: var(--white-headline);
     font-size: 16px;
     border: 0;
     transition: 0.3s;
+    border-radius: 20px;
 }
 
 .btn:hover {
-    background-color: var(--secondary-hover);
     transition: 0.3s;
-}
-
-#button1 {
-cursor: pointer;
-background-color: var(--tertiary-color);
-color: var(--white-headline);
-border: 0;
-transition: 0.3s;
-font-family: "signo", sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-text-decoration: none;
-padding: 10px 30px; 
-overflow: hidden;
-text-align: center;
-z-index: 1;
-}
-
-#button1:hover {
-    background-color: var(--secondary-hover);
+    border-radius: 5px;
 }
 
 /* responsive button */
 @media only screen and (max-width: 850px) {
-    #button1 {
+    .btn {
         font-size: 15px;
     }
 }
@@ -118,6 +87,14 @@ z-index: 1;
 
 .white-text {
     color: var(--white-text);
+}
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.secondary-text {
+    color: var(--secondary-color);
 }
 
 
@@ -170,4 +147,14 @@ z-index: 1;
 
 .tertiary-bg {
     background-color: var(--tertiary-color);
+}
+
+
+/* font family */
+.font-headline {
+    font-family: var(--h-font);
+}
+
+.font-text {
+    font-family: var(--t-font);
 }

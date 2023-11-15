@@ -421,28 +421,101 @@ const usePortfolios = () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                 console.log('File available at', downloadURL);
         
-                portfolioFrontImg.value = downloadURL
-                portfolioLandingImg.value = downloadURL
-                portfolioFirstImgOne.value = downloadURL
-                portfolioFirstImgTwo.value = downloadURL
-                portfolioFirstImgThree.value = downloadURL
-                portfolioSecondImgOne.value = downloadURL
-                portfolioSecondImgTwo.value = downloadURL
-                portfolioSecondImgThree.value = downloadURL
-                portfolioThirdImgOne.value = downloadURL
-                portfolioThirdImgTwo.value = downloadURL
-                portfolioThirdImgThree.value = downloadURL
-                portfolioProductImgOne.value = downloadURL
-                portfolioProductImgTwo.value = downloadURL
-                portfolioProductImgThree.value = downloadURL
-                portfolioProductImgFour.value = downloadURL
-                portfolioProductImgFive.value = downloadURL
-                portfolioProductImgSix.value = downloadURL
-                portfolioProductImgSeven.value = downloadURL
-                portfolioProductImgEight.value = downloadURL
-                portfolioProductImgNine.value = downloadURL
-                portfolioProductImgTen.value = downloadURL
-                portfolioNextImg.value = downloadURL
+
+
+
+                switch (imageType) {
+                    case 'front':
+                        portfolioFrontImg.value = downloadURL;
+                        break;
+                    case 'landing':
+                        portfolioLandingImg.value = downloadURL;
+                        break;
+                    case 'firstImgOne':
+                        portfolioFirstImgOne.value = downloadURL;
+                        break;
+                    case 'firstImgTwo':
+                        portfolioFirstImgTwo.value = downloadURL;
+                        break;
+                    case 'firstImgThree':
+                        portfolioFirstImgThree.value = downloadURL;
+                        break;
+                    case 'secondImgOne':
+                        portfolioSecondImgOne.value = downloadURL;
+                        break;
+                    case 'secondImgTwo':
+                        portfolioSecondImgTwo.value = downloadURL;
+                        break;
+                    case 'secondImgThree':
+                        portfolioSecondImgThree.value = downloadURL;
+                        break;
+                    case 'thirdImgOne':
+                        portfolioThirdImgOne.value = downloadURL;
+                        break;
+                    case 'thirdImgTwo':
+                        portfolioThirdImgTwo.value = downloadURL;
+                        break;
+                    case 'thirdImgThree':
+                        portfolioThirdImgThree.value = downloadURL;
+                        break;
+                    case 'productImgOne':
+                        portfolioProductImgOne.value = downloadURL;
+                        break;
+                    case 'productImgTwo':
+                        portfolioProductImgTwo.value = downloadURL;
+                        break;
+                    case 'productImgThree':
+                        portfolioProductImgThree.value = downloadURL;
+                        break;
+                    case 'productImgFour':
+                        portfolioProductImgFour.value = downloadURL;
+                        break;
+                    case 'productImgFive':
+                        portfolioProductImgFive.value = downloadURL;
+                        break;
+                    case 'productImgSix':
+                        portfolioProductImgSix.value = downloadURL;
+                        break;
+                    case 'productImgSeven':
+                        portfolioProductImgSeven.value = downloadURL;
+                        break;
+                    case 'productImgEight':
+                        portfolioProductImgEight.value = downloadURL;
+                        break;
+                    case 'productImgNine':
+                        portfolioProductImgNine.value = downloadURL;
+                        break;
+                    case 'productImgTen':
+                        portfolioProductImgTen.value = downloadURL;
+                        break;
+                    case 'nextImg':
+                        portfolioNextImg.value = downloadURL;
+                        break;
+                }
+
+
+
+
+
+                // portfolioFirstImgTwo.value = downloadURL
+                // portfolioFirstImgThree.value = downloadURL
+                // portfolioSecondImgOne.value = downloadURL
+                // portfolioSecondImgTwo.value = downloadURL
+                // portfolioSecondImgThree.value = downloadURL
+                // portfolioThirdImgOne.value = downloadURL
+                // portfolioThirdImgTwo.value = downloadURL
+                // portfolioThirdImgThree.value = downloadURL
+                // portfolioProductImgOne.value = downloadURL
+                // portfolioProductImgTwo.value = downloadURL
+                // portfolioProductImgThree.value = downloadURL
+                // portfolioProductImgFour.value = downloadURL
+                // portfolioProductImgFive.value = downloadURL
+                // portfolioProductImgSix.value = downloadURL
+                // portfolioProductImgSeven.value = downloadURL
+                // portfolioProductImgEight.value = downloadURL
+                // portfolioProductImgNine.value = downloadURL
+                // portfolioProductImgTen.value = downloadURL
+                // portfolioNextImg.value = downloadURL
             });
             }  
         );

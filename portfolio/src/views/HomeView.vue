@@ -2,83 +2,38 @@
   <main>
     <!-- primary-frame-inside -->
     <div class="primary-frame">
-      <div class="primary-frame-inside">
+      <div class="primary-frame-inside ten-percent">
 
-        <div class="primary-frame-inside-top-content flex">
+        <div class="primary-frame-inside-top-content flex pt-16">
           <!-- introduction -->
-          <div class="primary-frame-inside-content w-6/12">
-            <!-- <h3>Hej, jeg er</h3>
-            <h1>Lærke Nicole Nielsen</h1>
-            <h2 class="multimediedesigner">Og er Multimediedesigner</h2> -->
-            <!-- button to go straight to contact -->
-            <!-- <div class="primary-frame-inside-button pt-5">
-              <RouterLink to="/contact">
-                <button id="button1" class="button">Kontakt mig</button>
-              </RouterLink>
-            </div> -->
+          <div class="primary-frame-inside-content w-4/6 pb-16">
+            <h1 class="text-6xl white-headline pb-4 font-normal">Hello,<br> I'm Lærke!</h1>
+            <h2 class="white-text text-2xl">A multimedia designer</h2>
 
-            <h3>Hi, I am</h3>
-            <h1>Lærke Nicole Nielsen</h1>
-            <h2 class="multimediedesigner">A multimedia designer</h2>
+            <p class="pt-16 white-text">With a passion to bring my creative ideas<br> to life through photography, video production,<br> web development and graphic design.</p>
             <!-- button to go straight to contact -->
             <div class="primary-frame-inside-button pt-5">
               <RouterLink to="/contact">
-                <button id="button1" class="button">Contact me</button>
+                <button class="btn">Contact me</button>
               </RouterLink>
             </div>
           </div>
           
-          <div class="my-portrait w-6/12 flex justify-end pb-10">
-            <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fbeige-background.jpg?alt=media&token=c6fe6e6b-1287-453a-91cf-cc99746bc4b0&_gl=1*t2doc5*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTg4OTg1MS40OC4xLjE2ODU4ODk5MDkuMC4wLjA." alt="portrait-me" width="200">
+          <div class="w-2/6 pb-16">
+            <div class="my-portrait flex justify-end">
+              <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fbeige-background.jpg?alt=media&token=c6fe6e6b-1287-453a-91cf-cc99746bc4b0&_gl=1*t2doc5*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTg4OTg1MS40OC4xLjE2ODU4ODk5MDkuMC4wLjA." alt="portrait-me">
+            </div>  
+
+            <div class="passionBox flex white-text justify-end"></div>
           </div>
         </div>
 
-        <div class="passionBox flex text-right justify-end">
-          <div>
-            <p>
-              <!-- Med en passion for at bringe mine 
-              kreative ideer til virkelighed <br>gennem 
-              fotografering, videoredigering & webdevelopment -->
-              With a passion to bring my creative ideas to life through <br>
-              photography, video production, web development and graphic design.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
     
     
     <!-- scrolling text with my specialties -->
-    <div class="specialties">
-      <!-- <div class="scroll-text">
-        <span>Design & development</span>
-        <hr>
-        <span>Videoredigering</span>
-        <hr>
-        <span>Fotografering</span>
-        <hr>
-        <span>Design & development</span>
-        <hr>
-        <span>Videoredigering</span>
-        <hr>
-        <span id="last">Fotografering</span>
-        <hr>
-      </div>
-      <div class="scroll-text">
-        <span>Design & development</span>
-        <hr>
-        <span>Videoredigering</span>
-        <hr>
-        <span>Fotografering</span>
-        <hr>
-        <span>Design & development</span>
-        <hr>
-        <span>Videoredigering</span>
-        <hr>
-        <span id="last">Fotografering</span>
-        <hr>
-      </div> -->
-
+    <!-- <div class="specialties">
       <div class="scroll-text">
         <span>Web design & development</span>
         <hr>
@@ -123,7 +78,7 @@
         <span id="last">Graphic design</span>
         <hr>
       </div>
-    </div>
+    </div> -->
 
 
 
@@ -158,7 +113,7 @@
                       <p>{{ item.description }}</p>
                       <RouterLink :to="{ name: 'portfoliodetails', params:{id: item.id}}">
                         <!-- <button id="button1">Se mit arbejde</button>   -->
-                        <button id="button1">See my work</button>
+                        <button class="btn">See my work</button>
                       </RouterLink>
                     </div>
                 </div>
@@ -186,71 +141,32 @@ main {
 }
 
 /*primary-frame-inside*/
-.primary-frame-inside {
-  padding-top: 60px;
-  padding-left: 8%;
-}
-
 .primary-frame-inside h3 {
-  font-family: "signo", sans-serif;
-  font-style: normal;
   font-weight: 300;
-  font-size: 18px;
-  color: var(--white-text);
 }
 
 .primary-frame-inside h1 {
-  color: var(--white-headline);
-  font-size: 36px;
-  font-weight: bold;
   transform: scaleY(1.2);
-  margin-bottom: 6px;
 }
 
 .primary-frame-inside h2 {
-  font-family: "signo", sans-serif;
-  font-style: normal;
   font-weight: 200;
-  color: var(--white-headline);
-  font-size: 30px;
   line-height: 1;
   transform: scaleY(1.1);
-  padding-bottom: 8px;
 }
 /*primary-frame-inside end*/
 
 
-/* explaining what my passion is */
-.passionBox {
-  flex-direction: row;
-  padding-right: 8%;
-}
-
-.passionBox p {
-  padding-bottom: 60px;
-  color: var(--white-text);
-}
-/* explaining what my passion is end */
-
-
-/* styling position of buttons */
-button {
-  margin-bottom: 60px;
-}
-/* styling position of buttons end */
-
-
 /* my portrait */
 .my-portrait {
-  padding-right: 8%;
   height: auto;
 }
 
 .my-portrait img {
-  object-fit: cover;
   object-position: center;
   height: auto;
 }
+
 /* my portrait end */
 
 
@@ -393,28 +309,12 @@ button {
 
 
 /* styling portfolio text */
-.p-number {
-  color: var(--white-text);
-  padding-top: 60px;
-}
-
 .p-category {
-  color: var(--white-headline);
   transform: scaleY(1.4);
-  font-size: 21px;
   font-style: normal;
   font-weight: bold; 
 }
 
-.p-title {
-  color: var(--white-text);
-}
-
-.portfolio-content p {
-  padding-top: 16px;
-  padding-bottom: 12px;
-  color: var(--white-text);
-}
 /* styling portfolio text end */
 
 

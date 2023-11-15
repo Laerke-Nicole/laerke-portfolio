@@ -1,43 +1,39 @@
 <template>
   <main>
-      <div class="secondary-frame about-me-name-container">
-          <div class="secondary-frame-inside">
-              <h5 class="p-5 text-center about-me-name">Lærke Nicole Nielsen - Multimedia designer</h5>
-          </div>
-      </div>
-
       <!-- about container -->
       <div class="flex about-cols">
-          <!-- <div class="primary-frame sidebar">
-              <div class="primary-frame-inside sidebar-inside p-10">
-                  <h5>Multimedia designer</h5>
-              </div>
-          </div> -->
+          <div class="primary-frame w-6/12 left-portrait">
+              <div class="primary-frame-inside about-photo ten-percent pt-16">
+                  <h3 class="white-headline text-5xl pb-10">My skills</h3>
+                  <div class="flex flex-col justify-between gap-20">
+                    <div>
+                      <h4 class="white-text text-2xl">Web development skills</h4>
+                      <div>
+                        HTML, CSS, Javascript, Vue.js, Typescript, Tailwind, Bootstrap, Git, Wordpress, Jenkins
+                      </div>
+                    </div>
 
-          <div class="primary-frame w-2/5 left-portrait">
-              <div class="primary-frame-inside about-photo">
-                  <div class="flex justify-center left-my-portrait">
-                      <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fbeige-background.jpg?alt=media&token=c6fe6e6b-1287-453a-91cf-cc99746bc4b0&_gl=1*t2doc5*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTg4OTg1MS40OC4xLjE2ODU4ODk5MDkuMC4wLjA." alt="portrait-me" class="flex justify-center items-center my-portrait">
+                    <div>
+                      <h4 class="white-text text-2xl">Software skills</h4>
+                      <div>
+                        XD, Premiere Pro, Photoshop, Lightroom, Illustrator, Indesign
+                      </div>
+                    </div>
                   </div>
+                  
+
               </div>
           </div>
 
-          <div class="bright-frame w-3/5 right-portrait">
-              <div class="bright-frame-inside about-about">
+          <div class="bright-frame w-6/12 right-portrait">
+              <div class="bright-frame-inside about-about ten-percent pt-16">
                   <!-- content about me -->
-                  <div class="aboutMe">
-
-                      <!-- <div class="video">
-                          <iframe src="https://www.youtube.com/embed/Z7Z1Q48Qe3o" title="YouTube video player" id="video-cv" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                      </div> -->
-
-                      
-                      
-                      <div class="aboutText w-3/5">
+                  <div class="aboutMe">                      
+                      <div class="aboutText">
                           <!-- <h1>Hvem er jeg</h1>
                           <p class="pt-3">Jeg er lige nu i gang med min multimediedesigneruddannelse på Erhvervsakademiet Sydvest i Esbjerg. Jeg er passioneret for både foto- og videoredigering, samt design og web-udvikling, men har også interesse for grafisk- og UI/UX design. Jeg elsker at lærer nyt og nørde med mit arbejde, ligegyldig hvilken opgave jeg får.</p> -->
-                          <h1>Who am I</h1>
-                          <p class="pt-3">Hello! I am currently studying my 3rd semester of multimedia design at Business Academy South West in the city of Esbjerg, Denmark.<br><br>For me, there is nothing better than seeing things come together step by step, whether I am building a website or creating a graphic design. I have an eye for detail and consider myself to be a bit perfectionist.</p>
+                          <h1 class="text-5xl primary-text">Who am I?</h1>
+                          <p class="pt-3 black-text">Hello! I am currently studying my 3rd semester of multimedia design at Business Academy South West in the city of Esbjerg, Denmark.<br><br>For me, there is nothing better than seeing things come together step by step, whether I am building a website or creating a graphic design. I have an eye for detail and consider myself to be a bit perfectionist.</p>
                       </div>
                   </div>
               </div>
@@ -49,23 +45,6 @@
       <!-- text sliding animation -->
       <div class="services">
           <div class="servicesScrollBox">
-              <!-- <div class="servicesScrollText">
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5 id="last">Hvad jeg kan</h5>
-                  <hr>
-              </div> -->
-
               <div class="servicesScrollText">
                   <h5>What I can do</h5>
                   <hr>
@@ -82,23 +61,6 @@
                   <h5 id="last">What I can do</h5>
                   <hr>
               </div>
-
-              <!-- <div class="servicesScrollText">
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5>Hvad jeg kan</h5>
-                  <hr>
-                  <h5 id="last">Hvad jeg kan</h5>
-                  <hr>
-              </div> -->
 
               <div class="servicesScrollText">
                   <h5>What I can do</h5>
@@ -120,20 +82,19 @@
           
           
           <!-- the services i offer -->
-          <div class="servicesBorder">
-              <div class="servicesbox">
-                  <!-- <h4 class="servicesFirsth4">Webdesign & development</h4>
-                  <h4>Foto & videoredigering</h4>
-                  <h4>UI/UX design</h4>
-                  <h4>Grafisk design</h4>
-                  <h4 class="servicesLasth4">User Experience</h4> -->
-                  <h4 class="servicesFirsth4">Web design & development</h4>
-                  <h4>Photography</h4>
-                  <h4>Recording videos</h4>
-                  <h4>Photo & video editing</h4>
+          <div class="servicesBorder white-text">
+              <div class="servicesbox pt-16 pb-16">
+                  <h4>Web design & development</h4>
                   <h4>UI/UX design</h4>
                   <h4>Graphic design</h4>
-                  <h4 class="servicesLasth4">User Experience</h4>
+                  <h4>Video editing</h4>
+                  <h4>Record videos</h4>
+                  <h4>Photo editing</h4>
+                  <h4>Photography</h4>
+                  <h4>User Experience</h4>
+                  <h4>Digital marketing</h4>
+                  <h4>Create VR game</h4>
+                  <h4>3D modelling</h4>
               </div>
           </div>
       </div>
@@ -159,12 +120,6 @@ padding: 15px;
 background-color: var(--white-headline);
 }
 
-/* top with my name */
-.about-me-name {
-  color: var(--white-text);
-  font-size: 22px;
-}
-
 /* my portrait */
 .my-portrait{
   height: 50vh;
@@ -178,44 +133,15 @@ background-color: var(--white-headline);
 
 .aboutMe {
   display: flex;
-  padding: 100px 8%;
 }
 
 .about-photo {
-  padding: 100px 8%;
   height: 500px;
 }
-
-/* .sidebar {
-  height: auto;
-}
-
-.sidebar-inside {
-  writing-mode: vertical-lr;
-  color: var(--white-text);
-  font-size: 24px;
-  height: auto;
-} */
-
-/* .video {
-width: 60%;
-} */
-
-/* iframe {
-width: 100%;
-height: 100%;
-} */
 
 .aboutText {
   display: flex;
   flex-direction: column;
-}
-
-.aboutText h1 {
-  color: var(--secondary-color);
-  font-size: 36px;
-  line-height: 0.7;
-  font-weight: bold;
 }
 
 /* text about me end */
@@ -246,7 +172,6 @@ margin: 0;
 font-size: 36px;
 color: var(--primary-color);
 transition: all 2s ease;
-font-family: "signo", sans-serif;
 font-style: normal;
 font-weight: bold; 
 }
@@ -285,21 +210,9 @@ font-weight: bold;
 }
 
 .services h4 {
-  font-family: "signo", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  color: var(--white-headline);
   text-align: center;
   padding-bottom: 24px;
   font-size: 38px;
-}
-
-.servicesFirsth4 {
-  padding-top: 100px;
-}
-
-.servicesLasth4 {
-  padding-bottom: 100px !important;
 }
 /* services end */
 

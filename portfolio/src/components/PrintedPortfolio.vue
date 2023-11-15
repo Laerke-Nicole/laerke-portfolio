@@ -1,20 +1,20 @@
 <template>
     <!-- printed portfolio information in a loop -->
     <div v-for="portfolio in portfolios" :key="portfolio">
-          <div class="card-content flex flex-col round-corner white-bg pt-12 pb-12 mb-11">
+          <div class="card-content flex flex-col secondary-bg pt-12 pb-12 mb-11">
             <div class="flex flex-col ten-percent">
               
               <!-- inputs to edit portfolio information where you can edit -->
               <div>
-                <input type="text" placeholder="Number" v-model="portfolio.portfolioNumber" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4">
+                <input type="text" placeholder="Number" v-model="portfolio.portfolioNumber" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
   
-                <input type="text" placeholder="Category" v-model="portfolio.portfolioCategory" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4">
+                <input type="text" placeholder="Category" v-model="portfolio.portfolioCategory" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
         
-                <input type="text" placeholder="Product" v-model="portfolio.portfolioProduct" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4">
+                <input type="text" placeholder="Product" v-model="portfolio.portfolioProduct" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
         
                 <p class="black-text">Short description</p>
                 <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4" class="white-bg round-corner border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioShortDescription" />
+                <textarea name="message" id="message" rows="4" class="white-bg border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioShortDescription" />
                 </div>
 
                 <p>Front page img</p>
@@ -27,27 +27,27 @@
                     <img :src="portfolio.portfolioLandingImg" alt="tutors-profile-picture" class="h-48 mt-2.5">
                 </div>
 
-                <input type="text" placeholder="Year" v-model="portfolio.portfolioYear" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4">
+                <input type="text" placeholder="Year" v-model="portfolio.portfolioYear" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
         
                 <p class="black-text">Description</p>
                 <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4" class="white-bg round-corner border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioDescription" />
+                <textarea name="message" id="message" rows="4" class="white-bg border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioDescription" />
                 </div>
 
-                <input type="text" placeholder="Status" v-model="portfolio.portfolioStatus" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4">
+                <input type="text" placeholder="Status" v-model="portfolio.portfolioStatus" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
         
-                <input type="text" placeholder="Tech" v-model="portfolio.portfolioTech" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4">
+                <input type="text" placeholder="Tech" v-model="portfolio.portfolioTech" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
         
 
                 <!-- first problem -->
                 <p class="black-text">First problem</p>
                 <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4" class="white-bg round-corner border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioFirstProblem" />
+                <textarea name="message" id="message" rows="4" class="white-bg border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioFirstProblem" />
                 </div>
 
                 <p class="black-text">First solution</p>
                 <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4" class="white-bg round-corner border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioFirstSolution" />
+                <textarea name="message" id="message" rows="4" class="white-bg border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioFirstSolution" />
                 </div>
 
                 <p>First img one</p>
@@ -68,12 +68,12 @@
                 <!-- second problem -->
                 <p class="black-text">Second problem</p>
                 <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4" class="white-bg round-corner border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioSecondProblem" />
+                <textarea name="message" id="message" rows="4" class="white-bg border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioSecondProblem" />
                 </div>
 
                 <p class="black-text">Second solution</p>
                 <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4" class="white-bg round-corner border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioSecondSolution" />
+                <textarea name="message" id="message" rows="4" class="white-bg border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioSecondSolution" />
                 </div>
 
                 <p>Second img one</p>
@@ -94,12 +94,12 @@
                 <!-- third problem -->
                 <p class="black-text">Third problem</p>
                 <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4" class="white-bg round-corner border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioThirdProblem" />
+                <textarea name="message" id="message" rows="4" class="white-bg border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioThirdProblem" />
                 </div>
 
                 <p class="black-text">Third solution</p>
                 <div class="mt-2.5">
-                <textarea name="message" id="message" rows="4" class="white-bg round-corner border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioThirdSolution" />
+                <textarea name="message" id="message" rows="4" class="white-bg border-none text-sm w-full h-18 mb-4" v-model="portfolio.portfolioThirdSolution" />
                 </div>
 
                 <p>Third img one</p>
@@ -169,7 +169,7 @@
                 </div>
 
                 <!-- next project -->
-                <input type="text" placeholder="Next project" v-model="portfolio.portfolioNextCategory" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4">
+                <input type="text" placeholder="Next project" v-model="portfolio.portfolioNextCategory" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
 
                 <p>Next portfolio img</p>
                 <div>
@@ -194,13 +194,13 @@
                 <div class="btns-delete-edit flex gap-4">
                   <div>
                     <!-- Delete tutor button -->
-                    <button class="btn-delete black-btn mt-4" @click="firebaseDeleteSinglePortfolio(portfolio.id)">Delete portfolio</button>
+                    <button class="btn black-btn mt-4" @click="firebaseDeleteSinglePortfolio(portfolio.id)">Delete portfolio</button>
                     
                   </div>
 
                   <div>
                     <!-- edit tutor button -->
-                    <button class="btn-edit black-btn mt-4" @click="firebaseUpdateSinglePortfolio(portfolio)">Edit portfolio information</button>
+                    <button class="btn black-btn mt-4" @click="firebaseUpdateSinglePortfolio(portfolio)">Edit portfolio information</button>
                   </div>
                 </div>
                 
