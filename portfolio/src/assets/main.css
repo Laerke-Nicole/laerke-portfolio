@@ -22,7 +22,7 @@ body {
 /*styling text*/
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--h-font);
-    font-weight: 300;
+    font-weight: 200;
 }
 
 p {

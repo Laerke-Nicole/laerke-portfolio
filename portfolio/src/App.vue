@@ -42,6 +42,12 @@ import {
 
 const mobileMenuOpen = ref(false)
 
+
+// contact logos
+let linkedin = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/skills-logo%2Flinkedin.svg?alt=media&token=38e8195e-1a01-41a5-b2c2-7b704b46821d';
+let mail = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/skills-logo%2Fmail.svg?alt=media&token=e9cd44f2-459e-4fa6-a0d7-08c37738d86e';
+let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/skills-logo%2Fgithub.svg?alt=media&token=bba36aab-3677-41e3-8b66-b56b05599eb8';
+
 </script>
 
 
@@ -57,10 +63,6 @@ const mobileMenuOpen = ref(false)
             <p class="">Lærke Nielsen</p>
           </div>
         </RouterLink>
-        <!-- <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-        </a> -->
       </div>
 
       <!-- hamburgerbar icon -->
@@ -82,9 +84,6 @@ const mobileMenuOpen = ref(false)
         <div v-if="isLoggedIn"><RouterLink to="/" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">Admin</RouterLink></div>
         <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">Log out</RouterLink></div>
       </PopoverGroup>
-      <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">English</a>
-      </div> -->
     </nav>
 
     <!-- mobile navigation -->
@@ -144,11 +143,28 @@ const mobileMenuOpen = ref(false)
             <button class="btn button">Contact me</button>
         </RouterLink>
 
-        <div class="pb-10">
-          <ul class="flex justify-around white-headline">          
-              <RouterLink to="//www.linkedin.com/in/laerke-nicole-nielsen/?locale=en_US" target="_blank"><li>/laerke-nicole</li></RouterLink>
-              <RouterLink to="//github.com/Laerke-Nicole" target="_blank"><li>/Laerke-Nicole</li></RouterLink>
-              <div>laenie01@easv365.dk</div>
+        <div class="pt-4 pb-16">
+          <ul class="flex justify-around white-headline">      
+            
+              <RouterLink to="//www.linkedin.com/in/laerke-nicole-nielsen/?locale=en_US" target="_blank">
+                <div class="flex gap-2">
+                  <img :src="linkedin" alt="linkedin" class="h-6">
+                  <li>/laerke-nicole</li>
+                </div> 
+              </RouterLink>
+               
+              
+              <RouterLink to="//github.com/Laerke-Nicole" target="_blank">
+                <div class="flex gap-2">
+                  <img :src="github" alt="github" class="h-6">
+                  <li>/Laerke-Nicole</li>
+                </div>
+              </RouterLink>
+              
+              <div class="flex gap-2">
+                <img :src="mail" alt="mail" class="h-6">
+                <div>laenie01@easv365.dk</div>
+              </div>
             </ul>
         </div>
 
@@ -273,10 +289,6 @@ footer ul {
 }
 
 footer li {
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  flex-direction: column;
   transition: 0.3s;
 }
 
