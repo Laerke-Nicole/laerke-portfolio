@@ -4,7 +4,7 @@
 
         <!-- add portfolio -->
         <div class="flex flex-col justify-center gap-2">
-            <h1 class="pb-2 black-headline">Add portfolio</h1>
+            <h1 class="pt-16 pb-2 black-headline text-5xl">Add portfolio</h1>
 
             <!-- teleport modal with add portfolio -->
             <button @click="isOpen = true" class="btn mb-12">Add new portfolio</button>

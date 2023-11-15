@@ -13,9 +13,14 @@
             <p class="pt-16 white-text">With a passion to bring my creative ideas<br> to life through photography, video production,<br> web development and graphic design.</p>
             <!-- button to go straight to contact -->
             <div class="primary-frame-inside-button pt-5">
-              <RouterLink to="/contact">
-                <button class="btn">Contact me</button>
-              </RouterLink>
+              <button @click="isOpen = true" class="btn">Contact me</button>
+              <teleport to="body">
+                <div class="modal" v-if="isOpen">
+                  <ContactMe @close="isOpen = false">
+
+                  </ContactMe>
+                </div>
+              </teleport>
             </div>
           </div>
           
@@ -30,102 +35,84 @@
 
       </div>
     </div>
-    
-    
-    <!-- scrolling text with my specialties -->
-    <!-- <div class="specialties">
-      <div class="scroll-text">
-        <span>Web design & development</span>
-        <hr>
-        <span>Video recording</span>
-        <hr>
-        <span>Video editing</span>
-        <hr>
-        <span>Photography</span>
-        <hr>
-        <span>Graphic design</span>
-        <hr>
-        <span>Web design & development</span>
-        <hr>
-        <span>Video recording</span>
-        <hr>
-        <span>Video editing</span>
-        <hr>
-        <span>Photography</span>
-        <hr>
-        <span id="last">Graphic design</span>
-        <hr>
-      </div>
-      <div class="scroll-text">
-        <span>Web design & development</span>
-        <hr>
-        <span>Video recording</span>
-        <hr>
-        <span>Video editing</span>
-        <hr>
-        <span>Photography</span>
-        <hr>
-        <span>Graphic design</span>
-        <hr>
-        <span>Web design & development</span>
-        <hr>
-        <span>Video recording</span>
-        <hr>
-        <span>Video editing</span>
-        <hr>
-        <span>Photography</span>
-        <hr>
-        <span id="last">Graphic design</span>
-        <hr>
-      </div>
-    </div> -->
+
+
+
+
+
+
 
 
 
     <div class="portfolio-item-container">
 
-        <!-- making a loop for all of my projects -->
-        <div v-for="item in state" :key="item" class="portfolio-item">
+      <!-- making a loop for all of my projects -->
+      <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item">
 
-          <!-- container for projects -->
-          <div class="portfolio-content" :class="item.id" id="portfolio-view">
+        <!-- container for projects -->
+        <div class="portfolio-content" id="portfolio-view">
 
-            <!-- left portfolio -->
-            <div class="bright-frame">
-              <div class="bright-frame-inside">
-                  <div class="bright-frame-insideContent">
-                    <RouterLink :to="{ name: 'portfoliodetails', params:{id: item.id}}">
-                      <div>
-                        <img :src="item.portfolioimage" class="product-image" alt="portfolio-img">
-                      </div>   
+          <!-- left portfolio -->
+          <div class="bright-frame">
+            <div class="bright-frame-inside">
+                <div class="bright-frame-insideContent">
+                  <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
+                    <div>
+                      <img :src="portfolio.portfolioFrontImg" class="product-image" alt="portfolio-img">
+                    </div>   
+                  </RouterLink>
+                </div>
+            </div>
+          </div>
+          
+          <!-- right portfolio -->
+          <div class="secondary-frame">
+              <div class="secondary-frame-inside pb-6">
+                  <div class="secondary-frame-insideContent">
+                    <h4 class="p-number white-text text-base">{{ portfolio.portfolioNumber }}</h4>
+                    <h3 class="p-category white-headline text-3xl">{{ portfolio.portfolioCategory }}</h3>
+                    <h3 class="p-title white-text text-2xl">{{ portfolio.portfolioProduct }}</h3>
+                    <p class="white-text pt-10 pb-4">{{ portfolio.portfolioShortDescription }}</p>
+                    <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
+                      <!-- <button id="button1">Se mit arbejde</button>   -->
+                      <button class="btn">See my work</button>
                     </RouterLink>
                   </div>
               </div>
-            </div>
-            
-            <!-- right portfolio -->
-            <div class="secondary-frame">
-                <div class="secondary-frame-inside">
-                    <div class="secondary-frame-insideContent">
-                      <h4 class="p-number" :class="item.number">{{ item.number }}</h4>
-                      <h3 class="p-category" :class="item.category">{{ item.category }}</h3>
-                      <h3 class="p-title">{{ item.title }}</h3>
-                      <p>{{ item.description }}</p>
-                      <RouterLink :to="{ name: 'portfoliodetails', params:{id: item.id}}">
-                        <!-- <button id="button1">Se mit arbejde</button>   -->
-                        <button class="btn">See my work</button>
-                      </RouterLink>
-                    </div>
-                </div>
-            </div>   
-          </div>
+          </div>   
         </div>
-    </div>
+      </div>
+      </div>
   </main>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref } from 'vue'
+import { onMounted, toRefs, computed } from 'vue'
+import ContactMe from '../components/ContactMe.vue';
+import usePortfolios from '../modules/usePortfolios';
+
+onMounted(() => {
+  getPortfoliosData();
+})
+
+// get single page
+const props = defineProps({
+id: String
+})
+
+const { id } = toRefs(props)
+
+const { portfolios, getPortfoliosData } = usePortfolios();
+
+const portfolioDetail = computed(() => {
+  return portfolios.value.filter(item => item.id == id.value)
+})
+
+
+// modal button open and close
+const isOpen = ref(false);
+
 
 onMounted(() => {
   window.scrollTo(0, 0)
@@ -316,6 +303,42 @@ main {
 }
 
 /* styling portfolio text end */
+
+
+/* modal styling */
+.modal {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal > div {
+  background-color: var(--extra-white);
+  border-radius: 10px;
+  padding: 45px 20px;
+  width: 90%;
+  max-height: 80%;
+  top: 40px;
+  left: 40px;
+  position: absolute;
+  overflow-y: auto;
+}
+
+#floatyClose {
+  position: absolute;
+  top: 96px;
+  margin: 10px;
+  cursor: pointer;
+  z-index:110;
+}
+
 
 
 /* responsive */

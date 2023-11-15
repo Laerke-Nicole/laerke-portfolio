@@ -137,6 +137,10 @@ p {
     background-color: var(--white-headline);
 }
 
+.black-bg {
+    background-color: var(--black-text);
+}
+
 .primary-bg {
     background-color: var(--primary-color);
 }
@@ -157,4 +161,8 @@ p {
 
 .font-text {
     font-family: var(--t-font);
+}
+
+.round-corner {
+    border-radius: 20px;
 }

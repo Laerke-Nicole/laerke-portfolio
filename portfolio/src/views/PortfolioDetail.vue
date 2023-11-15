@@ -1,5 +1,6 @@
 <template>
     <main>
+        <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item">
             <div>
                 <!-- page about each project -->
                 <div v-if="portfolioDetails" class="portfolio-item">
@@ -325,6 +326,8 @@
                 </div>
             </div>
         </div>
+        </div>
+            
 
     </main>  
 </template>
@@ -332,31 +335,32 @@
 <script setup>
 import { toRefs, computed } from 'vue'
 import { RouterLink } from 'vue-router';
-import portfoliodb from '../modules/portfoliodb'
 import { useRouter } from 'vue-router'
 import { onMounted } from 'vue'
+import usePortfolios from '../modules/usePortfolios';
 
 onMounted(() => {
   window.scrollTo(0, 0)
 })
 
-const router = useRouter()
 
-const goBack = () => {
-    router.go(-1)
-}
+onMounted(() => {
+  getPortfoliosData();
+})
 
-const { state } = portfoliodb()
-
+// get single page
 const props = defineProps({
-    id: String
+id: String
 })
 
 const { id } = toRefs(props)
 
-const portfolioDetails = computed(() => {
-    return state.value.find(item => item.id == id.value)
+const { portfolios, getPortfoliosData } = usePortfolios();
+
+const portfolioDetail = computed(() => {
+    return portfolios.value.filter(item => item.id == id.value)
 })
+
 
 </script>
 
