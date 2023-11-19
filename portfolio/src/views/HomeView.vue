@@ -69,9 +69,9 @@
           <div class="secondary-frame">
               <div class="secondary-frame-inside pb-6">
                   <div class="secondary-frame-insideContent">
-                    <h4 class="p-number white-text text-base">{{ portfolio.portfolioNumber }}</h4>
-                    <h3 class="p-category white-headline text-3xl">{{ portfolio.portfolioCategory }}</h3>
-                    <h3 class="p-title white-text text-2xl">{{ portfolio.portfolioProduct }}</h3>
+                    <h4 class="p-number white-text text-base font-text">{{ portfolio.portfolioNumber }}</h4>
+                    <h3 class="p-category white-headline text-3xl pb-2">{{ portfolio.portfolioCategory }}</h3>
+                    <h3 class="p-title white-text text-xl">{{ portfolio.portfolioProduct }}</h3>
                     <p class="white-text pt-10 pb-4">{{ portfolio.portfolioShortDescription }}</p>
                     <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
                       <!-- <button id="button1">Se mit arbejde</button>   -->

@@ -52,11 +52,18 @@
                 </div>
 
                 <p class="white-text">Status</p>
-                <input type="text" placeholder="Status" v-model="portfolio.portfolioStatus" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
-        
+                <select v-model="portfolio.portfolioStatus" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4"> 
+                  <option v-for="status in status" :key="status" >
+                    <p>{{ status.status }}</p>
+                  </option>
+                </select>
+
                 <p class="white-text">Tech</p>
-                <input type="text" placeholder="Tech" v-model="portfolio.portfolioTech" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
-        
+                <select v-model="portfolio.portfolioTech" multiple class="white-bg round-corner border-none text-sm w-full h-auto focus:ring-0 mb-4"> 
+                  <option v-for="tech in tech" :key="tech" >
+                    <p>{{ tech.tech }}</p>
+                  </option>
+                </select>
 
                 <!-- first problem -->
                 <p class="white-text">First problem</p>
@@ -234,6 +241,8 @@
 <script setup>
 import { onMounted } from 'vue'
 import usePortfolios from '../modules/usePortfolios.js'
+import status from '../modules/status'
+import tech from '../modules/tech'
 
 
 

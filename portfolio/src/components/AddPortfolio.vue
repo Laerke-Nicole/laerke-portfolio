@@ -41,10 +41,10 @@
       </div>
 
       <p>Front page img</p>
-      <input v-on:change="uploadImg($event, 'front')" @change="uploadImg" alt="front page img" type="file" label="File input" width="200" height="200">
+      <input v-on:change="AddPortfolioData.portfolioFrontImg" @change="uploadImg" alt="front page img" type="file" label="File input" width="200" height="200">
 
       <p>Landing img</p>
-      <input v-on:change="uploadImg($event, 'landing')" @change="uploadImg" alt="landing img" type="file" label="File input" width="200" height="200">
+      <input v-on:change="AddPortfolioData.portfolioLandingImg" @change="uploadImg" alt="landing img" type="file" label="File input" width="200" height="200">
 
       <input type="text" placeholder="Year" v-model="AddPortfolioData.portfolioYear" class="white-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4">
 
@@ -62,7 +62,7 @@
       </select>
 
       <p class="white-text">Tech</p>
-      <select v-model="AddPortfolioData.portfolioTech" multiple class="white-bg round-corner border-none text-sm w-full h-auto focus:ring-0 mb-4"> 
+      <select multiple v-model="AddPortfolioData.portfolioTech" class="white-bg round-corner border-none text-sm w-full h-auto focus:ring-0 mb-4"> 
         <option v-for="tech in tech" :key="tech" >
           <p>{{ tech.tech }}</p>
         </option>

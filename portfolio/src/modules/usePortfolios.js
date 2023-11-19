@@ -25,7 +25,7 @@ const usePortfolios = () => {
         portfolioYear: "",
         portfolioDescription: "",
         portfolioStatus: "",
-        portfolioTech: "",
+        portfolioTech: [],
 
         // first problem, solution and images
         portfolioFirstProblem: "",
@@ -79,7 +79,7 @@ const usePortfolios = () => {
         portfolioYear: "",
         portfolioDescription: "",
         portfolioStatus: "",
-        portfolioTech: "",
+        portfolioTech: [],
 
         // first problem, solution and images
         portfolioFirstProblem: "",
@@ -345,10 +345,12 @@ const usePortfolios = () => {
     // image upload
     // Firebase storage upload image + get download URL
     const storage = getStorage();
+
+    // Create a variables to store the image link
     const portfolioFrontImg = ref(''); 
     const portfolioLandingImg = ref(''); 
     const portfolioFirstImgOne = ref(''); 
-    const portfolioFirstImgTwo = ref(''); 
+    const portfolioFirstImgTwo = ref('');    
     const portfolioFirstImgThree = ref(''); 
     const portfolioSecondImgOne = ref(''); 
     const portfolioSecondImgTwo = ref(''); 
@@ -421,25 +423,27 @@ const usePortfolios = () => {
             
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                 console.log('File available at', downloadURL);
-                // portfolioFirstImgTwo.value = downloadURL
-                // portfolioFirstImgThree.value = downloadURL
-                // portfolioSecondImgOne.value = downloadURL
-                // portfolioSecondImgTwo.value = downloadURL
-                // portfolioSecondImgThree.value = downloadURL
-                // portfolioThirdImgOne.value = downloadURL
-                // portfolioThirdImgTwo.value = downloadURL
-                // portfolioThirdImgThree.value = downloadURL
-                // portfolioProductImgOne.value = downloadURL
-                // portfolioProductImgTwo.value = downloadURL
-                // portfolioProductImgThree.value = downloadURL
-                // portfolioProductImgFour.value = downloadURL
-                // portfolioProductImgFive.value = downloadURL
-                // portfolioProductImgSix.value = downloadURL
-                // portfolioProductImgSeven.value = downloadURL
-                // portfolioProductImgEight.value = downloadURL
-                // portfolioProductImgNine.value = downloadURL
-                // portfolioProductImgTen.value = downloadURL
-                // portfolioNextImg.value = downloadURL
+                portfolioFrontImg.value = downloadURL
+                portfolioLandingImg.value = downloadURL
+                portfolioFirstImgTwo.value = downloadURL
+                portfolioFirstImgThree.value = downloadURL
+                portfolioSecondImgOne.value = downloadURL
+                portfolioSecondImgTwo.value = downloadURL
+                portfolioSecondImgThree.value = downloadURL
+                portfolioThirdImgOne.value = downloadURL
+                portfolioThirdImgTwo.value = downloadURL
+                portfolioThirdImgThree.value = downloadURL
+                portfolioProductImgOne.value = downloadURL
+                portfolioProductImgTwo.value = downloadURL
+                portfolioProductImgThree.value = downloadURL
+                portfolioProductImgFour.value = downloadURL
+                portfolioProductImgFive.value = downloadURL
+                portfolioProductImgSix.value = downloadURL
+                portfolioProductImgSeven.value = downloadURL
+                portfolioProductImgEight.value = downloadURL
+                portfolioProductImgNine.value = downloadURL
+                portfolioProductImgTen.value = downloadURL
+                portfolioNextImg.value = downloadURL
             });
             }
             
