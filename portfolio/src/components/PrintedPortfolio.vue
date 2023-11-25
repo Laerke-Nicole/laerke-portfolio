@@ -1,7 +1,7 @@
 <template>
     <!-- printed portfolio information in a loop -->
     <div v-for="portfolio in portfolios" :key="portfolio">
-          <div class="card-content flex flex-col secondary-bg pt-12 pb-12 mb-11">
+          <div class="card-content flex flex-col secondary-bg round-corner pt-12 pb-12 mb-11">
             <div class="flex flex-col ten-percent">
               
               <div class="btns-delete-edit flex gap-4 pb-8">
