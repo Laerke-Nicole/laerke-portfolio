@@ -59,7 +59,7 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
 
 <template>
   <header>
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8" aria-label="Global">
 
       <!-- logo in top left corner -->
       <div class="flex lg:flex-1">
@@ -168,7 +168,7 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
           </teleport>
         </div>
 
-        <div class="pt-4 pb-16">
+        <div class="pt-4 pb-4">
           <ul class="flex justify-around white-headline">      
             <a href="https://www.linkedin.com/in/laerke-nicole/" target="_blank">
               <div class="flex gap-2">
@@ -193,7 +193,7 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
 
         <!-- links in footer -->
         <div>
-            <ul class="flex flex-col white-text justify-around">
+            <ul class="flex white-text justify-around">
               <!-- <RouterLink to="/contact"><li>Kontakt</li></RouterLink> -->
               <RouterLink to="/about"><li>About me</li></RouterLink>
               <RouterLink to="/"><li>Work</li></RouterLink>
@@ -233,6 +233,7 @@ header {
   z-index: 1000;
   width: 100%;
 }
+  
 
 /* active stuff */
 
@@ -336,13 +337,13 @@ footer li:hover {
   font-size: 18px;
   gap: 18px;
   justify-content: center;
-  padding-top: 18px;
+  padding-top: 32px;
 }
 
 .mail hr {
   display: block;
   border-width: 0;
-  height: 1px;
+  height: 0.5px;
   width: 62%;
   background-color: var(--white-headline);
   align-self: center;

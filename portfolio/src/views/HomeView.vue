@@ -10,7 +10,7 @@
             <h1 class="text-6xl white-headline pb-4 font-normal">Hello,<br> I'm Lærke!</h1>
             <h2 class="white-text text-2xl">A multimedia designer</h2>
 
-            <p class="pt-16 white-text">With a passion to bring my creative ideas<br> to life through photography, video production,<br> web development and graphic design.</p>
+            <p class="pt-16 white-text">With a passion to bring my creative ideas<br> to life through web design and development,<br>video editing, and graphic design.</p>
             <!-- button to go straight to contact -->
             <div class="primary-frame-inside-button pt-5">
               <button @click="isOpen = true" class="btn">Contact me</button>
@@ -50,7 +50,7 @@
       <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item">
 
         <!-- container for projects -->
-        <div class="portfolio-content" id="portfolio-view">
+        <div class="portfolio-content" id="portfolio-view" v-motion-fade-visible-once>
 
           <!-- left portfolio -->
           <div class="bright-frame">
@@ -124,7 +124,7 @@ onMounted(() => {
 <style scoped>
 
 main {
-  padding-top: 96px;
+  padding-top: 64px;
 }
 
 /*primary-frame-inside*/

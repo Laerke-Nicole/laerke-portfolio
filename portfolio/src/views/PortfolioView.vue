@@ -58,7 +58,7 @@ window.scrollTo(0, 0)
 <style scoped>
 
 main {
-padding-top: 96px;
+    padding-top: 64px;
 }
 
 

@@ -85,46 +85,46 @@
       
       <!-- text sliding animation -->
       <div class="services">
-          <div class="servicesScrollBox">
-              <div class="servicesScrollText">
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5 id="last">What I can do</h5>
-              </div>
+        <div class="servicesScrollBox">
+          <div class="servicesScrollText">
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5 id="last">What I can do</h5>
+          </div>
 
-              <div class="servicesScrollText">
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5>What I can do</h5>
-                  <h5 id="last">What I can do</h5>
-              </div>
+          <div class="servicesScrollText">
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5>What I can do</h5>
+            <h5 id="last">What I can do</h5>
           </div>
-          
-          
-          <!-- the services i offer -->
-          <div class="servicesBorder white-text">
-              <div class="servicesbox pt-16 pb-16">
-                  <h4>Web design & development</h4>
-                  <h4>UI/UX design</h4>
-                  <h4>Graphic design</h4>
-                  <h4>Video editing</h4>
-                  <h4>Record videos</h4>
-                  <h4>Photo editing</h4>
-                  <h4>Photography</h4>
-                  <h4>User Experience</h4>
-                  <h4>Digital marketing</h4>
-                  <h4>Create VR game</h4>
-                  <h4>3D modelling</h4>
-              </div>
+        </div>
+        
+        
+        <!-- the services i offer -->
+        <div class="servicesBorder white-text">
+          <div class="servicesbox pt-16 pb-16">
+            <h4 v-motion-slide-visible-once-bottom>Web design & development</h4>
+            <h4 v-motion-slide-visible-once-bottom>UI/UX design</h4>
+            <h4 v-motion-slide-visible-once-bottom>Graphic design</h4>
+            <h4 v-motion-slide-visible-once-bottom>Video editing</h4>
+            <h4 v-motion-slide-visible-once-bottom>Record videos</h4>
+            <h4 v-motion-slide-visible-once-bottom>Photo editing</h4>
+            <h4 v-motion-slide-visible-once-bottom>Photography</h4>
+            <h4 v-motion-slide-visible-once-bottom>User Experience</h4>
+            <h4 v-motion-slide-visible-once-bottom>Digital marketing</h4>
+            <h4 v-motion-slide-visible-once-bottom>Create VR game</h4>
+            <h4 v-motion-slide-visible-once-bottom>3D modelling</h4>
           </div>
-      </div>
+        </div>
+    </div>
   </main>
 </template>
 
@@ -159,7 +159,7 @@ window.scrollTo(0, 0)
 
 <style>
 main {
-  padding-top: 96px;
+  padding-top: 64px;
 }
 
 /* border for container */

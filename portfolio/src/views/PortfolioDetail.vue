@@ -5,25 +5,20 @@
             <div>
                 <!-- page about each project -->
                 <div class="portfolio-item">
-                        <!-- show image -->
-                        <div v-if="portfolio.portfolioLandingImg">
-                            <img :src="portfolio.portfolioLandingImg" id="detail img">
-                        </div>
-                    
                     <div class="primary-frame">
-                        <div class="primary-frame-inside content">
+                        <div class="primary-frame-inside content pt-16 pb-16 ten-percent">
                             <!-- further short information about project -->
                             <div class="flex justify-between top-content">
-                                <h2 class="title white-headline text-5xl">{{ portfolio.portfolioProduct }}</h2>
+                                <h2 class="title white-headline text-5xl pb-10">{{ portfolio.portfolioProduct }}</h2>
                                 <div v-if="portfolio.portfolioProduct == 'Website'" class="flex items-end">
-                                        <!-- <a :href="portfolio.portfolioWebsiteURL" target="_blank"><h5 class="live-server underline">See the website live here</h5></a>  -->
+                                    <!-- <a :href="portfolio.portfolioWebsiteURL" target="_blank"><h5 class="live-server underline">See the website live here</h5></a>  -->
                                 </div>
                                 
                             </div>
                             
                             <hr>
 
-                            <div class="p-content">
+                            <div class="p-content pt-6">
                                 <div>
                                     <h4 class="p-date white-text text-2xl font-text font-bold">{{ portfolio.portfolioYear }}</h4>
                                 </div>
@@ -76,11 +71,71 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>   
                 </div>
-        
             </div>
+
+            <!-- gallery -->
+            <section>
+                <div class="bright-frame">
+                    <div class="bright-frame-inside flex gap-4 p-4">
+                        <div class="flex flex-col gap-4">
+                            <div>
+                                <img :src="portfolio.portfolioFrontImg" alt="">
+                            </div>
+                            <div>
+                                <img :src="portfolio.portfolioFrontImg" alt="">
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col gap-4">
+                            <div>
+                                <img :src="portfolio.portfolioFrontImg" alt="">
+                            </div>
+                            <div>
+                                <img :src="portfolio.portfolioFrontImg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="bright-frame">
+                    <div class="bright-frame-inside flex flex-col p-4 gap-4">
+                        <div class="flex">
+                            <div class="w-2/6 flex items-end pb-16">
+                                <p>FNEJNFLKEWLWEKLFNEFKLEWNFE</p>
+                            </div>
+                            
+                            <div class="flex gap-4 w-4/6">
+                                <div>
+                                    <img :src="portfolio.portfolioFrontImg" alt="">
+                                </div>
+                                <div>
+                                    <img :src="portfolio.portfolioFrontImg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex gap-4 w-4/6">
+                                <div>
+                                    <img :src="portfolio.portfolioFrontImg" alt="">
+                                </div>
+                                <div>
+                                    <img :src="portfolio.portfolioFrontImg" alt="">
+                                </div>
+                            </div>
+
+                            <div class="w-2/6 flex items-end pb-16 p-4">
+                                <p>FNEJNFLKEWLWEKLFNEFKLEWNFE</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
     
             <!-- information about my design process -->
             <div class="portfolio-item">
@@ -395,7 +450,7 @@ onMounted(() => {
 
 <style scoped>
 main {
-    padding-top: 96px;
+    padding-top: 64px;
 }
 
 .tech-height {
@@ -424,10 +479,6 @@ video {
 
 
 /* further short information about project */
-.top-content{
-    padding: 100px 8% 12px 8%;
-}
-
 .live-server {
     font-size: 18px;
     font-family: "signo", sans-serif;
@@ -443,10 +494,9 @@ hr {
     display: flex;
     display: block;
     border-width: 0;
-    height: 1px;
-    width: 84%;
+    height: 0.5px;
     margin: 0 auto;
-    background-color: #8a8a8a;
+    background-color: var(--white-headline);
 }
 
 .p-content {
@@ -454,7 +504,6 @@ hr {
     flex-wrap: nowrap;
     overflow: hidden;
     justify-content: space-between;
-    padding: 24px 8% 100px 8%;
 }
 
 /* further short information about project end */
@@ -464,6 +513,7 @@ hr {
 .designProcess{
     overflow: hidden;
 }
+
 
 /* problems and solution 1 */
 .problem-solution-box {
