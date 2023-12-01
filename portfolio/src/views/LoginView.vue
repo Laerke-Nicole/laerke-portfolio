@@ -1,7 +1,7 @@
 <template>
     <div class="pt-20 pb-20 white-bg">
         <div class="mt-14 max-w-md m-auto relative flex flex-col p-12 text-black secondary-bg">
-            <h3 class="text-2xl font-bold mb-2 white-headline text-center">Login</h3>
+            <h3 class="text-2xl font-bold mb-2 red-headline text-center">Login</h3>
 
             <div class="flex flex-col gap-3">
                 <!-- email -->

@@ -7,7 +7,6 @@
 /* styling of body to have less work */
 body {
     min-height: 100vh;
-    background: var(--background-color);
     transition: color 0.5s, background-color 0.5s;
     line-height: 1.6;
     font-family: "signo", sans-serif;
@@ -40,7 +39,7 @@ p {
 .btn {
     background-color: var(--black-btn);
     padding: 10px 40px;
-    color: var(--white-headline);
+    color: var(--white-text);
     font-size: 16px;
     border: 0;
     transition: 0.3s;
@@ -49,12 +48,27 @@ p {
 
 .btn:hover {
     transition: 0.3s;
-    border-radius: 5px;
+    border: 1px solid var(--black-text);
+}
+
+.btn-second {
+    background-color: var(--red-btn);
+    padding: 10px 40px;
+    color: var(--white-text);
+    font-size: 16px;
+    border: 1px solid var(--red-btn);
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+.btn-second:hover {
+    transition: 0.3s;
+    border: 1px solid var(--white-text);
 }
 
 /* responsive button */
 @media only screen and (max-width: 850px) {
-    .btn {
+    .btn, .btn-second {
         font-size: 15px;
     }
 }
@@ -71,6 +85,11 @@ p {
     margin-left: 10%;
 }
 
+.ten-percent-top-bottom {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
 
 /* classes for text colors  */
 .black-headline {
@@ -81,8 +100,8 @@ p {
     color: var(--black-text);
 }
 
-.white-headline {
-    color: var(--white-headline);
+.red-headline {
+    color: var(--red-headline);
 }
 
 .white-text {
@@ -100,7 +119,7 @@ p {
 
 /* white colored frame box */
 .bright-frame {
-    background-color: var(--white-headline);
+    background-color: var(--tertiary-color);
     padding: 15px;
 }
 
@@ -109,7 +128,7 @@ p {
 }
 
 
-/* primary colored frame box */
+/* black colored frame box */
 .primary-frame {
     background-color: var(--primary-color);
     padding: 15px;
@@ -120,21 +139,20 @@ p {
 }
 
 
-/* secondary colored frame box */
+/* red colored frame box */
 .secondary-frame {
     background-color: var(--secondary-color);
     padding: 15px;
 }
 
 .secondary-frame-inside {
-    border: var(--bright-border);
+    border: var(--dark-border);
 }
-
 
 /* background colors */
 
 .white-bg {
-    background-color: var(--white-headline);
+    background-color: var(--red-headline);
 }
 
 .black-bg {

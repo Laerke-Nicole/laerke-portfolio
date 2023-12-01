@@ -9,7 +9,7 @@
                         <div class="primary-frame-inside content pt-16 pb-16 ten-percent">
                             <!-- further short information about project -->
                             <div class="flex justify-between top-content">
-                                <h2 class="title white-headline text-5xl pb-10">{{ portfolio.portfolioProduct }}</h2>
+                                <h2 class="title red-headline text-5xl pb-10">{{ portfolio.portfolioProduct }}</h2>
                                 <div v-if="portfolio.portfolioProduct == 'Website'" class="flex items-end">
                                     <!-- <a :href="portfolio.portfolioWebsiteURL" target="_blank"><h5 class="live-server underline">See the website live here</h5></a>  -->
                                 </div>
@@ -496,7 +496,7 @@ hr {
     border-width: 0;
     height: 0.5px;
     margin: 0 auto;
-    background-color: var(--white-headline);
+    background-color: var(--red-headline);
 }
 
 .p-content {
@@ -523,7 +523,7 @@ hr {
 }
 
 .problem-solution-box h3 {
-    color: var(--white-headline);
+    color: var(--red-headline);
     padding-bottom: 6px;
     font-style: normal;
     font-weight: bold; 

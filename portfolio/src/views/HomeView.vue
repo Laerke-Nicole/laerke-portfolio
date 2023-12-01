@@ -2,18 +2,22 @@
   <main>
     <!-- primary-frame-inside -->
     <div class="primary-frame">
-      <div class="primary-frame-inside ten-percent">
+      <div class="primary-frame-inside">
 
-        <div class="primary-frame-inside-top-content flex pt-16">
-          <!-- introduction -->
-          <div class="primary-frame-inside-content w-4/6 pb-16">
-            <h1 class="text-6xl white-headline pb-4 font-normal">Hello,<br> I'm Lærke!</h1>
-            <h2 class="white-text text-2xl">A multimedia designer</h2>
+        <div class="flex justify-end pt-4 pr-4">
+          <img :src="star" alt="star" class="h-8">
+        </div>
 
-            <p class="pt-16 white-text">With a passion to bring my creative ideas<br> to life through web design and development,<br>video editing, and graphic design.</p>
+        <div class="primary-frame-inside-top-content flex ten-percent">
+          <!-- left side hero -->
+          <div class="primary-frame-inside-content w-1/3">
+            <h2 class="text-6xl hello font-normal">Hello,</h2>
+            <h2 class="text-6xl pb-4 red-headline">I'm Lærke!</h2>
+
+            <p class="pt-16 pb-4 text-sm white-text">With a passion to bring my creative ideas<br> to life through web design and development,<br>video editing, and graphic design.</p>
             <!-- button to go straight to contact -->
             <div class="primary-frame-inside-button pt-5">
-              <button @click="isOpen = true" class="btn">Contact me</button>
+              <button @click="isOpen = true" class="btn-second">Contact me</button>
               <teleport to="body">
                 <div class="modal" v-if="isOpen">
                   <ContactMe @close="isOpen = false">
@@ -24,13 +28,25 @@
             </div>
           </div>
           
-          <div class="w-2/6 pb-16">
-            <div class="my-portrait flex justify-end">
-              <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fbeige-background.jpg?alt=media&token=c6fe6e6b-1287-453a-91cf-cc99746bc4b0&_gl=1*t2doc5*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTg4OTg1MS40OC4xLjE2ODU4ODk5MDkuMC4wLjA." alt="portrait-me">
+          <!-- right side hero -->
+          <div class="w-2/3 right-hero">
+            <div class="my-portrait h-auto flex justify-end">
+              <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2FDSC_2997-1.jpg?alt=media&token=c2d34077-6e9a-46b0-bd3a-7094d97d9e3e" alt="portrait-me" class="w-full h-auto object-center">
             </div>  
+            <div>
+              <h3 class="text-5xl red-headline pt-4">Multimedia designer</h3>
+              <div class="flex justify-between white-text">
+                <p>Studying 3rd semester</p>
+                <p>Portfolio</p>
+              </div>
+            </div>
 
-            <div class="passionBox flex white-text justify-end"></div>
+            
           </div>
+          
+        </div>
+        <div class="flex justify-start pb-4 pl-4">
+          <img :src="star" alt="star" class="h-10">
         </div>
 
       </div>
@@ -44,18 +60,18 @@
 
 
 
-    <div class="portfolio-item-container">
+    <div class="portfolio-item-container flex flex-col flex-nowrap overflow-hidden w-full gap-y-12 secondary-bg">
 
       <!-- making a loop for all of my projects -->
-      <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item">
+      <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item flex flex-col items-start primary-bg w-full">
 
         <!-- container for projects -->
-        <div class="portfolio-content" id="portfolio-view" v-motion-fade-visible-once>
+        <div class="portfolio-content flex w-full" id="portfolio-view" v-motion-fade-visible-once>
 
           <!-- left portfolio -->
-          <div class="bright-frame">
-            <div class="bright-frame-inside">
-                <div class="bright-frame-insideContent">
+          <div class="bright-frame w-6/12">
+            <div class="bright-frame-inside left-container flex items-center justify-center">
+                <div class="bright-frame-insideContent flex flex-col items-center justify-center pt-16 pb-16">
                   <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
                     <div>
                       <img :src="portfolio.portfolioFrontImg" class="product-image" alt="portfolio-img">
@@ -66,19 +82,19 @@
           </div>
           
           <!-- right portfolio -->
-          <div class="secondary-frame">
-              <div class="secondary-frame-inside pb-6">
-                  <div class="secondary-frame-insideContent">
-                    <h4 class="p-number white-text text-base font-text">{{ portfolio.portfolioNumber }}</h4>
-                    <h3 class="p-category white-headline text-3xl pb-2">{{ portfolio.portfolioCategory }}</h3>
-                    <h3 class="p-title white-text text-xl">{{ portfolio.portfolioProduct }}</h3>
-                    <p class="white-text pt-10 pb-4">{{ portfolio.portfolioShortDescription }}</p>
-                    <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
-                      <!-- <button id="button1">Se mit arbejde</button>   -->
-                      <button class="btn">See my work</button>
-                    </RouterLink>
-                  </div>
+          <div class="primary-frame w-6/12">
+            <div class="primary-frame-inside right-container flex flex-col justify-end">
+              <div class="flex flex-col justify-end ten-percent">
+                <h4 class="white-text text-base font-text">{{ portfolio.portfolioNumber }}</h4>
+                <h3 class="p-category white-text text-3xl pb-6">{{ portfolio.portfolioProduct }}</h3>
+                <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
+                  <button class="btn-second">See my work</button>
+                </RouterLink>
               </div>
+              <div class="flex justify-end pb-4 pr-4">
+                <img :src="star" alt="star" class="h-10">
+              </div>
+            </div>
           </div>   
         </div>
       </div>
@@ -91,6 +107,7 @@ import { ref } from 'vue'
 import { onMounted, toRefs, computed } from 'vue'
 import ContactMe from '../components/ContactMe.vue';
 import usePortfolios from '../modules/usePortfolios';
+import star from '../modules/star';
 
 onMounted(() => {
   getPortfoliosData();
@@ -128,12 +145,8 @@ main {
 }
 
 /*primary-frame-inside*/
-.primary-frame-inside h3 {
-  font-weight: 300;
-}
-
-.primary-frame-inside h1 {
-  transform: scaleY(1.2);
+.right-hero {
+  padding-left: 10%;
 }
 
 .primary-frame-inside h2 {
@@ -141,156 +154,36 @@ main {
   line-height: 1;
   transform: scaleY(1.1);
 }
+
+.hello {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--red-headline);
+}
 /*primary-frame-inside end*/
 
 
-/* my portrait */
-.my-portrait {
-  height: auto;
-}
-
-.my-portrait img {
-  object-position: center;
-  height: auto;
-}
-
-/* my portrait end */
-
-
-/* scrollbar of my specialty of subjects */ 
-.specialties {
-  display: flex;
-  width: 100%;
-  background-color: var(--white-headline);
-  overflow: hidden;
-  border-top: var(--dark-border);
-  border-bottom: var(--dark-border);
-}
-
-.specialties .scroll-text {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  transition: all 1s ease;
-  gap: 2rem;
-  display: flex;
-  animation: animate_text 30s linear infinite;
-}
-  
-.specialties .scroll-text span {
-  margin: 0;
-  font-size: 36px;
-  color: var(--primary-color);
-  transition: all 2s ease;
-  font-family: "signo", sans-serif;
-  font-style: normal;
-  font-weight: bold; 
-}
-
-.scroll-text hr {
-  display: block;
-  border-width: 0;
-  height: 2px;
-  width: 2rem;
-  transform: rotate(90deg);
-  background-color: var(--primary-color);
-  align-self: center;
-}
-
-#last {
-  padding-right: 2rem;
-}
-
-@keyframes animate_text {
-    from {
-      transform: translate3d(0, 0, 0);
-    }
-    to {
-      transform: translate3d(-60%, 0, 0);
-    }
-}
-/* scrollbar of my specialty of subjects end */ 
-
-
-
-/* making container of projects */
-.portfolio-item-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  overflow: hidden;
-  background-color: var(--black-headline);
-  width: 100%;
-  row-gap: 46px;
-}
-
-.portfolio-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border: 0;
-  background-color: var(--black-headline);
-  width: 100%;
-}
-
-.portfolio-content {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.bright-frame {
-  width: 50%;
-}
-/* portfolio container end */
-
-
 /* left side portfolio */
-.bright-frame-inside {
+.left-container {
   height: 65vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bright-frame-insideContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 8%;
 }
 
 
 /* right side portfolio */
-.secondary-frame {
-  width: 50%;
-}
-
-.secondary-frame-inside {
-  display: flex;
-  flex-direction: row;
+.right-container {
   height: 65vh;
 }
 
-.secondary-frame-inside .secondary-frame-insideContent {
-  padding-left: 8%;
-  padding-right: 8%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
 /* making container of projects end */
 
 
 /* stying image */
-.bright-frame-insideContent img {
+.product-image {
   max-height: 50vh;
 }
 
-.bright-frame-insideContent img:hover {
-  box-shadow:  9px 9px 18px #b5b5b5,
-             -9px -9px 18px #ffffff;
+.product-image:hover {
+  box-shadow:  9px 9px 18px var(--red-headline),
+  -9px -9px 18px var(--primary-color);
 }
 /* stying image end */
 
@@ -347,7 +240,7 @@ main {
     height: 50vh;
   }
 
-  .secondary-frame-inside {
+  .right-container {
     height: 50vh;
   }
 
@@ -361,7 +254,7 @@ main {
     height: 45vh;
   }
 
-  .secondary-frame-inside {
+  .right-container {
     height: 45vh;
   }
 }
@@ -398,7 +291,7 @@ main {
     height: auto;
   }
 
-  .secondary-frame-inside {
+  .right-container {
     height: auto;
   }
 
@@ -428,7 +321,7 @@ main {
     width: 100%;
   }
 
-  #secondary-frame-inside {
+  .right-container {
     height: auto;
   }
 }
@@ -493,7 +386,8 @@ main {
   }
 
   .bright-frame-insideContent {
-    padding: 45px 8%;
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
 }
 

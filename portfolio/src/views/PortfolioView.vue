@@ -157,7 +157,7 @@ color: var(--white-text);
 }
 
 .p-category {
-    color: var(--white-headline);
+    color: var(--red-headline);
     transform: scaleY(1.4);
     font-size: 21px;
     font-style: normal;

@@ -5,6 +5,7 @@ import { auth } from './firebase.js'
 import { signOut, onAuthStateChanged } from 'firebase/auth'
 import router from './router'
 import ContactMe from './components/ContactMe.vue'
+import star from './modules/star'
 
 let isLoggedIn = ref(false)
 
@@ -80,11 +81,11 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
 
       <!-- links in navigation -->
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-        <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>About me</p></RouterLink>
-        <RouterLink to="/portfolio" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>Work</p></RouterLink>
+        <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>ABOUT ME</p></RouterLink>
+        <RouterLink to="/portfolio" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>WORK</p></RouterLink>
         
         <div>
-          <button @click="isOpen = true" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>Contact me</p></button>
+          <button @click="isOpen = true" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>CONTACT ME</p></button>
             <teleport to="body">
               <div class="modal" v-if="isOpen">
                 <ContactMe @close="isOpen = false">
@@ -96,8 +97,8 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
 
         <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2Fenglish-version%2FCV_L%C3%A6rke_Nicole_Nielsen.pdf?alt=media&token=15292116-362b-41ec-b32d-e426d373c57e" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>CV <span aria-hidden="true">&nearr;</span></p></a>
         <!-- <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">Om mig</RouterLink> -->
-        <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>Admin</p></RouterLink></div>
-        <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>Log out</p></RouterLink></div>
+        <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>ADMIN</p></RouterLink></div>
+        <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>LOG OUT</p></RouterLink></div>
       </PopoverGroup>
     </nav>
 
@@ -125,9 +126,9 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">About me</RouterLink>
-              <RouterLink to="/portfolio" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">Work</RouterLink>
-              <button @click="isOpen = true, mobileMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">Contact</button>
+              <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">ABOUT ME</RouterLink>
+              <RouterLink to="/portfolio" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">WORK</RouterLink>
+              <button @click="isOpen = true, mobileMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">CONTACT ME</button>
               <teleport to="body">
                 <div class="modal" v-if="isOpen">
                   <ContactMe @close="isOpen = false">
@@ -137,8 +138,8 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
               </teleport>
               
               <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2Fenglish-version%2FCV_L%C3%A6rke_Nicole_Nielsen.pdf?alt=media&token=15292116-362b-41ec-b32d-e426d373c57e" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">CV <span aria-hidden="true">&nearr;</span></a>
-              <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">Admin</RouterLink></div>
-              <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">Log out</RouterLink></div>
+              <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">ADMIN</RouterLink></div>
+              <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">LOG OUT</RouterLink></div>
             </div>
           </div>
         </div>
@@ -154,70 +155,56 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
   <!-- footer -->
   <div class="primary-frame">
     <div class="primary-frame-inside">
-      <footer class="ten-percent">
-        <!-- <h1>Lad os arbejde sammen!</h1> -->
-        <h4 class="white-text text-center text-6xl pt-16 pb-8">Thank you!</h4>
-        <div>
-        <button @click="isOpen = true" class="btn button">Contact me</button>
-          <teleport to="body">
-            <div class="modal" v-if="isOpen">
-              <ContactMe @close="isOpen = false">
+      <footer>
+        <div class="flex justify-start pt-4 pl-4">
+            <img :src="star" alt="star" class="h-8">
+          </div>
+        <div class="ten-percent">
+          <!-- <h1>Lad os arbejde sammen!</h1> -->
+          <h4 class="red-headline text-center text-6xl pb-8">THANK YOU!</h4>
+          <div>
+          <button @click="isOpen = true" class="btn-second button">Contact me</button>
+            <teleport to="body">
+              <div class="modal" v-if="isOpen">
+                <ContactMe @close="isOpen = false">
 
-              </ContactMe>
-            </div>
-          </teleport>
-        </div>
-
-        <div class="pt-4 pb-4">
-          <ul class="flex justify-around white-headline">      
-            <a href="https://www.linkedin.com/in/laerke-nicole/" target="_blank">
-              <div class="flex gap-2">
-                <img :src="linkedin" alt="linkedin" class="h-6">
-                <li>/laerke-nicole</li>
-              </div> 
-            </a>
-               
-            <a href="https://github.com/Laerke-Nicole" target="_blank">
-              <div class="flex gap-2">
-                <img :src="github" alt="github" class="h-6">
-                <li>/Laerke-Nicole</li>
+                </ContactMe>
               </div>
-            </a>
-            
-            <div class="flex gap-2">
-              <img :src="mail" alt="mail" class="h-6">
-              <div>laenie01@easv365.dk</div>
-            </div>
-          </ul>
+            </teleport>
+          </div>
+
+          <!-- links in footer -->
+          <div>
+              <ul class="flex white-text justify-around">
+                <!-- <RouterLink to="/contact"><li>Kontakt</li></RouterLink> -->
+                <RouterLink to="/about"><li>About me</li></RouterLink>
+                <RouterLink to="/"><li>Work</li></RouterLink>
+                <div>
+                  <button @click="isOpen = true"><li>Contact me</li></button>
+                    <teleport to="body">
+                      <div class="modal" v-if="isOpen">
+                        <ContactMe @close="isOpen = false">
+
+                        </ContactMe>
+                      </div>
+                    </teleport>
+                  </div>
+                <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2Fenglish-version%2FCV_L%C3%A6rke_Nicole_Nielsen.pdf?alt=media&token=15292116-362b-41ec-b32d-e426d373c57e" target="_blank"><li>CV &nearr;</li></a>
+                <!-- <RouterLink to="/about"><li>Om mig</li></RouterLink> -->
+                
+              </ul>
+          </div>
+
+          <!-- my mail in footer -->
+          <div class="mail">
+            <h4 class="red-headline">Lærke Nicole Nielsen</h4>
+            <hr>
+          </div>
         </div>
 
-        <!-- links in footer -->
-        <div>
-            <ul class="flex white-text justify-around">
-              <!-- <RouterLink to="/contact"><li>Kontakt</li></RouterLink> -->
-              <RouterLink to="/about"><li>About me</li></RouterLink>
-              <RouterLink to="/"><li>Work</li></RouterLink>
-              <div>
-                <button @click="isOpen = true"><li>Contact me</li></button>
-                  <teleport to="body">
-                    <div class="modal" v-if="isOpen">
-                      <ContactMe @close="isOpen = false">
-
-                      </ContactMe>
-                    </div>
-                  </teleport>
-                </div>
-              <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2Fenglish-version%2FCV_L%C3%A6rke_Nicole_Nielsen.pdf?alt=media&token=15292116-362b-41ec-b32d-e426d373c57e" target="_blank"><li>CV &nearr;</li></a>
-              <!-- <RouterLink to="/about"><li>Om mig</li></RouterLink> -->
-              
-            </ul>
-        </div>
-
-        <!-- my mail in footer -->
-        <div class="mail">
-          <h4 class="white-headline">Lærke Nicole Nielsen</h4>
-          <hr>
-        </div>
+          <div class="flex justify-end pb-4 pr-4">
+            <img :src="star" alt="star" class="h-10">
+          </div>
       </footer>
     </div>
   </div>
@@ -228,7 +215,7 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
 <style scoped>
 
 header {
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
   position: fixed;
   z-index: 1000;
   width: 100%;
@@ -238,28 +225,29 @@ header {
 /* active stuff */
 
 header p {
-  color: var(--black-text);
+  color: var(--red-headline);
   font-weight: 500px;
 }
 
 header a:hover {
   text-decoration: underline;
+  color: var(--red-headline);
   transition: 0.3s;
+  background-color: var(--primary-color);
 }
 
 header button:hover {
   text-decoration: underline;
+  color: var(--red-headline);
   transition: 0.3s;
-}
-
-header img:hover {
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
 }
 
 nav a.router-link-exact-active  {
   border-radius: 0;
   font-weight: bold;
   text-decoration: underline;
+  color: var(--red-headline);
   transition: 0.3s;
 }
 
@@ -277,8 +265,8 @@ nav a.router-link-exact-active  {
 }
 
 .mobilenav a:hover {
-  background-color: var(--tertiary-color);
-  color: var(--white-text);
+  background-color: var(--red-headline);
+  color: var(--black-text);
   border-radius: 0;
 }
 
@@ -297,11 +285,6 @@ nav a.router-link-exact-active  {
 }
 
 /* footer */
-footer {
-  background-color: var(--primary-color);
-  padding-bottom: 60px;
-}
-
 footer .footerMyName h2 {
   color: var(--white-headline);
   font-style: normal;
@@ -345,7 +328,7 @@ footer li:hover {
   border-width: 0;
   height: 0.5px;
   width: 62%;
-  background-color: var(--white-headline);
+  background-color: var(--red-headline);
   align-self: center;
 }
 /* footer end */
