@@ -2,7 +2,7 @@
     <main>
         <div v-for="portfolio in portfolioDetail" :key="portfolio" class="portfolio-item">
 
-            <div>
+            <section>
                 <!-- page about each project -->
                 <div class="portfolio-item">
                     <div class="primary-frame">
@@ -20,24 +20,27 @@
 
                             <div class="p-content pt-6">
                                 <div>
-                                    <h4 class="p-date white-text text-2xl font-text font-bold">{{ portfolio.portfolioYear }}</h4>
+                                    <h4 class="p-date red-headline text-2xl font-text font-bold">{{ portfolio.portfolioYear }}</h4>
                                 </div>
                                 
                                 <div>
                                     <!-- <h4>Beskrivelse</h4> -->
-                                    <h4 class="white-text text-2xl pb-3">Description</h4>
-                                    <!-- <p class="pr-6">{{ portfolioDetails.description }} <br> Læs nedenfor om problemer og løsninger jeg fandt.</p> -->
+                                    <div>
+
+                                    </div>
+                                    <h4 class="red-headline text-2xl pb-3">Description</h4>
+
                                     <p class="pr-6 white-text pb-20">{{ portfolio.portfolioDescription }} <br> Read below about the problems and solutions i had.</p>
-                                    <h4 class="white-text text-2xl pb-3">Status</h4>
+                                    <h4 class="red-headline text-2xl pb-3">Status</h4>
                                     <p class="white-text">{{ portfolio.portfolioStatus }}</p>
                                 </div>
                                 
                                 <div>
                                     <!-- <h4>Kategori</h4> -->
-                                    <h4 class="white-text text-2xl pb-3">Category</h4>
+                                    <h4 class="red-headline text-2xl pb-3">Category</h4>
                                     <p class="white-text pb-20">{{ portfolio.portfolioCategory }}</p>
 
-                                    <h4 class="white-text text-2xl pb-3">Tech</h4>
+                                    <h4 class="red-headline text-2xl pb-3">Tech</h4>
                                     <div class="flex flex-wrap justify-center items-center gap-4">
                                         <div v-if="portfolio.portfolioTech.includes('html')">
                                             <img :src="html" alt="html" class="tech-height">
@@ -73,22 +76,16 @@
                         </div>
                     </div>   
                 </div>
-            </div>
+            </section>
 
             <!-- gallery -->
             <section>
-                <div class="bright-frame">
-                    <div class="bright-frame-inside flex gap-4 p-4">
-                        <div class="flex flex-col gap-4">
+                <div class="primary-frame">
+                    <div class="primary-frame-inside flex gap-4 six-percent pt-16 pb-16">
+                        <div class="flex gap-4">
                             <div>
                                 <img :src="portfolio.portfolioFrontImg" alt="">
                             </div>
-                            <div>
-                                <img :src="portfolio.portfolioFrontImg" alt="">
-                            </div>
-                        </div>
-                        
-                        <div class="flex flex-col gap-4">
                             <div>
                                 <img :src="portfolio.portfolioFrontImg" alt="">
                             </div>
@@ -101,11 +98,11 @@
             </section>
 
             <section>
-                <div class="bright-frame">
-                    <div class="bright-frame-inside flex flex-col p-4 gap-4">
+                <div class="primary-frame">
+                    <div class="primary-frame-inside flex flex-col six-percent pt-16 pb-16 gap-4">
                         <div class="flex">
                             <div class="w-2/6 flex items-end pb-16">
-                                <p>FNEJNFLKEWLWEKLFNEFKLEWNFE</p>
+                                <p class="white-text">FNEJNFLKEWLWEKLFNEFKLEWNFE</p>
                             </div>
                             
                             <div class="flex gap-4 w-4/6">
@@ -129,7 +126,7 @@
                             </div>
 
                             <div class="w-2/6 flex items-end pb-16 p-4">
-                                <p>FNEJNFLKEWLWEKLFNEFKLEWNFE</p>
+                                <p class="white-text">FNEJNFLKEWLWEKLFNEFKLEWNFE</p>
                             </div>
                         </div>
                         
@@ -138,10 +135,10 @@
             </section>
     
             <!-- information about my design process -->
-            <div class="portfolio-item">
-                <div class="secondary-frame">
-                    <div class="secondary-frame-inside">
-                        <div class="designProcess flex flex-row">
+            <section class="portfolio-item" v-if="portfolio.portfolioFirstProblem">
+                <div class="primary-frame">
+                    <div class="primary-frame-inside">
+                        <div class="designProcess flex flex-row ten-percent ten-percent-top-bottom">
                             <div class="problem-solution-box flex flex-col w-3/6">
                                 <!-- problems i had -->
                                 <div>
@@ -171,43 +168,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div v-if="portfolio.portfolioProductImgOne || portfolio.portfolioProductImgTwo || portfolio.portfolioProductVideoOne || portfolio.portfolioProductVideoTwo">
-                <div v="item in state" :key="item" class="portfolio-item">
-                    <div class="primary-frame">
-                        <div class="primary-frame-inside">   
-                            <div class="product-demonstration flex flex-col gap-16">
-
-                                <!-- show image -->
-                                <div v-if="portfolio.portfolioProductImgOne" class="product-demonstration-box flex w-3/6">
-                                    <img :src="portfolio.portfolioProductImgOne" id="image showing product 1">
-                                </div>
-
-                                <div v-if="portfolio.portfolioProductImgTwo" class="product-demonstration-box flex w-3/6">
-                                    <img :src="portfolio.portfolioProductImgTwo" id="image showing product 2">
-                                </div>
-
-                                <!-- or show video -->
-                                <div v-if="portfolio.portfolioProductVideoOne" class="product-demonstration-box flex w-3/6">
-                                    <video autoplay loop muted plays-inline :src="portfolio.portfolioProductVideoOne" type="video/mp4"></video>
-                                </div>
-
-                                <div v-if="portfolio.portfolioProductVideoTwo" class="product-demonstration-box flex w-3/6">
-                                    <video autoplay loop muted plays-inline :src="portfolio.portfolioProductVideoTwo" type="video/mp4"></video>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
         
-        
-            <div class="portfolio-item">
-                <div class="secondary-frame">
-                    <div class="secondary-frame-inside">
-                        <div class="designProcess psi-flip flex flex-row"> 
+            <section class="portfolio-item" v-if="portfolio.portfolioSecondProblem">
+                <div class="primary-frame">
+                    <div class="primary-frame-inside">
+                        <div class="designProcess psi-flip flex flex-row ten-percent ten-percent-top-bottom"> 
                             <div v-if="portfolio.portfolioSecondImgOne" class="problem-solution-image left-image flex w-3/6 items-center">
                                 <img :src="portfolio.portfolioSecondImgOne" id="image about the problem/issue">
                             </div>
@@ -220,70 +186,33 @@
                             <div class="problem-solution-box flex flex-col w-3/6">
                                 <!-- problems i had -->
                                 <div>
-                                    <!-- <h3>.02 Problemstilling jeg havde med denne {{ portfolioDetails.title }}</h3> -->
                                     <h3 class="text-3xl">.02 A problem I had with this {{ portfolio.portfolioProduct }}</h3>
-                                    <p>{{ portfolio.portfolioSecondProblem }}</p>
+                                    <p class="white-text">{{ portfolio.portfolioSecondProblem }}</p>
                                 </div>
                                 <div class="pt-5">
-                                    <!-- solutions to the problems -->
-                                    <!-- <h3>.02 Løsningen på problemet</h3> -->
                                     <h3 class="text-3xl">.02 The solution to the problem</h3>
-                                    <p>{{ portfolio.portfolioSecondSolution }}</p>
+                                    <p class="white-text">{{ portfolio.portfolioSecondSolution }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div v-if="portfolio.portfolioProductImgThree || portfolio.portfolioProductImgFour || portfolio.video3 || portfolio.video4 || portfolio.footerImg">
-                <div class="portfolio-item">
-                    <div class="primary-frame">
-                        <div class="primary-frame-inside">   
-                            <div class="product-demonstration flex flex-col gap-16">
-
-                                <!-- show image -->
-                                <div v-if="portfolio.portfolioProductImgThree" class="product-demonstration-box flex w-3/6">
-                                    <img :src="portfolio.portfolioProductImgThree" id="image showing product 3">
-                                </div>
-
-                                <div v-if="portfolio.portfolioProductImgFour" class="product-demonstration-box flex w-3/6">
-                                    <img :src="portfolio.portfolioProductImgFour" id="image showing product 4">
-                                </div>
-
-                                <!-- or show video -->
-                                <div v-if="portfolio.portfolioProductVideoThree" class="product-demonstration-box flex w-3/6">
-                                    <video autoplay loop muted plays-inline :src="portfolio.portfolioProductVideoThree" type="video/mp4"></video>
-                                </div>
-
-                                <div v-if="portfolio.portfolioProductVideoFour" class="product-demonstration-box flex w-3/6">
-                                    <video autoplay loop muted plays-inline :src="portfolio.portfolioProductVideoFour" type="video/mp4"></video>
-                                </div>
-
-                                <div v-if="portfolio.PortfolioFooterImg">
-                                    <img :src="portfolio.PortfolioFooterImg" alt="footer image">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </section>
 
             <div v-if="portfolio.portfolioThirdProblem">
                 <div class="portfolio-item">
-                    <div class="secondary-frame">
-                        <div class="secondary-frame-inside">
+                    <div class="primary-frame">
+                        <div class="primary-frame-inside">
                             <div class="designProcess flex flex-row">
                                 <div class="problem-solution-box flex flex-col w-3/6">
                                     <!-- problems i had -->
                                     <div>
                                         <h3 class="text-3xl">.03 A problem I had with this {{ portfolio.portfolioProduct }}</h3>
-                                        <p>{{ portfolio.portfolioThirdProblem }}</p>
+                                        <p class="white-text">{{ portfolio.portfolioThirdProblem }}</p>
                                     </div>
                                     <div class="pt-5">
                                         <h3 class="text-3xl">.03 The solution to the problem</h3>
-                                        <p>{{ portfolio.portfolioThirdSolution }}</p>
+                                        <p class="white-text">{{ portfolio.portfolioThirdSolution }}</p>
                                     </div>
                                 </div>
                                 
@@ -299,85 +228,9 @@
             <div class="portfolio-item">
                 <div class="bright-frame">
                     <div class="bright-frame-inside flex flex-col">
-                        <div class="flex flex-col">
-                            <div class="next-project-title flex flex-col">
-                                <h4>See next project</h4>
-
-                                <!-- Title of next project -->
-                                <!-- page one -->
-                                <div v-if="portfolio.portfolioNumber == '.01'">
-                                    <h3>Website</h3>
-                                </div>
-
-                                <!-- page two -->
-                                <div v-if="portfolio.portfolioNumber == '.02'">
-                                    <h3>Photography</h3>
-                                </div>
-
-                                <!-- page three -->
-                                <div v-if="portfolio.portfolioNumber == '.03'">
-                                    <!-- <h3>Poster</h3> -->
-                                    <h3>Poster</h3>
-                                </div>
-
-                                <!-- page four -->
-                                <div v-if="portfolio.portfolioNumber == '.04'">
-                                    <!-- <h3>Musik Video</h3> -->
-                                    <h3>Music Video</h3>
-                                </div>
-
-                                <!-- page five -->
-                                <div v-if="portfolio.portfolioNumber == '.05'">
-                                    <!-- <h3>Hjemmeside</h3> -->
-                                    <h3>Website</h3>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="next-project-img">
-                            <!-- page one -->
-                            <div v-if="portfolio.portfolioNumber == '.01'">
-                                <RouterLink to="">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fmockup-website-2.png?alt=media&token=61b856b8-bdc8-466d-a213-1d7257421830&_gl=1*14ituqp*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTg4NjYzOC40Ny4xLjE2ODU4ODY3MDUuMC4wLjA." alt="next-project-image">
-                                </RouterLink>
-                                
-                            </div>
-
-                            <!-- page two -->
-                            <div v-if="portfolio.portfolioNumber == '.02'">
-                                <RouterLink to="">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fproject-3%2Fphoto-1.jpg?alt=media&token=8c87d53f-c523-4edb-8c5f-525e17465458" alt="next-project-image">
-                                </RouterLink>
-                            </div>
-
-                            <!-- page three -->
-                            <div v-if="portfolio.portfolioNumber == '.03'">
-                                <RouterLink to="">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fplakat-1.jpg?alt=media&token=a4628e6b-2fe9-490f-8ad9-907787086e29&_gl=1*qclej6*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTgwNTc4MC40Mi4xLjE2ODU4MDY0NDYuMC4wLjA." alt="next-project-image">
-                                </RouterLink>
-                            </div>
-
-                            <!-- page four -->
-                            <div v-if="portfolio.portfolioNumber == '.04'">
-                                <RouterLink to="">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fmusic-video-thumbnail.jpg?alt=media&token=061d5bb2-e019-42c2-87b5-44dec4524a07&_gl=1*jy8sp2*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTgwNTc4MC40Mi4xLjE2ODU4MDY0MTIuMC4wLjA." alt="next-project-image">
-                                </RouterLink>
-                            </div>
-
-                            <!-- page five -->
-                            <div v-if="portfolio.portfolioNumber == '.05'">
-                                <RouterLink to="productOne">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/projects%2Fproject-1%2Fmockup-website-1.png?alt=media&token=c10b471f-0d41-49a5-a8c3-9e6e24a1479b" alt="next-project-image">
-                                </RouterLink>
-                            </div>
-                        </div>
-                        
-
-
-
-                        <div class="flex flex-col next-project-btn">
-                            <p class="pb-2 text-base">or you can go back:</p>
+                        <div class="flex flex-col next-project-btn ten-percent pt-6 pb-6">
+                            <!-- <p class="pb-2 text-base">or you can go back:</p> -->
+                            <p class="text-base">Go back to front page:</p>
                             <div>
                                 <RouterLink to='/'>
                                     <!-- button to go back to last page -->
@@ -496,7 +349,7 @@ hr {
     border-width: 0;
     height: 0.5px;
     margin: 0 auto;
-    background-color: var(--red-headline);
+    background-color: var(--white-text);
 }
 
 .p-content {
@@ -519,7 +372,6 @@ hr {
 .problem-solution-box {
     display: flex;
     flex-direction: column;
-    padding: 100px 8%;
 }
 
 .problem-solution-box h3 {
@@ -534,25 +386,10 @@ hr {
     padding-bottom: 16px;
 }
 
-.right-image {
-    padding: 100px 8% 100px 0;
-}
-
-.left-image {
-    padding: 100px 0 100px 8%;
-}
-
-.problem-video-two {
-    padding: 0 0 0 8%;
-}
-
 /* design process end */
 
 
 /* product demonstration */
-.product-demonstration {
-    padding: 100px 8%;
-}
 .product-demonstration-box {
     margin: 0 auto;
     width: 100%;
@@ -560,9 +397,6 @@ hr {
 
 
 /* next project */
-.next-project-title{
-    padding: 100px 8% 18px 8%;
-}
 
 .next-project-title h4 {
     font-size: 18px;
@@ -575,10 +409,6 @@ hr {
     line-height: 1;
 }
 
-.next-project-img{
-    padding: 18px 8%;
-}
-
 .next-project-img img {
     max-height: 600px;
 }
@@ -586,10 +416,6 @@ hr {
 .next-project-img img:hover {
     box-shadow:  9px 9px 18px #b5b5b5,
              -9px -9px 18px #ffffff;
-}
-
-.next-project-btn {
-    padding: 18px 8% 60px 8%;
 }
 
 
@@ -611,9 +437,9 @@ hr {
 
     .p-content {
         flex-direction: column;
-        padding-right: 8%;
+        padding-right: 10%;
         padding-bottom: 60px;
-        padding-left: 8%;
+        padding-left: 10%;
     }
 
     .p-date {
@@ -631,7 +457,7 @@ hr {
     }
 
     .problem-video-two {
-        padding: 24px 8% 60px 8%;
+        padding: 24px 10% 60px 10%;
     }
 
     .psi-flip {
@@ -640,7 +466,7 @@ hr {
 
     .problem-solution-image {
         width: 100%;
-        padding: 24px 8% 60px 8%;
+        padding: 24px 10% 60px 10%;
     }
 
     .primary-frame {

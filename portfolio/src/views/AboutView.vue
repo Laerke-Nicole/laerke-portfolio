@@ -2,7 +2,7 @@
   <main>
       <!-- about container -->
       <div class="flex about-cols">
-          <div class="bright-frame w-6/12 about-skills-container">
+          <div class="bright-frame about-skills-container w-2/4">
               <div class="bright-frame-inside about-skills ten-percent pt-14 pb-16">
                   <h3 class="red-headline text-5xl pb-10">My skills</h3>
                   <div class="flex flex-col justify-between gap-20">
@@ -24,22 +24,6 @@
                           <p>Tailwind</p>
                           <p>WordPress</p>
                         </div>
-                        
-                        
-                        
-                        
-                        
-
-
-                        <!-- <img :src="html" alt="html" class="h-9">
-                        <img :src="css" alt="css" class="h-9">
-                        <img :src="javascript" alt="javascript" class="h-9">
-                        <img :src="vue" alt="vue" class="h-9">
-                        <img :src="typescript" alt="typescript" class="h-9">
-                        <img :src="bootstrap" alt="bootstrap" class="h-9">
-                        <img :src="php" alt="php" class="h-9">
-                        <img :src="wordpress" alt="wordpress" class="h-9">
-                        <img :src="tailwind" alt="tailwind" class="h-9"> -->
                       </div>
                     </div>
 
@@ -57,34 +41,32 @@
               </div>
           </div>
 
-          <div class="primary-frame w-6/12 right-portrait">
+          <div class="primary-frame right-portrait w-2/4">
               <div class="primary-frame-inside about-about">
                 <div class="flex justify-end pt-4 pr-4">
-                    <img :src="star" alt="star" class="h-10">
-                  </div>
-                  <!-- content about me -->
-                  <div class="aboutMe ten-percent pb-16">                      
-                      <div class="aboutText">
-                          <h1 class="text-5xl red-headline">Who am I?</h1>
-                          <p class="pt-3 pb-6 white-text">Hello! I am currently studying my 3rd semester of multimedia design at Business Academy South West in the city of Esbjerg, Denmark.</p>
-                          <p class="white-text">For me, there is nothing better than seeing things come together step by step, whether I am building a website or creating a graphic design. I have an eye for detail and consider myself to be a bit perfectionist.</p>
-                          
-                          <div class="pt-16">
-                            <h4 class="secondary-text text-2xl pb-3">Interests and hobbies</h4>
-                            <div class="flex justify-between flex-wrap white-text">
-                              <p>Gaming</p>
-                              <p>Hip hop & dancehall</p>
-                              <p>Anime</p>
-                              <p>Crochet</p>
-                            </div>
-                          </div>
+                  <img :src="star" alt="star" class="h-10">
+                </div>
+                <!-- content about me -->
+                <div class="aboutMe ten-percent pb-16">                      
+                    <div class="aboutText">
+                      <h1 class="text-5xl red-headline">Who am I?</h1>
+                      <p class="pt-3 pb-6 white-text">Hello! I am currently studying my 3rd semester of multimedia design at Business Academy South West in the city of Esbjerg, Denmark.</p>
+                      <p class="white-text">For me, there is nothing better than seeing things come together step by step, whether I am building a website or creating a graphic design. I have an eye for detail and consider myself to be a bit perfectionist.</p>
+                      
+                      <div class="pt-16">
+                        <h4 class="secondary-text text-2xl pb-3">Interests and hobbies</h4>
+                        <div class="flex justify-between flex-wrap white-text">
+                          <p>Gaming</p>
+                          <p>Hip hop & dancehall</p>
+                          <p>Anime</p>
+                          <p>Crochet</p>
                         </div>
+                      </div>
+                    </div>
                   </div>
               </div>
           </div>
       </div>
-      
-
       
       <!-- text sliding animation -->
       <div class="services secondary-bg">
@@ -170,7 +152,6 @@ main {
 .my-portrait{
   height: 50vh;
 }
-
 
 /* text about me */
 .about-about {

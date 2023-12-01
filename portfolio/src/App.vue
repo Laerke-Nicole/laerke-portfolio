@@ -55,6 +55,17 @@ let linkedin = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portf
 let mail = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/skills-logo%2Fmail.svg?alt=media&token=e9cd44f2-459e-4fa6-a0d7-08c37738d86e';
 let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/skills-logo%2Fgithub.svg?alt=media&token=bba36aab-3677-41e3-8b66-b56b05599eb8';
 
+
+// line that follows scroll
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
 </script>
 
 
@@ -66,7 +77,7 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
       <div class="flex lg:flex-1">
         <RouterLink to='/'>
           <div class="flex gap-4 justify-center items-center">
-            <img class="h-12 w-auto" src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/logos%2Flogo-dark.svg?alt=media&token=ba702079-f71d-43f3-9c5e-ee67049d4bbc&_gl=1*xvdzn3*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTgwNTc4MC40Mi4xLjE2ODU4MDYwMDEuMC4wLjA." alt="my logo" />
+            <img class="h-12 w-auto" :src="star" alt="my logo" />
           </div>
         </RouterLink>
       </div>
@@ -145,6 +156,11 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
         </div>
       </DialogPanel>
     </Dialog>
+
+    <!-- line that follows scrolling -->
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
   </header>
 
  
@@ -196,10 +212,10 @@ let github = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfol
           </div>
 
           <!-- my mail in footer -->
-          <div class="mail">
+          <!-- <div class="mail">
             <h4 class="red-headline">Lærke Nicole Nielsen</h4>
             <hr>
-          </div>
+          </div> -->
         </div>
 
           <div class="flex justify-end pb-4 pr-4">
@@ -227,6 +243,7 @@ header {
 header p {
   color: var(--red-headline);
   font-weight: 500px;
+  font-size: 15px;
 }
 
 header a:hover {
@@ -282,6 +299,21 @@ nav a.router-link-exact-active  {
   opacity: 1;
   transition: var(--transition);
   cursor: pointer;
+}
+
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: var(--primary-color);
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: var(--red-headline);
+  width: 0%;
 }
 
 /* footer */

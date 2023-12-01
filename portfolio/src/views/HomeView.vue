@@ -31,7 +31,7 @@
           <!-- right side hero -->
           <div class="w-2/3 right-hero">
             <div class="my-portrait h-auto flex justify-end">
-              <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2FDSC_2997-1.jpg?alt=media&token=c2d34077-6e9a-46b0-bd3a-7094d97d9e3e" alt="portrait-me" class="w-full h-auto object-center">
+              <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2FDSC_2997-1.jpg?alt=media&token=c2d34077-6e9a-46b0-bd3a-7094d97d9e3e" alt="portrait-me" class="w-full h-auto object-contain">
             </div>  
             <div>
               <h3 class="text-5xl red-headline pt-4">Multimedia designer</h3>
@@ -60,7 +60,7 @@
 
 
 
-    <div class="portfolio-item-container flex flex-col flex-nowrap overflow-hidden w-full gap-y-12 secondary-bg">
+    <div class="portfolio-item-container flex flex-col flex-nowrap overflow-hidden w-full gap-y-12">
 
       <!-- making a loop for all of my projects -->
       <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item flex flex-col items-start primary-bg w-full">
@@ -73,8 +73,9 @@
             <div class="bright-frame-inside left-container flex items-center justify-center">
                 <div class="bright-frame-insideContent flex flex-col items-center justify-center pt-16 pb-16">
                   <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
-                    <div>
+                    <div class="product-image-container">
                       <img :src="portfolio.portfolioFrontImg" class="product-image" alt="portfolio-img">
+                      <div class="overlay"></div>
                     </div>   
                   </RouterLink>
                 </div>
@@ -159,6 +160,17 @@ main {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--red-headline);
 }
+
+.portfolio-item-container {
+  /* The image used */
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/extras%2Fstarry-night-sky.jpg?alt=media&token=69fae120-7823-4dd0-8fc4-75d1df17d23b");
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /*primary-frame-inside end*/
 
 
@@ -179,12 +191,28 @@ main {
 /* stying image */
 .product-image {
   max-height: 50vh;
+  transition: .5s ease;
 }
 
-.product-image:hover {
-  box-shadow:  9px 9px 18px var(--red-headline),
-  -9px -9px 18px var(--primary-color);
+.overlay {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
+
+.product-image-container:hover .product-image {
+  opacity: 0.8;
+}
+
+.product-image-container:hover .overlay {
+  opacity: 1;
+}
+
+
 /* stying image end */
 
 
