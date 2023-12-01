@@ -2,3 +2,193 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* styling of body to have less work */
+body {
+    min-height: 100vh;
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    font-family: "signo", sans-serif;
+    font-style: normal;
+    list-style-type: none;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*styling text*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--h-font);
+    font-weight: 100;
+}
+
+p {
+    font-size: 16px;
+}
+
+/* making all p responsive for smaller screens */
+@media only screen and (max-width: 850px) {
+    p {
+    font-size: 15px;
+    }
+}
+
+/*styling button*/
+.btn {
+    background-color: var(--black-btn);
+    padding: 10px 40px;
+    color: var(--white-text);
+    font-size: 16px;
+    border: 0;
+    transition: 0.3s;
+    border-radius: 20px;
+    border: 2px solid var(--black-btn);
+}
+
+.btn:hover {
+    transition: 0.3s;
+    border: 2px solid var(--red-headline);
+    border-radius: 5px;
+}
+
+.btn-second {
+    background-color: var(--red-btn);
+    padding: 10px 40px;
+    color: var(--white-text);
+    font-size: 16px;
+    border: 2px solid var(--red-btn);
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+.btn-second:hover {
+    transition: 0.3s;
+    border: 2px solid var(--white-text);
+    border-radius: 5px;
+}
+
+/* responsive button */
+@media only screen and (max-width: 850px) {
+    .btn, .btn-second {
+        font-size: 15px;
+    }
+}
+
+
+/* 10% percent */
+.ten-percent {
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.ten-percent-m {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.ten-percent-top-bottom {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.six-percent {
+    padding-right: 6%;
+    padding-left: 6%;
+}
+
+
+/* classes for text colors  */
+.black-headline {
+    color: var(--black-headline);
+}
+
+.black-text {
+    color: var(--black-text);
+}
+
+.red-headline {
+    color: var(--red-headline);
+}
+
+.white-text {
+    color: var(--white-text);
+}
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.secondary-text {
+    color: var(--secondary-color);
+}
+
+
+/* white colored frame box */
+.bright-frame {
+    background-color: var(--tertiary-color);
+    padding: 15px;
+}
+
+.bright-frame-inside {
+    border: var(--dark-border);
+}
+
+
+/* black colored frame box */
+.primary-frame {
+    background-color: var(--primary-color);
+    padding: 15px;
+}
+
+.primary-frame-inside {
+    border: var(--bright-border);
+}
+
+
+/* red colored frame box */
+.secondary-frame {
+    background-color: var(--secondary-color);
+    padding: 15px;
+}
+
+.secondary-frame-inside {
+    border: var(--dark-border);
+}
+
+/* background colors */
+
+.white-bg {
+    background-color: var(--red-headline);
+}
+
+.black-bg {
+    background-color: var(--black-text);
+}
+
+.primary-bg {
+    background-color: var(--primary-color);
+}
+
+.secondary-bg {
+    background-color: var(--secondary-color);
+}
+
+.tertiary-bg {
+    background-color: var(--tertiary-color);
+}
+
+
+/* font family */
+.font-headline {
+    font-family: var(--h-font);
+}
+
+.font-text {
+    font-family: var(--t-font);
+}
+
+.round-corner {
+    border-radius: 20px;
+}
