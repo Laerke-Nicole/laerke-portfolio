@@ -22,11 +22,6 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/portfolio',
-      name: 'portfolio',
-      component: () => import('../views/PortfolioView.vue')
-    },
-    {
       path: '/navguard',
       name: 'navguard',
       component: () => import('../views/NavGuardView.vue'),

@@ -1,38 +1,26 @@
 /*color swatches for my color palette*/
 :root {
   /* main colors */
-  /* --primary-color: #265952;
-  --secondary-color: #437361; */
-  --primary-color: #0F0F0F;
-  --secondary-color: #F04A4A;
-  --tertiary-color: #fff5e8; 
+  --primary-color: #796796;
+  --secondary-color: #dad1ed;
+  --tertiary-color: #caeaa9;
+  --quaternary-color: #fff5e8;
+  --black-color: #0F0F0F;
 
   /* hover color */
   --primary-hover: #fba9a9;
   --secondary-hover: #911111;
 
   /*color for text*/
-  --red-headline: #F04A4A;
-  --white-text: #F1DCDC;
-  --red-btn: #F04A4A;
-
-  --black-headline: #0F0F0F;
-  --black-text: #251e1e;
-  --black-btn: #0F0F0F;
+  --light-body: #dad1ed;
+  --dark-body: #3b393d;
 
 }
 
 /* font */
 :root {
-  --h-font: "ohno-blazeface", sans-serif;
+  --h-font: "tuppence", serif;
   --t-font: "condor", sans-serif;
-}
-
-/* border */
-:root {
-  --dark-border: 1px solid var(--primary-color);
-  --bright-border: 1px solid var(--tertiary-color);
-  --complementary-border: 1px solid var(--tertiary-color);
 }
 
 /* section styling */

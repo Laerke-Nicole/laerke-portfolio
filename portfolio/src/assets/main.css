@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     transition: color 0.5s, background-color 0.5s;
     line-height: 1.6;
-    font-family: "signo", sans-serif;
+    font-family: "condor", sans-serif;
     font-style: normal;
     list-style-type: none;
     font-weight: 400;
@@ -21,7 +21,6 @@ body {
 /*styling text*/
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--h-font);
-    font-weight: 100;
 }
 
 p {
@@ -36,10 +35,10 @@ p {
 }
 
 /*styling button*/
-.btn {
-    background-color: var(--black-btn);
+.btn-1 {
+    background-color: var(--primary-color);
     padding: 10px 40px;
-    color: var(--white-text);
+    color: var(--quaternary-color);
     font-size: 16px;
     border: 0;
     transition: 0.3s;
@@ -47,31 +46,43 @@ p {
     border: 2px solid var(--black-btn);
 }
 
-.btn:hover {
+.btn-1:hover {
     transition: 0.3s;
     border: 2px solid var(--red-headline);
     border-radius: 5px;
 }
 
-.btn-second {
-    background-color: var(--red-btn);
+.btn-2 {
+    background-color: var(--secondary-color);
     padding: 10px 40px;
-    color: var(--white-text);
+    color: var(--black-color);
     font-size: 16px;
-    border: 2px solid var(--red-btn);
     transition: 0.3s;
     border-radius: 20px;
 }
 
-.btn-second:hover {
+.btn-2:hover {
     transition: 0.3s;
-    border: 2px solid var(--white-text);
+    border-radius: 5px;
+}
+
+.btn-3 {
+    background-color: var(--tertiary-color);
+    padding: 10px 40px;
+    color: var(--black-color);
+    font-size: 16px;
+    transition: 0.3s;
+    border-radius: 20px;
+}
+
+.btn-3:hover {
+    transition: 0.3s;
     border-radius: 5px;
 }
 
 /* responsive button */
 @media only screen and (max-width: 850px) {
-    .btn, .btn-second {
+    .btn-1, .btn-2, .btn-3 {
         font-size: 15px;
     }
 }
@@ -100,73 +111,28 @@ p {
 
 
 /* classes for text colors  */
-.black-headline {
-    color: var(--black-headline);
-}
-
-.black-text {
-    color: var(--black-text);
-}
-
-.red-headline {
-    color: var(--red-headline);
-}
-
-.white-text {
-    color: var(--white-text);
-}
-
-.primary-text {
+.dark-headline {
     color: var(--primary-color);
 }
 
-.secondary-text {
+.light-headline {
     color: var(--secondary-color);
 }
 
-
-/* white colored frame box */
-.bright-frame {
-    background-color: var(--tertiary-color);
-    padding: 15px;
+.third-headline {
+    color: var(--tertiary-color);
 }
 
-.bright-frame-inside {
-    border: var(--dark-border);
+.black-text {
+    color: var(--dark-body);
 }
 
-
-/* black colored frame box */
-.primary-frame {
-    background-color: var(--primary-color);
-    padding: 15px;
+.white-text {
+    color: var(--light-body);
 }
 
-.primary-frame-inside {
-    border: var(--bright-border);
-}
-
-
-/* red colored frame box */
-.secondary-frame {
-    background-color: var(--secondary-color);
-    padding: 15px;
-}
-
-.secondary-frame-inside {
-    border: var(--dark-border);
-}
 
 /* background colors */
-
-.white-bg {
-    background-color: var(--red-headline);
-}
-
-.black-bg {
-    background-color: var(--black-text);
-}
-
 .primary-bg {
     background-color: var(--primary-color);
 }
@@ -177,6 +143,10 @@ p {
 
 .tertiary-bg {
     background-color: var(--tertiary-color);
+}
+
+.quaternary-bg {
+    background-color: var(--quaternary-color);
 }
 
 
