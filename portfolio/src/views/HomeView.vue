@@ -1,23 +1,24 @@
 <template>
   <main>
-    <!-- primary-frame-inside -->
-    <div class="primary-frame">
-      <div class="primary-frame-inside">
+    <section class="secondary-bg">
+      <!-- primary-frame-inside -->
+      <div class="flex justify-end pt-4 pr-4">
+        <img :src="star" alt="star" class="h-12">
+      </div>
 
-        <div class="flex justify-end pt-4 pr-4">
-          <img :src="star" alt="star" class="h-8">
-        </div>
+        <div class="flex ten-percent justify-center">
+          <div>
+            <h1 class="text-9xl dark-headline text-center portfolio">PORTFOLIO</h1>
 
-        <div class="primary-frame-inside-top-content flex ten-percent">
-          <!-- left side hero -->
-          <div class="primary-frame-inside-content w-1/3">
-            <h2 class="text-6xl hello font-normal">Hello,</h2>
-            <h2 class="text-6xl pb-4 red-headline">I'm Lærke!</h2>
+            <div class="cat-1 pr-16 pl-16">
+              <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/different%20moon%201.svg?alt=media&token=00027135-a371-4cc0-b17b-943031deeba3" alt="">
+            </div>
+            
+            
 
-            <p class="pt-16 pb-4 text-sm white-text">With a passion to bring my creative ideas<br> to life through web design and development,<br>video editing, and graphic design.</p>
             <!-- button to go straight to contact -->
-            <div class="primary-frame-inside-button pt-5">
-              <button @click="isOpen = true" class="btn-second">Contact me</button>
+            <div class="pt-6 flex justify-center">
+              <button @click="isOpen = true" class="btn-3">Contact me</button>
               <teleport to="body">
                 <div class="modal" v-if="isOpen">
                   <ContactMe @close="isOpen = false">
@@ -27,30 +28,16 @@
               </teleport>
             </div>
           </div>
-          
-          <!-- right side hero -->
-          <div class="w-2/3 right-hero">
-            <div class="my-portrait h-auto flex justify-end">
-              <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2FDSC_2997-1.jpg?alt=media&token=c2d34077-6e9a-46b0-bd3a-7094d97d9e3e" alt="portrait-me" class="w-full h-auto object-contain">
-            </div>  
-            <div>
-              <h3 class="text-5xl red-headline pt-4">Multimedia designer</h3>
-              <div class="flex justify-between white-text">
-                <p>Studying 3rd semester</p>
-                <p>Portfolio</p>
-              </div>
-            </div>
-
-            
-          </div>
+        
           
         </div>
         <div class="flex justify-start pb-4 pl-4">
-          <img :src="star" alt="star" class="h-10">
+          <img :src="star" alt="star" class="h-14">
         </div>
 
-      </div>
-    </div>
+    </section>
+    
+    
 
 
 
@@ -59,44 +46,52 @@
 
 
 
-
-    <div class="portfolio-item-container flex flex-col flex-nowrap overflow-hidden w-full gap-y-12">
+    <div class="flex flex-col flex-nowrap overflow-hidden w-full gap-y-44 quaternary-bg" id="work">
 
       <!-- making a loop for all of my projects -->
-      <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item flex flex-col items-start primary-bg w-full">
+      <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item flex flex-col items-start secondary-bg w-full"  v-motion-fade-visible-once>
 
         <!-- container for projects -->
-        <div class="portfolio-content flex w-full" id="portfolio-view" v-motion-fade-visible-once>
+        <div class="portfolio-content flex justify-between ten-percent w-full pt-10 pb-12 gap-16" id="portfolio-view">
 
-          <!-- left portfolio -->
-          <div class="bright-frame w-6/12">
-            <div class="bright-frame-inside left-container flex items-center justify-center">
-                <div class="bright-frame-insideContent flex flex-col items-center justify-center pt-16 pb-16">
-                  <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
-                    <div class="product-image-container">
-                      <img :src="portfolio.portfolioFrontImg" class="product-image" alt="portfolio-img">
-                      <div class="overlay"></div>
-                    </div>   
-                  </RouterLink>
-                </div>
+          <!-- left side -->
+          <div>
+            <div class="pb-10">
+              <h4 class="dark-headline text-5xl pb-4">{{ portfolio.portfolioProduct }}</h4>
+              
+              <p class="dark-text">{{ portfolio.portfolioShortDescription }}</p>
+            </div>
+            
+              <h4 class="dark-headline text-5xl pb-4">Tools</h4>
+            <p class="dark-text">{{ portfolio.portfolioShortDescription }}</p>
+
+            <div class="flex  pt-10">
+              <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
+                <div class="product-image-container">
+                  <button class="btn-3">See my work</button>
+                </div>   
+              </RouterLink>
+            </div>
+            
+          </div>
+
+          <!-- right side -->
+          <div class="flex justify-end flex-col">
+            <div>
+              <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
+                <div class="product-image-container">
+                  <img :src="portfolio.portfolioFrontImg" class="product-image" alt="portfolio-img">
+                  <div class="overlay"></div>
+                </div>   
+              </RouterLink>
+            </div>
+
+            <!-- number -->
+            <div class="flex justify-end pt-4">
+              <h5 class="text-7xl dark-headline">{{ portfolio.portfolioNumber }}</h5>
             </div>
           </div>
-          
-          <!-- right portfolio -->
-          <div class="primary-frame w-6/12">
-            <div class="primary-frame-inside right-container flex flex-col justify-end">
-              <div class="flex flex-col justify-end ten-percent">
-                <h4 class="white-text text-base font-text">{{ portfolio.portfolioNumber }}</h4>
-                <h3 class="p-category white-text text-3xl pb-6">{{ portfolio.portfolioProduct }}</h3>
-                <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
-                  <button class="btn-second">See my work</button>
-                </RouterLink>
-              </div>
-              <div class="flex justify-end pb-4 pr-4">
-                <img :src="star" alt="star" class="h-10">
-              </div>
-            </div>
-          </div>   
+ 
         </div>
       </div>
       </div>
@@ -145,53 +140,21 @@ main {
   padding-top: 64px;
 }
 
-/*primary-frame-inside*/
-.right-hero {
-  padding-left: 10%;
+/* first section */
+.portfolio {
+  margin-top: -30px;
 }
 
-.primary-frame-inside h2 {
-  font-weight: 200;
-  line-height: 1;
-  transform: scaleY(1.1);
+.cat-1 {
+  margin-top: -90px;
 }
-
-.hello {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--red-headline);
-}
-
-.portfolio-item-container {
-  /* The image used */
-  background-image: url("https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/extras%2Fstarry-night-sky.jpg?alt=media&token=69fae120-7823-4dd0-8fc4-75d1df17d23b");
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-/*primary-frame-inside end*/
-
-
-/* left side portfolio */
-.left-container {
-  height: 65vh;
-}
-
-
-/* right side portfolio */
-.right-container {
-  height: 65vh;
-}
-
-/* making container of projects end */
 
 
 /* stying image */
 .product-image {
-  max-height: 50vh;
+  max-height: 70vh;
   transition: .5s ease;
+  margin-top: -100px;
 }
 
 .overlay {
@@ -295,10 +258,6 @@ main {
     flex-direction: column;
   }
 
-  .primary-frame-inside-content {
-    width: 100%;
-  }
-
   .primary-frame-inside h1 {
     font-size: 36px;
   }
@@ -307,9 +266,6 @@ main {
     font-size: 30px;
   }
 
-  .primary-frame-inside-button {
-    padding-top: 12px;
-  }
   .primary-frame-inside button {
     margin-bottom: 24px;
     padding-top: 12px;

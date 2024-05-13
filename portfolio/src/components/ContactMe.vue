@@ -1,22 +1,21 @@
 <template>
     <div class="flex flex-col contact">
-        <div class="bright-frame">
-            <div class="bright-frame-inside ten-percent flex flex-col pb-16">
+        <div>
+            <div class="ten-percent flex flex-col pb-16  secondary-bg">
                 <button
                     id="floatyClose"
                     @click="$emit('close')"
-                    class="pt-6 flex flex-col justify-start black-headline text-xl exit-btn"
+                    class="pt-6 flex flex-col justify-start dark-headline text-xl exit-btn"
                 >
                 X
                 </button>
-                <h2 class="red-headline text-5xl pt-10 pb-1">Please contact me on:</h2>
-                <h4 class="black-text pb-8 text-xl">I'll get back to you as soon as possible!</h4>
+                <h2 class="dark-headline text-5xl pt-10 pb-10">Please contact me on:</h2>
                 
                 <div class="flex gap-16">
                     <a href="https://www.linkedin.com/in/laerke-nicole/" target="_blank">
                         <div class="flex gap-2">
                             <img :src="linkedin" alt="linkedin" class="h-6">
-                            <p class="black-text linkedin">/laerke-nicole</p>
+                            <p class="dark-text linkedin">/laerke-nicole</p>
                         </div> 
                     </a>
                         
@@ -48,9 +47,5 @@ let mail = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio
 
 .linkedin:hover {
     text-decoration: underline;
-}
-
-.exit-btn:hover {
-    color: var(--black-text);
 }
 </style>

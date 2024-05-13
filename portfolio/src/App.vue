@@ -93,7 +93,7 @@ function myFunction() {
       <!-- links in navigation -->
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
         <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>ABOUT ME</p></RouterLink>
-        <RouterLink to="/portfolio" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>WORK</p></RouterLink>
+        <RouterLink to="/" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>WORK</p></RouterLink>
         
         <div>
           <button @click="isOpen = true" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>CONTACT ME</p></button>
@@ -106,7 +106,7 @@ function myFunction() {
             </teleport>
         </div>
 
-        <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2Fenglish-version%2FCV_L%C3%A6rke_Nicole_Nielsen.pdf?alt=media&token=15292116-362b-41ec-b32d-e426d373c57e" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>CV <span aria-hidden="true">&nearr;</span></p></a>
+        <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>CV <span aria-hidden="true">&nearr;</span></p></a>
         <!-- <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">Om mig</RouterLink> -->
         <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>ADMIN</p></RouterLink></div>
         <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>LOG OUT</p></RouterLink></div>
@@ -138,7 +138,7 @@ function myFunction() {
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
               <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">ABOUT ME</RouterLink>
-              <RouterLink to="/portfolio" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">WORK</RouterLink>
+              <RouterLink to="/" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">WORK</RouterLink>
               <button @click="isOpen = true, mobileMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">CONTACT ME</button>
               <teleport to="body">
                 <div class="modal" v-if="isOpen">
@@ -148,7 +148,7 @@ function myFunction() {
                 </div>
               </teleport>
               
-              <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2Fenglish-version%2FCV_L%C3%A6rke_Nicole_Nielsen.pdf?alt=media&token=15292116-362b-41ec-b32d-e426d373c57e" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">CV <span aria-hidden="true">&nearr;</span></a>
+              <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">CV <span aria-hidden="true">&nearr;</span></a>
               <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">ADMIN</RouterLink></div>
               <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">LOG OUT</RouterLink></div>
             </div>
@@ -169,61 +169,39 @@ function myFunction() {
 
   
   <!-- footer -->
-  <div class="primary-frame">
-    <div class="primary-frame-inside">
-      <footer>
-        <div class="flex justify-start pt-4 pl-4">
-            <img :src="star" alt="star" class="h-8">
-          </div>
-        <div class="ten-percent">
-          <!-- <h1>Lad os arbejde sammen!</h1> -->
-          <h4 class="red-headline text-center text-6xl pb-8">THANK YOU!</h4>
-          <div>
-          <button @click="isOpen = true" class="btn-second button">Contact me</button>
-            <teleport to="body">
-              <div class="modal" v-if="isOpen">
-                <ContactMe @close="isOpen = false">
-
-                </ContactMe>
-              </div>
-            </teleport>
-          </div>
-
-          <!-- links in footer -->
-          <div>
-              <ul class="flex white-text justify-around">
-                <!-- <RouterLink to="/contact"><li>Kontakt</li></RouterLink> -->
-                <RouterLink to="/about"><li>About me</li></RouterLink>
-                <RouterLink to="/"><li>Work</li></RouterLink>
-                <div>
-                  <button @click="isOpen = true"><li>Contact me</li></button>
-                    <teleport to="body">
-                      <div class="modal" v-if="isOpen">
-                        <ContactMe @close="isOpen = false">
-
-                        </ContactMe>
-                      </div>
-                    </teleport>
-                  </div>
-                <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2Fenglish-version%2FCV_L%C3%A6rke_Nicole_Nielsen.pdf?alt=media&token=15292116-362b-41ec-b32d-e426d373c57e" target="_blank"><li>CV &nearr;</li></a>
-                <!-- <RouterLink to="/about"><li>Om mig</li></RouterLink> -->
-                
-              </ul>
-          </div>
-
-          <!-- my mail in footer -->
-          <!-- <div class="mail">
-            <h4 class="red-headline">Lærke Nicole Nielsen</h4>
-            <hr>
-          </div> -->
+    <footer class="primary-bg">
+      <div class="flex justify-start pt-4 pl-4">
+          <img :src="star" alt="star" class="h-8">
         </div>
+      <div class="ten-percent">
+        <!-- <h1>Lad os arbejde sammen!</h1> -->
+        <h4 class="light-headline text-center text-6xl pb-10" v-motion-pop-visible>THANK YOU!</h4>
 
-          <div class="flex justify-end pb-4 pr-4">
-            <img :src="star" alt="star" class="h-10">
-          </div>
-      </footer>
-    </div>
-  </div>
+        <!-- links in footer -->
+        <div>
+            <ul class="flex white-text justify-around">
+              <RouterLink to="/about"><li>About me</li></RouterLink>
+              <RouterLink to="/"><li>Work</li></RouterLink>
+              <div>
+                <button @click="isOpen = true"><li>Contact me</li></button>
+                  <teleport to="body">
+                    <div class="modal" v-if="isOpen">
+                      <ContactMe @close="isOpen = false">
+
+                      </ContactMe>
+                    </div>
+                  </teleport>
+                </div>
+              <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank"><li>CV &nearr;</li></a>
+              
+            </ul>
+        </div>
+      </div>
+
+        <div class="flex justify-end pb-4 pr-4">
+          <img :src="star" alt="star" class="h-10">
+        </div>
+    </footer>
   
 </template>
 
@@ -241,21 +219,19 @@ header {
 /* active stuff */
 
 header p {
-  color: var(--red-headline);
+  color: var(--secondary-color);
   font-weight: 500px;
   font-size: 15px;
 }
 
 header a:hover {
   text-decoration: underline;
-  color: var(--red-headline);
   transition: 0.3s;
   background-color: var(--primary-color);
 }
 
 header button:hover {
   text-decoration: underline;
-  color: var(--red-headline);
   transition: 0.3s;
   background-color: var(--primary-color);
 }
@@ -264,7 +240,6 @@ nav a.router-link-exact-active  {
   border-radius: 0;
   font-weight: bold;
   text-decoration: underline;
-  color: var(--red-headline);
   transition: 0.3s;
 }
 
@@ -312,7 +287,7 @@ nav a.router-link-exact-active  {
 /* The progress bar (scroll indicator) */
 .progress-bar {
   height: 8px;
-  background: var(--red-headline);
+  background: var(--tertiary-color);
   width: 0%;
 }
 
