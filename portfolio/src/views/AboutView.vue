@@ -1,83 +1,20 @@
 <template>
-  <main>
-    <!-- my image and name -->
-    <section class="ten-percent primary-bg pt-24">
-      <div class="flex">
-        <div class="w-2/4">
-          <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/nyt%20billede.jpg?alt=media&token=a35db02f-1b3c-421a-bb3a-af821f59dde3" alt="" class="round-corner">
-        </div>
-
-        <div class="w-2/4 light-headline ten-percent">
-          <h3 class="text-5xl pb-3">Lærke Nielsen</h3>
-          <p class="text-2xl">Multimedia designer</p>
-        </div>
-        
+  <main class="secondary-bg">
+    <section class="flex about-me">
+      <div class="flex w-1/2 justify-end">
+        <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fme.jpg?alt=media&token=651fb432-8d6c-4815-a446-e1337a290f4a" alt="" class="my-img">
       </div>
-      
-    </section>
-      <!-- about container -->
-      <section class="primary-bg ten-percent">
-        <div class="flex about-cols">
-            <div class="about-skills-container w-2/4">
-                <div class="about-skills pt-14 pb-16">
-                    <h3 class="text-5xl pb-10 light-headline">My skills</h3>
-                    <div class="flex flex-col justify-between gap-20">
-                      <div>
-                        <h4 class="white-text text-2xl pb-3">Web development skills</h4>
-                        <div class="flex gap-16">
-
-                          <div class="white-text flex flex-col">
-                            <p>HTML</p>
-                            <p>CSS</p>
-                            <p>JavaScript</p>
-                            <p>PHP</p>
-                          </div>
-
-                          <div class="white-text flex flex-col">
-                            <p>Vue.js</p>
-                            <p>TypeScript</p>
-                            <p>Bootstrap</p>
-                            <p>Tailwind</p>
-                            <p>WordPress</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 class="white-text text-2xl pb-3">Adobe software skills</h4>
-                        <div class="flex gap-4 flex-wrap">
-                          <img :src="PremierePro" alt="premiere pro" class="h-9">
-                          <img :src="Indesign" alt="indesign" class="h-9">
-                          <img :src="Illustrator" alt="illustrator" class="h-9">
-                          <img :src="XD" alt="xd" class="h-9">
-                          <img :src="photoshop" alt="photoshop" class="h-9">
-                        </div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="right-portrait w-2/4">
-                <div class="about-about">
-                  <div class="flex justify-end pt-4 pr-4">
-                    <img :src="star" alt="star" class="h-10">
-                  </div>
-                  <!-- content about me -->
-                  <div class="aboutMe pb-16">                      
-                      <div class="aboutText">
-                        <h1 class="text-5xl light-headline pb-10">Who am I?</h1>
-                        <p class="pb-6 white-text">Hello! I am currently studying my 4th semester of multimedia design at Business Academy South West in the city of Esbjerg, Denmark.</p>
-                        <p class="white-text">For me, there is nothing better than seeing things come together step by step, whether I am building a website or creating a graphic design. I have an eye for detail and consider myself to be a bit perfectionist.</p>
-                      </div>
-
-                      <div>
-                        <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/Cat.svg?alt=media&token=3e14a681-0b0c-4fdf-9951-11d11dc70d20" alt="" class="cat">
-                      </div>
-                    </div>
-                </div>
-            </div>
+        
+      <div class="flex flex-col w-1/2 justify-center">
+        <div class="pl-20">
+          <h1 class="dark-headline text-6xl pb-20">Hello,<br>I'm Lærke</h1>
+          <div class="w-2/3">
+            <p class="black-text pb-4">I'm a multimedia designer from Denmark who's main passion is in front-end development and graphic design.</p>
+            <p class="black-text">I have an eye for detail and consider myself to be a bit perfectionist.</p>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
       
       <!-- text sliding animation -->
       <div class="services secondary-bg">
@@ -121,6 +58,24 @@
           </div>
         </div>
     </div>
+
+
+    <section class="flex">
+      <div class="w-6/12">
+        <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fcat%20sitting.svg?alt=media&token=20ce2dd9-01eb-4595-9c4a-e2b11f2829b0" alt="">
+      </div>
+
+      <div class="w-6/12 flex items-center ">
+        <div class="w-6/12 flex flex-col items-center justify-center"> 
+          <h4 class="dark-headline text-5xl pb-14">Please check out my CV to see more about me</h4>
+          <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank">
+            <button class="btn-3">See my CV</button>
+          </a>
+          
+        </div>
+      </div>
+    </section>
+
   </main>
 </template>
 
@@ -159,8 +114,13 @@ main {
   padding-top: 64px;
 }
 
-.aboutText {
-  z-index: 2;
+.about-me {
+  height: 100vh;
+}
+
+.my-img {
+  height: 100vh;  
+  object-fit: cover;
 }
 
 .cat {
@@ -190,8 +150,7 @@ main {
 
 .servicesScrollBox .servicesScrollText h5 {
   margin: 0;
-  padding: 10px 0;
-  font-size: 24px;
+  font-size: 80px;
   transition: all 2s ease;
   font-style: normal;
 }
