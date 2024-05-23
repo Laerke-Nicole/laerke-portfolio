@@ -1,19 +1,19 @@
 <template>
-    <div class="pt-20 pb-20 white-bg">
-        <div class="mt-14 max-w-md m-auto relative flex flex-col p-12 text-black secondary-bg">
-            <h3 class="text-2xl font-bold mb-2 red-headline text-center">Login</h3>
+    <div class="pt-20 pb-20 quaternary-bg">
+        <div class="mt-14 max-w-md m-auto relative flex flex-col p-12 text-black primary-bg round-corner">
+            <h3 class="text-2xl font-bold mb-2 light-headline text-center">Login</h3>
 
             <div class="flex flex-col gap-3">
                 <!-- email -->
                 <label for="email" class="block white-text cursor-text text-sm font-normal">Email</label>
-                <input type="text" v-model="email" class="white-bg border-none text-sm w-full h-11 focus:ring-0 mb-4 pl-4"/>
+                <input type="text" v-model="email" class="quaternary-bg round-corner border-none text-sm w-full h-11 focus:ring-0 mb-4 pl-4"/>
                 
                 <!-- password -->
                 <label for="password" class="block white-text cursor-text text-sm font-normal">Password</label>
-                <input type="password" v-model="password" class="white-bg border-none text-sm w-full h-11 focus:ring-0 pl-4"/>
+                <input type="password" v-model="password" class="quaternary-bg round-corner border-none text-sm w-full h-11 focus:ring-0 pl-4"/>
                 <p v-if="errMsg">{{ errMsg }}</p>
 
-                <button @click="logIn" class="btn m-auto mt-3 mb-5">Login</button>
+                <button @click="logIn" class="btn-3 m-auto mt-3 mb-5">Login</button>
             </div>
         </div>  
     </div>

@@ -2,44 +2,20 @@
     <main>
         <div v-for="portfolio in portfolioDetail" :key="portfolio" class="portfolio-item">
 
-            <section>
+            <section class="secondary-bg">
                 <!-- page about each project -->
                 <div class="portfolio-item">
-                    <div class="primary-frame">
-                        <div class="primary-frame-inside content pt-16 pb-16 ten-percent">
+                    <div>
+                        <div class="content pt-16 pb-16 ten-percent">
                             <!-- further short information about project -->
-                            <div class="flex justify-between top-content">
-                                <h2 class="title red-headline text-5xl pb-10">{{ portfolio.portfolioProduct }}</h2>
+                            <div class="flex justify-between">
+                                <h2 class="title dark-headline text-5xl pb-10">{{ portfolio.portfolioProduct }}</h2>
                                 <div v-if="portfolio.portfolioProduct == 'Website'" class="flex items-end">
                                     <!-- <a :href="portfolio.portfolioWebsiteURL" target="_blank"><h5 class="live-server underline">See the website live here</h5></a>  -->
                                 </div>
-                                
                             </div>
-                            
-                            <hr>
-
-                            <div class="p-content pt-6">
+                            <div class="pt-6">
                                 <div>
-                                    <h4 class="p-date red-headline text-2xl font-text font-bold">{{ portfolio.portfolioYear }}</h4>
-                                </div>
-                                
-                                <div>
-                                    <!-- <h4>Beskrivelse</h4> -->
-                                    <div>
-
-                                    </div>
-                                    <h4 class="red-headline text-2xl pb-3">Description</h4>
-
-                                    <p class="pr-6 white-text pb-20">{{ portfolio.portfolioDescription }} <br> Read below about the problems and solutions i had.</p>
-                                    <h4 class="red-headline text-2xl pb-3">Status</h4>
-                                    <p class="white-text">{{ portfolio.portfolioStatus }}</p>
-                                </div>
-                                
-                                <div>
-                                    <!-- <h4>Kategori</h4> -->
-                                    <h4 class="red-headline text-2xl pb-3">Category</h4>
-                                    <p class="white-text pb-20">{{ portfolio.portfolioCategory }}</p>
-
                                     <h4 class="red-headline text-2xl pb-3">Tech</h4>
                                     <div class="flex flex-wrap justify-center items-center gap-4">
                                         <div v-if="portfolio.portfolioTech.includes('html')">
@@ -80,161 +56,24 @@
 
             <!-- gallery -->
             <section>
-                <div class="primary-frame">
-                    <div class="primary-frame-inside flex gap-4 six-percent pt-16 pb-16">
-                        <div class="flex gap-4">
-                            <div>
-                                <img :src="portfolio.portfolioFrontImg" alt="">
-                            </div>
-                            <div>
-                                <img :src="portfolio.portfolioFrontImg" alt="">
-                            </div>
-                            <div>
-                                <img :src="portfolio.portfolioFrontImg" alt="">
-                            </div>
-                        </div>
+                <div class="six-percent pt-16 pb-16">
+                    <div>
+                        <img :src="portfolio.portfolioFrontImg" alt="">
                     </div>
                 </div>
             </section>
 
-            <section>
-                <div class="primary-frame">
-                    <div class="primary-frame-inside flex flex-col six-percent pt-16 pb-16 gap-4">
-                        <div class="flex">
-                            <div class="w-2/6 flex items-end pb-16">
-                                <p class="white-text">FNEJNFLKEWLWEKLFNEFKLEWNFE</p>
-                            </div>
-                            
-                            <div class="flex gap-4 w-4/6">
-                                <div>
-                                    <img :src="portfolio.portfolioFrontImg" alt="">
-                                </div>
-                                <div>
-                                    <img :src="portfolio.portfolioFrontImg" alt="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex">
-                            <div class="flex gap-4 w-4/6">
-                                <div>
-                                    <img :src="portfolio.portfolioFrontImg" alt="">
-                                </div>
-                                <div>
-                                    <img :src="portfolio.portfolioFrontImg" alt="">
-                                </div>
-                            </div>
-
-                            <div class="w-2/6 flex items-end pb-16 p-4">
-                                <p class="white-text">FNEJNFLKEWLWEKLFNEFKLEWNFE</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </section>
-    
-            <!-- information about my design process -->
-            <section class="portfolio-item" v-if="portfolio.portfolioFirstProblem">
-                <div class="primary-frame">
-                    <div class="primary-frame-inside">
-                        <div class="designProcess flex flex-row ten-percent ten-percent-top-bottom">
-                            <div class="problem-solution-box flex flex-col w-3/6">
-                                <!-- problems i had -->
-                                <div>
-                                    <!-- <h3>.01 Problemstilling jeg havde med denne {{ portfolioDetails.title }}</h3> -->
-                                    <h3 class="text-3xl">.01 A problem I had with this {{ portfolio.portfolioCategory }}</h3>
-                                    <p>{{ portfolio.portfolioFirstProblem }}</p>
-                                </div>
-                                <div class="pt-5">
-                                    <!-- solutions to the problems -->
-                                    <!-- <h3>.01 Løsningen på problemet</h3> -->
-                                    <h3 class="text-3xl">.01 The solution to the problem</h3>
-                                    <p>{{ portfolio.portfolioFirstSolution }}</p>
-                                </div>
-                            </div>
-                            
-                            <div class="problem-solution-image right-image flex flex-col w-3/6 justify-center gap-4">
-                                <img :src="portfolio.portfolioFirstImgOne" id="image about the problem/issue">
-
-                                <div v-if="portfolio.portfolioFirstImgTwo">
-                                    <img :src="portfolio.portfolioFirstImgTwo" alt="">
-                                </div>
-
-                                <div v-if="portfolio.portfolioFirstImgThree">
-                                    <img :src="portfolio.portfolioFirstImgThree" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        
-            <section class="portfolio-item" v-if="portfolio.portfolioSecondProblem">
-                <div class="primary-frame">
-                    <div class="primary-frame-inside">
-                        <div class="designProcess psi-flip flex flex-row ten-percent ten-percent-top-bottom"> 
-                            <div v-if="portfolio.portfolioSecondImgOne" class="problem-solution-image left-image flex w-3/6 items-center">
-                                <img :src="portfolio.portfolioSecondImgOne" id="image about the problem/issue">
-                            </div>
-
-                            <!-- or show video -->
-                            <div v-if="portfolio.portfolioProductVideoOne" class="product-demonstration-box problem-video-two flex w-3/6 items-center justify-center">
-                                <video autoplay loop muted plays-inline :src="portfolio.portfolioProductVideoOne" type="video/mp4"></video>
-                            </div>
-
-                            <div class="problem-solution-box flex flex-col w-3/6">
-                                <!-- problems i had -->
-                                <div>
-                                    <h3 class="text-3xl">.02 A problem I had with this {{ portfolio.portfolioProduct }}</h3>
-                                    <p class="white-text">{{ portfolio.portfolioSecondProblem }}</p>
-                                </div>
-                                <div class="pt-5">
-                                    <h3 class="text-3xl">.02 The solution to the problem</h3>
-                                    <p class="white-text">{{ portfolio.portfolioSecondSolution }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div v-if="portfolio.portfolioThirdProblem">
-                <div class="portfolio-item">
-                    <div class="primary-frame">
-                        <div class="primary-frame-inside">
-                            <div class="designProcess flex flex-row">
-                                <div class="problem-solution-box flex flex-col w-3/6">
-                                    <!-- problems i had -->
-                                    <div>
-                                        <h3 class="text-3xl">.03 A problem I had with this {{ portfolio.portfolioProduct }}</h3>
-                                        <p class="white-text">{{ portfolio.portfolioThirdProblem }}</p>
-                                    </div>
-                                    <div class="pt-5">
-                                        <h3 class="text-3xl">.03 The solution to the problem</h3>
-                                        <p class="white-text">{{ portfolio.portfolioThirdSolution }}</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="problem-solution-image right-image flex w-3/6 items-center">
-                                    <img :src="portfolio.portfolioThirdImgOne" id="image about the problem/issue">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class="portfolio-item">
                 <div class="bright-frame">
                     <div class="bright-frame-inside flex flex-col">
                         <div class="flex flex-col next-project-btn ten-percent pt-6 pb-6">
                             <!-- <p class="pb-2 text-base">or you can go back:</p> -->
-                            <p class="text-base">Go back to front page:</p>
+                            <p class="text-base pb-2">Go back to front page:</p>
                             <div>
                                 <RouterLink to='/'>
                                     <!-- button to go back to last page -->
-                                    <button class="btn" @click="goBack()">&larr; Go back</button>
+                                    <button class="btn-3" @click="goBack()">&larr; Go back</button>
                                 </RouterLink>
                                 
                             </div>

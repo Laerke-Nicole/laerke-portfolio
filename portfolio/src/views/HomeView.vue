@@ -1,40 +1,23 @@
 <template>
   <main>
     <section class="secondary-bg">
-      <!-- primary-frame-inside -->
+      <div>
       <div class="flex justify-end pt-4 pr-4">
         <img :src="star" alt="star" class="h-12">
       </div>
 
-        <div class="flex ten-percent justify-center">
-          <div>
-            <h1 class="text-9xl dark-headline text-center portfolio">PORTFOLIO</h1>
+        <div class="flex flex-col">
+          <div class="portfolio">
+            <h1 class="text-9xl dark-headline text-center ">PORTFOLIO</h1>
+          </div>
 
-            <div class="cat-1 pr-16 pl-16">
-              <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/different%20moon%201.svg?alt=media&token=00027135-a371-4cc0-b17b-943031deeba3" alt="">
-            </div>
-            
-            
-
-            <!-- button to go straight to contact -->
-            <div class="pt-6 flex justify-center">
-              <button @click="isOpen = true" class="btn-3">Contact me</button>
-              <teleport to="body">
-                <div class="modal" v-if="isOpen">
-                  <ContactMe @close="isOpen = false">
-
-                  </ContactMe>
-                </div>
-              </teleport>
-            </div>
+          <div class="cat-peeking-container">
+            <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Cats%2FCat%20peeking.svg?alt=media&token=04a6dc7f-ed50-4f65-a8a7-db2eba5986a3" alt="" class="cat-peeking">
           </div>
         
           
         </div>
-        <div class="flex justify-start pb-4 pl-4">
-          <img :src="star" alt="star" class="h-14">
-        </div>
-
+      </div>
     </section>
     
     
@@ -46,7 +29,7 @@
 
 
 
-    <div class="flex flex-col flex-nowrap overflow-hidden w-full gap-y-44 quaternary-bg" id="work">
+    <div class="flex flex-col flex-nowrap overflow-hidden w-full gap-y-44 quaternary-bg pt-44" id="work">
 
       <!-- making a loop for all of my projects -->
       <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item flex flex-col items-start secondary-bg w-full"  v-motion-fade-visible-once>
@@ -135,18 +118,18 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
-main {
-  padding-top: 64px;
+.cat-peeking-container {
+  padding: 0 10%;
 }
+
+.cat-peeking {
+  margin-top: -50px;
+}
+
 
 /* first section */
 .portfolio {
-  margin-top: -30px;
-}
-
-.cat-1 {
-  margin-top: -90px;
+  padding-top: 50px;
 }
 
 

@@ -168,28 +168,37 @@ function myFunction() {
       <div class="flex justify-start pt-4 pl-4">
           <img :src="star" alt="star" class="h-8">
         </div>
-      <div class="ten-percent">
-        <!-- <h1>Lad os arbejde sammen!</h1> -->
-        <h4 class="light-headline text-center text-6xl pb-10" v-motion-pop-visible>THANK YOU!</h4>
 
-        <!-- links in footer -->
-        <div>
-            <ul class="flex white-text justify-around">
-              <RouterLink to="/about"><li>About me</li></RouterLink>
-              <RouterLink to="/"><li>Work</li></RouterLink>
-              <div>
-                <button @click="isOpen = true"><li>Contact me</li></button>
-                  <teleport to="body">
-                    <div class="modal" v-if="isOpen">
-                      <ContactMe @close="isOpen = false">
+      <!-- info -->
+      <div class="ten-percent flex">
 
-                      </ContactMe>
-                    </div>
-                  </teleport>
-                </div>
-              <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank"><li>CV &nearr;</li></a>
-              
-            </ul>
+        <!-- cat on moon -->
+        <div class="w-2/4 cat-moon">
+          <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Cats%2FCat%20on%20moon.svg?alt=media&token=c124e917-ab29-4126-9c29-369cfebf2527" alt="">
+        </div>
+
+        <div class="w-2/4 flex flex-col justify-center">
+          <h4 class="light-headline text-6xl pb-10" v-motion-pop-visible>THANK YOU!</h4>
+
+          <!-- links in footer -->
+          <div>
+              <ul class="flex flex-col white-text gap-4">
+                <RouterLink to="/about"><li>About me</li></RouterLink>
+                <RouterLink to="/"><li>Work</li></RouterLink>
+                <div>
+                  <button @click="isOpen = true"><li>Contact me</li></button>
+                    <teleport to="body">
+                      <div class="modal" v-if="isOpen">
+                        <ContactMe @close="isOpen = false">
+
+                        </ContactMe>
+                      </div>
+                    </teleport>
+                  </div>
+                <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank"><li>CV &nearr;</li></a>
+                
+              </ul>
+          </div>
         </div>
       </div>
 
@@ -287,19 +296,8 @@ nav a.router-link-exact-active  {
 }
 
 /* footer */
-footer .footerMyName h2 {
-  color: var(--white-headline);
-  font-style: normal;
-  font-weight: 400; 
-  display: flex;
-  flex-direction: column;
-}
-
-footer .button {
-  display: flex;
-  align-items: center;  
-  justify-content: center;
-  margin: 0 auto 45px auto;
+.cat-moon {
+  margin: -40px 0;
 }
 
 footer ul {
@@ -312,26 +310,6 @@ footer li {
 
 footer li:hover {
   text-decoration: underline;
-}
-
-.mail {
-  display: flex;
-  color: var(--white-headline);
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  gap: 18px;
-  justify-content: center;
-  padding-top: 32px;
-}
-
-.mail hr {
-  display: block;
-  border-width: 0;
-  height: 0.5px;
-  width: 62%;
-  background-color: var(--red-headline);
-  align-self: center;
 }
 /* footer end */
 
@@ -351,11 +329,11 @@ footer li:hover {
 }
 
 .modal > div {
-  background-color: var(--extra-white);
-  border-radius: 10px;
-  padding: 45px 20px;
-  width: 90%;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  width: 93%;
   max-height: 80%;
+  /* height: 65vh; */
   top: 40px;
   left: 40px;
   position: absolute;

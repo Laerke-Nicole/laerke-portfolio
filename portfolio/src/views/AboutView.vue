@@ -42,8 +42,8 @@
         
         
         <!-- the services i offer -->
-        <div class="servicesBorder primary-frame red-headline">
-          <div class="servicesbox primary-frame-inside pt-16 pb-16">
+        <div class="servicesBorder">
+          <div class="servicesbox pt-16 pb-16 primary-bg light-headline">
             <h4 v-motion-slide-visible-once-bottom>Web design & development</h4>
             <h4 v-motion-slide-visible-once-bottom>UI/UX design</h4>
             <h4 v-motion-slide-visible-once-bottom>Graphic design</h4>
@@ -60,20 +60,19 @@
     </div>
 
 
-    <section class="flex">
-      <div class="w-6/12">
-        <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fcat%20sitting.svg?alt=media&token=20ce2dd9-01eb-4595-9c4a-e2b11f2829b0" alt="">
-      </div>
-
-      <div class="w-6/12 flex items-center ">
-        <div class="w-6/12 flex flex-col items-center justify-center"> 
+    <section class="flex ten-percent pt-16">
+        <div class="w-6/12 flex flex-col pl-24"> 
           <h4 class="dark-headline text-5xl pb-14">Please check out my CV to see more about me</h4>
           <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank">
             <button class="btn-3">See my CV</button>
           </a>
           
         </div>
-      </div>
+
+      <div class="w-6/12">
+        <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fcat%20sitting.svg?alt=media&token=20ce2dd9-01eb-4595-9c4a-e2b11f2829b0" alt="">
+      </div>  
+      
     </section>
 
   </main>

@@ -123,6 +123,10 @@ p {
     color: var(--tertiary-color);
 }
 
+.black-headline {
+    color: var(--black-color);
+}
+
 .black-text {
     color: var(--dark-body);
 }
