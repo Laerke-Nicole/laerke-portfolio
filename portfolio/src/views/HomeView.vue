@@ -2,10 +2,6 @@
   <main>
     <section class="secondary-bg">
       <div>
-      <div class="flex justify-end pt-4 pr-4">
-        <img :src="star" alt="star" class="h-12">
-      </div>
-
         <div class="flex flex-col">
           <div class="portfolio">
             <h1 class="text-9xl dark-headline text-center ">PORTFOLIO</h1>
@@ -40,12 +36,12 @@
           <!-- left side -->
           <div>
             <div class="pb-10">
-              <h4 class="dark-headline text-5xl pb-4">{{ portfolio.portfolioProduct }}</h4>
+              <h4 class="dark-headline text-4xl pb-4">{{ portfolio.portfolioProduct }}</h4>
               
               <p class="dark-text">{{ portfolio.portfolioShortDescription }}</p>
             </div>
             
-              <h4 class="dark-headline text-5xl pb-4">Tools</h4>
+              <h4 class="dark-headline text-4xl pb-4">Tools</h4>
             <p class="dark-text">{{ portfolio.portfolioShortDescription }}</p>
 
             <div class="flex  pt-10">
@@ -63,7 +59,7 @@
             <div>
               <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
                 <div class="product-image-container">
-                  <img :src="portfolio.portfolioFrontImg" class="product-image" alt="portfolio-img">
+                  <img :src="portfolio.portfolioImg" class="product-image" alt="portfolio-img">
                   <div class="overlay"></div>
                 </div>   
               </RouterLink>
@@ -118,12 +114,22 @@ onMounted(() => {
 </script>
 
 <style scoped>
+main {
+  padding-top: 64px;
+}
+
 .cat-peeking-container {
   padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cat-peeking {
   margin-top: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

@@ -1,13 +1,11 @@
 <template>
     <!-- buttons to choose what to view -->
-    <div class="ten-percent pt-28 pb-20 white-bg">
+    <div class="ten-percent pt-28 pb-20 quaternary-bg">
 
         <!-- add portfolio -->
         <div class="flex flex-col justify-center gap-2">
-            <h1 class="pt-16 pb-2 black-headline text-5xl">Add portfolio</h1>
-
             <!-- teleport modal with add portfolio -->
-            <button @click="isOpen = true" class="btn mb-12">Add new portfolio</button>
+            <button @click="isOpen = true" class="btn-3 mb-12">Add new portfolio</button>
             <teleport to="body">
                 <div class="modal" v-if="isOpen">
                     <AddPortfolio @close="isOpen = false">
@@ -76,7 +74,7 @@ onMounted(() => {
 }
 
 .modal > div {
-    background-color: var(--extra-white);
+    background-color: var(--primary-color);
     border-radius: 10px;
     padding: 45px 20px;
     width: 90%;

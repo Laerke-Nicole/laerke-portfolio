@@ -1,18 +1,17 @@
 <template>
   <main class="secondary-bg">
     <section class="flex about-me">
-      <div class="flex w-1/2 justify-end">
-        <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fme.jpg?alt=media&token=651fb432-8d6c-4815-a446-e1337a290f4a" alt="" class="my-img">
+      <div class="flex w-1/2 ">
+        <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fflower.png?alt=media&token=f7a7ae77-d3b0-4c9d-8dcd-f85c21152a9c" alt="">
+        <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fportfolio_me.gif?alt=media&token=20692d12-310e-45bd-9a57-d2e67840fd21" alt="" class="my-img">
       </div>
-        
-      <div class="flex flex-col w-1/2 justify-center">
-        <div class="pl-20">
+      
+      <div class="flex flex-col w-1/2 justify-center pl-20">
           <h1 class="dark-headline text-6xl pb-20">Hello,<br>I'm Lærke</h1>
           <div class="w-2/3">
             <p class="black-text pb-4">I'm a multimedia designer from Denmark who's main passion is in front-end development and graphic design.</p>
             <p class="black-text">I have an eye for detail and consider myself to be a bit perfectionist.</p>
           </div>
-        </div>
       </div>
     </section>
       
@@ -109,9 +108,9 @@ window.scrollTo(0, 0)
 </script>
 
 <style>
-main {
+/* main {
   padding-top: 64px;
-}
+} */
 
 .about-me {
   height: 100vh;

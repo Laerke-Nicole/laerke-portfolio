@@ -16,7 +16,7 @@
                             </div>
                             <div class="pt-6">
                                 <div>
-                                    <h4 class="red-headline text-2xl pb-3">Tech</h4>
+                                    <h4 class="dark-headline text-2xl pb-3">Tech</h4>
                                     <div class="flex flex-wrap justify-center items-center gap-4">
                                         <div v-if="portfolio.portfolioTech.includes('html')">
                                             <img :src="html" alt="html" class="tech-height">
@@ -58,7 +58,7 @@
             <section>
                 <div class="six-percent pt-16 pb-16">
                     <div>
-                        <img :src="portfolio.portfolioFrontImg" alt="">
+                        <img :src="portfolio.portfolioImg" alt="">
                     </div>
                 </div>
             </section>
