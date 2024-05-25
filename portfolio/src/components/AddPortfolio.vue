@@ -35,21 +35,16 @@
 
       <input type="text" placeholder="Product" v-model="AddPortfolioData.portfolioProduct" class="quaternary-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
 
-      <p class="white-text">Short description</p>
-      <div class="mt-2.5">
-        <textarea name="message" id="message" rows="4" class="quaternary-bg border-none text-sm w-full h-18 mb-4" v-model="AddPortfolioData.portfolioShortDescription" />
-      </div>
-
       <p class="white-text">Img</p>
       <input v-on:change="AddPortfolioData.portfolioImg" @change="uploadImg" alt="front page img" type="file" label="File input" width="200" height="200">
-
-      <p class="white-text">Year</p>
-      <input type="text" placeholder="Year" v-model="AddPortfolioData.portfolioYear" class="quaternary-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
 
       <p class="white-text">Description</p>
       <div class="mt-2.5">
         <textarea name="message" id="message" rows="4" class="quaternary-bg border-none text-sm w-full h-18 mb-4" v-model="AddPortfolioData.portfolioDescription" />
       </div>
+
+      <p class="white-text">Year</p>
+      <input type="text" placeholder="Year" v-model="AddPortfolioData.portfolioYear" class="quaternary-bg border-none text-sm w-full h-11 focus:ring-0 mb-4">
 
       <!-- status -->
       <p class="white-text">Status</p>
@@ -65,39 +60,6 @@
           <p>{{ tech.tech }}</p>
         </option>
       </select>
-
-      <!-- first problem -->
-      <p class="white-text">First problem</p>
-      <div class="mt-2.5">
-        <textarea name="message" id="message" rows="4" class="quaternary-bg border-none text-sm w-full h-18 mb-4" v-model="AddPortfolioData.portfolioFirstProblem" />
-      </div>
-
-      <p class="white-text">First solution</p>
-      <div class="mt-2.5">
-        <textarea name="message" id="message" rows="4" class="quaternary-bg border-none text-sm w-full h-18 mb-4" v-model="AddPortfolioData.portfolioFirstSolution" />
-      </div>
-
-      <!-- second problem -->
-      <p class="white-text">Second problem</p>
-      <div class="mt-2.5">
-        <textarea name="message" id="message" rows="4" class="quaternary-bg border-none text-sm w-full h-18 mb-4" v-model="AddPortfolioData.portfolioSecondProblem" />
-      </div>
-
-      <p class="white-text">Second solution</p>
-      <div class="mt-2.5">
-        <textarea name="message" id="message" rows="4" class="quaternary-bg border-none text-sm w-full h-18 mb-4" v-model="AddPortfolioData.portfolioSecondSolution" />
-      </div>
-
-      <!-- third problem -->
-      <p class="white-text">Third problem</p>
-      <div class="mt-2.5">
-        <textarea name="message" id="message" rows="4" class="quaternary-bg border-none text-sm w-full h-18 mb-4" v-model="AddPortfolioData.portfolioThirdProblem" />
-      </div>
-
-      <p class="white-text">Third solution</p>
-      <div class="mt-2.5">
-        <textarea name="message" id="message" rows="4" class="quaternary-bg border-none text-sm w-full h-18 mb-4" v-model="AddPortfolioData.portfolioThirdSolution" />
-      </div>
     </div>
 
   </div>

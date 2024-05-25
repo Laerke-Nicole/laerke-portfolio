@@ -1,10 +1,11 @@
 <template>
   <main>
     <section class="secondary-bg">
-      <div>
+      <div class="hero">
         <div class="flex flex-col">
-          <div class="portfolio">
-            <h1 class="text-9xl dark-headline text-center ">PORTFOLIO</h1>
+          <div class="portfolio slide-down-container">
+            <!-- portfolio text -->
+            <h1 class="text-9xl dark-headline text-center slide-down">PORTFOLIO</h1>
           </div>
 
           <div class="cat-peeking-container">
@@ -16,42 +17,36 @@
       </div>
     </section>
     
-    
-
-
-
-
-
-
-
-
+    <!-- portfolio section -->
     <div class="flex flex-col flex-nowrap overflow-hidden w-full gap-y-44 quaternary-bg pt-44" id="work">
 
       <!-- making a loop for all of my projects -->
-      <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item flex flex-col items-start secondary-bg w-full"  v-motion-fade-visible-once>
+      <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item flex flex-col items-start secondary-bg w-full">
 
         <!-- container for projects -->
         <div class="portfolio-content flex justify-between ten-percent w-full pt-10 pb-12 gap-16" id="portfolio-view">
 
           <!-- left side -->
           <div>
-            <div class="pb-10">
-              <h4 class="dark-headline text-4xl pb-4">{{ portfolio.portfolioProduct }}</h4>
-              
-              <p class="dark-text">{{ portfolio.portfolioShortDescription }}</p>
-            </div>
-            
-              <h4 class="dark-headline text-4xl pb-4">Tools</h4>
-            <p class="dark-text">{{ portfolio.portfolioShortDescription }}</p>
+            <div>
+              <h1 class="title dark-headline text-5xl pb-4">{{ portfolio.portfolioProduct }}</h1>
+              <div>
+                <p class="short pb-8">{{ portfolio.portfolioDescription }}</p>
+              </div>
 
-            <div class="flex  pt-10">
-              <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
-                <div class="product-image-container">
-                  <button class="btn-3">See my work</button>
-                </div>   
-              </RouterLink>
+              <div>
+                <h4 class="dark-headline text-2xl">Tech</h4>
+                <p>{{ portfolio.portfolioTech.join(", ") }}</p>
+              </div>
+
+              <div class="flex  pt-10">
+                <RouterLink :to="{ name: 'portfoliodetails', params:{id: portfolio.id}}">
+                  <div class="product-image-container">
+                    <button class="btn-3">See my work</button>
+                  </div>   
+                </RouterLink>
+              </div>
             </div>
-            
           </div>
 
           <!-- right side -->
@@ -138,6 +133,13 @@ main {
   padding-top: 50px;
 }
 
+.short {
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
 
 /* stying image */
 .product-image {
@@ -164,18 +166,7 @@ main {
   opacity: 1;
 }
 
-
 /* stying image end */
-
-
-/* styling portfolio text */
-.p-category {
-  transform: scaleY(1.4);
-  font-style: normal;
-  font-weight: bold; 
-}
-
-/* styling portfolio text end */
 
 
 /* modal styling */
@@ -216,183 +207,9 @@ main {
 
 /* responsive */
 @media only screen and (max-width: 1150px) {
-  .bright-frame-inside {
-    height: 50vh;
-  }
 
-  .right-container {
-    height: 50vh;
-  }
-
-  .bright-frame-insideContent img {
-    max-height: 40vh;
-  }
 }
 
-@media only screen and (max-width: 1000px) {
-  .bright-frame-inside {
-    height: 45vh;
-  }
-
-  .right-container {
-    height: 45vh;
-  }
-}
-
-@media only screen and (max-width: 950px) {
-  .primary-frame-inside {
-    height: auto;
-  }
-  .primary-frame-inside-top-content {
-    flex-direction: column;
-  }
-
-  .primary-frame-inside h1 {
-    font-size: 36px;
-  }
-
-  .primary-frame-inside h2{
-    font-size: 30px;
-  }
-
-  .primary-frame-inside button {
-    margin-bottom: 24px;
-    padding-top: 12px;
-  }
-
-  .bright-frame-inside {
-    height: auto;
-  }
-
-  .right-container {
-    height: auto;
-  }
-
-  .portfolio-item-container {
-    row-gap: 44px;
-  }
-
-  .my-portrait {
-    justify-content: flex-start;
-    padding-bottom: 12px;
-  }
-
-  .passionBox {
-    text-align: left;
-    justify-content: flex-start;
-  }
-
-  .portfolio-content {
-    flex-direction: column;
-  }
-
-  .bright-frame {
-    width: 100%;
-  }
-
-  .secondary-frame {
-    width: 100%;
-  }
-
-  .right-container {
-    height: auto;
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  .product-image {
-      max-inline-size: 100%;
-      block-size: auto;
-      object-fit: contain;
-  }    
-}
-
-@media only screen and (max-width: 700px) {
-  .specialties .scroll-text {
-    gap: 1rem;
-  }
-
-  .specialties .scroll-text span {
-    font-size: 28px;
-  }
-  .scroll-text hr {
-  height: 2px;
-  width: 1.4rem;
-  }
-}
-
-@media only screen and (max-width: 580px) {
-  .primary-frame-inside h3 {
-    font-size: 18px;
-  }
-
-  .passionBox p {
-    padding-right: 40px;
-  }
-
-  #bright-frame-inside {
-    height: auto;
-  }
-}
-
-@media only screen and (max-width: 550px) {
-  .primary-frame-inside h1 {
-    font-size: 34px;
-  }
-
-  .primary-frame-inside h2 {
-    font-size: 28px;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .primary-frame-inside {
-    padding-top: 45px;
-  }
-
-  .p-number {
-    padding-top: 45px;
-  }
-
-  .passionBox p {
-    padding-bottom: 45px;
-  }
-
-  .bright-frame-insideContent {
-    padding-top: 45px;
-    padding-bottom: 45px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .primary-frame-inside h1 {
-    font-size: 28px;
-  }
-
-  .primary-frame-inside h2 {
-    font-size: 23px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .primary-frame-inside h3 {
-    font-size: 16px;
-  }
-
-  .primary-frame-inside h1 {
-    font-size: 24px;
-  }
-
-  .primary-frame-inside h2 {
-    font-size: 18px;
-  }
-
-  .p-category {
-    font-size: 22px;
-    line-height: 1.1;
-    padding: 8px 0;
-  }
-}
 /* responsive end*/
 
 

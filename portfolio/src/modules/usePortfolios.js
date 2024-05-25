@@ -17,7 +17,6 @@ const usePortfolios = () => {
         portfolioNumber: "",
         portfolioCategory: "",
         portfolioProduct: "",
-        portfolioShortDescription: "",
         portfolioImg: "",
 
         // portfolio detail
@@ -25,18 +24,6 @@ const usePortfolios = () => {
         portfolioDescription: "",
         portfolioStatus: "",
         portfolioTech: [],
-
-        // first problem, solution and images
-        portfolioFirstProblem: "",
-        portfolioFirstSolution: "",
-
-        // second problem, solution and images
-        portfolioSecondProblem: "",
-        portfolioSecondSolution: "",
-
-        // third proble, solution and images
-        portfolioThirdProblem: "",
-        portfolioThirdSolution: "",
     })
 
 
@@ -45,7 +32,6 @@ const usePortfolios = () => {
         portfolioNumber: "",
         portfolioCategory: "",
         portfolioProduct: "",
-        portfolioShortDescription: "",
         portfolioImg: "",
 
         // portfolio detail
@@ -53,18 +39,6 @@ const usePortfolios = () => {
         portfolioDescription: "",
         portfolioStatus: "",
         portfolioTech: [],
-
-        // first problem, solution and images
-        portfolioFirstProblem: "",
-        portfolioFirstSolution: "",
-
-        // second problem, solution and images
-        portfolioSecondProblem: "",
-        portfolioSecondSolution: "",
-
-        // third proble, solution and images
-        portfolioThirdProblem: "",
-        portfolioThirdSolution: "",
     })
 
     // store documents
@@ -96,22 +70,12 @@ const usePortfolios = () => {
             portfolioNumber: AddPortfolioData.value.portfolioNumber,
             portfolioCategory: AddPortfolioData.value.portfolioCategory,
             portfolioProduct: AddPortfolioData.value.portfolioProduct,
-            portfolioShortDescription: AddPortfolioData.value.portfolioShortDescription,
             portfolioImg: imgUrlOne,
 
             portfolioYear: AddPortfolioData.value.portfolioYear,
             portfolioDescription: AddPortfolioData.value.portfolioDescription,
             portfolioStatus: AddPortfolioData.value.portfolioStatus,
             portfolioTech: AddPortfolioData.value.portfolioTech,
-
-            portfolioFirstProblem: AddPortfolioData.value.portfolioFirstProblem,
-            portfolioFirstSolution: AddPortfolioData.value.portfolioFirstSolution,
-
-            portfolioSecondProblem: AddPortfolioData.value.portfolioSecondProblem,
-            portfolioSecondSolution: AddPortfolioData.value.portfolioSecondSolution,
-
-            portfolioThirdProblem: AddPortfolioData.value.portfolioThirdProblem,
-            portfolioThirdSolution: AddPortfolioData.value.portfolioThirdSolution,
         })
 
         // make the input fields empty after adding
@@ -119,18 +83,11 @@ const usePortfolios = () => {
             portfolioNumber: AddPortfolioData.value.portfolioNumber = '',
             portfolioCategory: AddPortfolioData.value.portfolioCategory = '',
             portfolioProduct: AddPortfolioData.value.portfolioProduct = '',
-            portfolioShortDescription: AddPortfolioData.value.portfolioShortDescription = '',
             portfolioImg: AddPortfolioData.value.portfolioImg = '',
             portfolioYear: AddPortfolioData.value.portfolioYear = '',
             portfolioDescription: AddPortfolioData.value.portfolioDescription = '',
             portfolioStatus: AddPortfolioData.value.portfolioStatus = '',
             portfolioTech: AddPortfolioData.value.portfolioTech = '',
-            portfolioFirstProblem: AddPortfolioData.value.portfolioFirstProblem = '',
-            portfolioFirstSolution: AddPortfolioData.value.portfolioFirstSolution = '',
-            portfolioSecondProblem: AddPortfolioData.value.portfolioSecondProblem = '',
-            portfolioSecondSolution: AddPortfolioData.value.portfolioSecondSolution = '',
-            portfolioThirdProblem: AddPortfolioData.value.portfolioThirdProblem = '',
-            portfolioThirdSolution: AddPortfolioData.value.portfolioThirdSolution = '',
         })
 
         console.log("portfolio is added");
@@ -144,36 +101,22 @@ const usePortfolios = () => {
                 portfolioNumber,
                 portfolioCategory,
                 portfolioProduct,
-                portfolioShortDescription,
                 portfolioImg,
                 portfolioYear,
                 portfolioDescription,
                 portfolioStatus,
                 portfolioTech,
-                portfolioFirstProblem,
-                portfolioFirstSolution,
-                portfolioSecondProblem,
-                portfolioSecondSolution,
-                portfolioThirdProblem,
-                portfolioThirdSolution,
             } = portfolioToUpdate;
     
             await updateDoc(doc(portfolioDataRef, portfolioToUpdate.id), {
                 portfolioNumber,
                 portfolioCategory,
                 portfolioProduct,
-                portfolioShortDescription,
                 portfolioImg,
                 portfolioYear,
                 portfolioDescription,
                 portfolioStatus,
                 portfolioTech,
-                portfolioFirstProblem,
-                portfolioFirstSolution,
-                portfolioSecondProblem,
-                portfolioSecondSolution,
-                portfolioThirdProblem,
-                portfolioThirdSolution,
             });
         }
     }

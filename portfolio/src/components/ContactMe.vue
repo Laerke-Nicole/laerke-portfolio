@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div class="secondary-bg contact pb-16">
+        <div class="secondary-bg contact">
             <button
                     id="floatyClose"
                     @click="$emit('close')"
@@ -10,8 +10,8 @@
                 </button>
 
             <!-- content -->
-            <div class="flex">
-                <div class="ten-percent flex flex-col w-2/4">
+            <div class="flex justify-center items-center slide-down-container">
+                <div class="ten-percent flex flex-col w-2/4 pb-16 slide-down">
                     <h2 class="dark-headline text-5xl pt-10 pb-14">Contact me on:</h2>
                     
                     <div class="flex flex-col gap-6">
@@ -31,7 +31,7 @@
                 </div> 
 
                 <div class="w-2/4 flex justify-center items-center">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Cats%2FCat%20curious.svg?alt=media&token=89021651-a8e4-44a8-be43-3cdb0325380a" alt="" class="cat-contact">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fgraphic_me.svg?alt=media&token=0a897f27-feef-419f-8102-65ee2a4bf647" alt="" class="cat-contact">
                 </div>
             </div>
             

@@ -181,8 +181,8 @@ function myFunction() {
           <h4 class="light-headline text-6xl pb-10" v-motion-pop-visible>THANK YOU!</h4>
 
           <!-- links in footer -->
-          <div>
-              <ul class="flex flex-col white-text gap-4">
+          <div class="slide-down-container">
+              <ul class="flex flex-col white-text gap-4 slide-down">
                 <RouterLink to="/about"><li>About me</li></RouterLink>
                 <RouterLink to="/"><li>Work</li></RouterLink>
                 <div>
