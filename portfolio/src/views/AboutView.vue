@@ -129,7 +129,7 @@ window.scrollTo(0, 0)
 
 .servicesScrollBox .servicesScrollText h5 {
   margin: 0;
-  font-size: 80px;
+  font-size: 50px;
   transition: all 2s ease;
   font-style: normal;
 }

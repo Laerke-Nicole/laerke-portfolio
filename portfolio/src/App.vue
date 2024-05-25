@@ -178,11 +178,11 @@ function myFunction() {
         </div>
 
         <div class="w-2/4 flex flex-col justify-center">
-          <h4 class="light-headline text-6xl pb-10" v-motion-pop-visible>THANK YOU!</h4>
+          <h4 class="light-headline text-6xl pb-6" v-motion-pop-visible>THANK YOU!</h4>
 
           <!-- links in footer -->
-          <div class="slide-down-container">
-              <ul class="flex flex-col white-text gap-4 slide-down">
+          <div>
+              <ul class="flex flex-col white-text gap-2">
                 <RouterLink to="/about"><li>About me</li></RouterLink>
                 <RouterLink to="/"><li>Work</li></RouterLink>
                 <div>
