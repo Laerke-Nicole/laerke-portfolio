@@ -1,6 +1,6 @@
 import { db } from '../firebase.js'
 import { ref } from 'vue'
-import { collection, doc, onSnapshot, deleteDoc, addDoc, updateDoc, orderBy } from 'firebase/firestore';
+import { collection, doc, onSnapshot, deleteDoc, addDoc, updateDoc, } from 'firebase/firestore';
 import { getStorage, ref as refFB, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 
 
@@ -17,52 +17,13 @@ const usePortfolios = () => {
         portfolioNumber: "",
         portfolioCategory: "",
         portfolioProduct: "",
-        portfolioShortDescription: "",
-        portfolioFrontImg: "",
+        portfolioImg: "",
 
         // portfolio detail
-        portfolioLandingImg: "",
         portfolioYear: "",
         portfolioDescription: "",
         portfolioStatus: "",
         portfolioTech: [],
-
-        // first problem, solution and images
-        portfolioFirstProblem: "",
-        portfolioFirstSolution: "",
-        portfolioFirstImgOne: "",
-        portfolioFirstImgTwo: "",
-        portfolioFirstImgThree: "",
-
-        // second problem, solution and images
-        portfolioSecondProblem: "",
-        portfolioSecondSolution: "",
-        portfolioSecondImgOne: "",
-        portfolioSecondImgTwo: "",
-        portfolioSecondImgThree: "",
-
-        // third proble, solution and images
-        portfolioThirdProblem: "",
-        portfolioThirdSolution: "",
-        portfolioThirdImgOne: "",
-        portfolioThirdImgTwo: "",
-        portfolioThirdImgThree: "",
-
-        // extra product images
-        portfolioProductImgOne: "",
-        portfolioProductImgTwo: "",
-        portfolioProductImgThree: "",
-        portfolioProductImgFour: "",
-        portfolioProductImgFive: "",
-        portfolioProductImgSix: "",
-        portfolioProductImgSeven: "",
-        portfolioProductImgEight: "",
-        portfolioProductImgNine: "",
-        portfolioProductImgTen: "",
-
-        // next project
-        portfolioNextCategory: "",
-        portfolioNextImg: "",
     })
 
 
@@ -71,52 +32,13 @@ const usePortfolios = () => {
         portfolioNumber: "",
         portfolioCategory: "",
         portfolioProduct: "",
-        portfolioShortDescription: "",
-        portfolioFrontImg: "",
+        portfolioImg: "",
 
         // portfolio detail
-        portfolioLandingImg: "",
         portfolioYear: "",
         portfolioDescription: "",
         portfolioStatus: "",
         portfolioTech: [],
-
-        // first problem, solution and images
-        portfolioFirstProblem: "",
-        portfolioFirstSolution: "",
-        portfolioFirstImgOne: "",
-        portfolioFirstImgTwo: "",
-        portfolioFirstImgThree: "",
-
-        // second problem, solution and images
-        portfolioSecondProblem: "",
-        portfolioSecondSolution: "",
-        portfolioSecondImgOne: "",
-        portfolioSecondImgTwo: "",
-        portfolioSecondImgThree: "",
-
-        // third proble, solution and images
-        portfolioThirdProblem: "",
-        portfolioThirdSolution: "",
-        portfolioThirdImgOne: "",
-        portfolioThirdImgTwo: "",
-        portfolioThirdImgThree: "",
-
-        // extra product images
-        portfolioProductImgOne: "",
-        portfolioProductImgTwo: "",
-        portfolioProductImgThree: "",
-        portfolioProductImgFour: "",
-        portfolioProductImgFive: "",
-        portfolioProductImgSix: "",
-        portfolioProductImgSeven: "",
-        portfolioProductImgEight: "",
-        portfolioProductImgNine: "",
-        portfolioProductImgTen: "",
-
-        // next project
-        portfolioNextCategory: "",
-        portfolioNextImg: "",
     })
 
     // store documents
@@ -141,74 +63,19 @@ const usePortfolios = () => {
     // accept the button that adds item
 
     const firebaseAddSinglePortfolio = async () => {
-        const imgUrlOne = portfolioFrontImg.value; // Get the image URL from portfolioImg
-        const imgUrlTwo = portfolioLandingImg.value; // Get the image URL from portfolioImg
-        const imgUrlThree = portfolioFirstImgOne.value; // Get the image URL from portfolioImg
-        const imgUrlFour = portfolioFirstImgTwo.value;
-        const imgUrlFive = portfolioFirstImgThree.value;
-        const imgUrlSix = portfolioSecondImgOne.value;
-        const imgUrlSeven = portfolioSecondImgTwo.value;
-        const imgUrlEight = portfolioSecondImgThree.value;
-        const imgUrlNine = portfolioThirdImgOne.value;
-        const imgUrlTen = portfolioThirdImgTwo.value;
-        const imgUrlEleven = portfolioThirdImgThree.value;
-        const imgUrlTwelve = portfolioProductImgOne.value;
-        const imgUrlThirteen = portfolioProductImgTwo.value;
-        const imgUrlFourteen = portfolioProductImgThree.value;
-        const imgUrlFifteen = portfolioProductImgFour.value;
-        const imgUrlSixteen = portfolioProductImgFive.value;
-        const imgUrlSeventeen = portfolioProductImgSix.value;
-        const imgUrlEighteen = portfolioProductImgSeven.value;
-        const imgUrlNineteen = portfolioProductImgEight.value;
-        const imgUrlTwenty = portfolioProductImgNine.value;
-        const imgUrlTwentyOne = portfolioProductImgTen.value;
-        const imgUrlTwentyTwo = portfolioNextImg.value;
+        const imgUrlOne = portfolioImg.value; // Get the image URL from portfolioImg
 
         // Add the imageUrl to the data being added to Firebase
         await addDoc(collection(db, "portfolios"), {
             portfolioNumber: AddPortfolioData.value.portfolioNumber,
             portfolioCategory: AddPortfolioData.value.portfolioCategory,
             portfolioProduct: AddPortfolioData.value.portfolioProduct,
-            portfolioShortDescription: AddPortfolioData.value.portfolioShortDescription,
-            portfolioFrontImg: imgUrlOne,
+            portfolioImg: imgUrlOne,
 
-            portfolioLandingImg: imgUrlTwo,
             portfolioYear: AddPortfolioData.value.portfolioYear,
             portfolioDescription: AddPortfolioData.value.portfolioDescription,
             portfolioStatus: AddPortfolioData.value.portfolioStatus,
             portfolioTech: AddPortfolioData.value.portfolioTech,
-
-            portfolioFirstProblem: AddPortfolioData.value.portfolioFirstProblem,
-            portfolioFirstSolution: AddPortfolioData.value.portfolioFirstSolution,
-            portfolioFirstImgOne: imgUrlThree,
-            portfolioFirstImgTwo: imgUrlFour,
-            portfolioFirstImgThree: imgUrlFive,
-
-            portfolioSecondProblem: AddPortfolioData.value.portfolioSecondProblem,
-            portfolioSecondSolution: AddPortfolioData.value.portfolioSecondSolution,
-            portfolioSecondImgOne: imgUrlSix,
-            portfolioSecondImgTwo: imgUrlSeven,
-            portfolioSecondImgThree: imgUrlEight,
-
-            portfolioThirdProblem: AddPortfolioData.value.portfolioThirdProblem,
-            portfolioThirdSolution: AddPortfolioData.value.portfolioThirdSolution,
-            portfolioThirdImgOne: imgUrlNine,
-            portfolioThirdImgTwo: imgUrlTen,
-            portfolioThirdImgThree: imgUrlEleven,
-
-            portfolioProductImgOne: imgUrlTwelve,
-            portfolioProductImgTwo: imgUrlThirteen,
-            portfolioProductImgThree: imgUrlFourteen,
-            portfolioProductImgFour: imgUrlFifteen,
-            portfolioProductImgFive: imgUrlSixteen,
-            portfolioProductImgSix: imgUrlSeventeen,
-            portfolioProductImgSeven: imgUrlEighteen,
-            portfolioProductImgEight: imgUrlNineteen,
-            portfolioProductImgNine: imgUrlTwenty,
-            portfolioProductImgTen: imgUrlTwentyOne,
-
-            portfolioNextCategory: AddPortfolioData.value.portfolioNextCategory,
-            portfolioNextImg: imgUrlTwentyTwo,
         })
 
         // make the input fields empty after adding
@@ -216,40 +83,11 @@ const usePortfolios = () => {
             portfolioNumber: AddPortfolioData.value.portfolioNumber = '',
             portfolioCategory: AddPortfolioData.value.portfolioCategory = '',
             portfolioProduct: AddPortfolioData.value.portfolioProduct = '',
-            portfolioShortDescription: AddPortfolioData.value.portfolioShortDescription = '',
-            portfolioFrontImg: AddPortfolioData.value.portfolioFrontImg = '',
-            portfolioLandingImg: AddPortfolioData.value.portfolioLandingImg = '',
+            portfolioImg: AddPortfolioData.value.portfolioImg = '',
             portfolioYear: AddPortfolioData.value.portfolioYear = '',
             portfolioDescription: AddPortfolioData.value.portfolioDescription = '',
             portfolioStatus: AddPortfolioData.value.portfolioStatus = '',
             portfolioTech: AddPortfolioData.value.portfolioTech = '',
-            portfolioFirstProblem: AddPortfolioData.value.portfolioFirstProblem = '',
-            portfolioFirstSolution: AddPortfolioData.value.portfolioFirstSolution = '',
-            portfolioFirstImgOne: AddPortfolioData.value.portfolioFirstImgOne = '',
-            portfolioFirstImgTwo: AddPortfolioData.value.portfolioFirstImgTwo = '',
-            portfolioFirstImgThree: AddPortfolioData.value.portfolioFirstImgThree = '',
-            portfolioSecondProblem: AddPortfolioData.value.portfolioSecondProblem = '',
-            portfolioSecondSolution: AddPortfolioData.value.portfolioSecondSolution = '',
-            portfolioSecondImgOne: AddPortfolioData.value.portfolioSecondImgOne = '',
-            portfolioSecondImgTwo: AddPortfolioData.value.portfolioSecondImgTwo = '',
-            portfolioSecondImgThree: AddPortfolioData.value.portfolioSecondImgThree = '',
-            portfolioThirdProblem: AddPortfolioData.value.portfolioThirdProblem = '',
-            portfolioThirdSolution: AddPortfolioData.value.portfolioThirdSolution = '',
-            portfolioThirdImgOne: AddPortfolioData.value.portfolioThirdImgOne = '',
-            portfolioThirdImgTwo: AddPortfolioData.value.portfolioThirdImgTwo = '',
-            portfolioThirdImgThree: AddPortfolioData.value.portfolioThirdImgThree = '',
-            portfolioProductImgOne: AddPortfolioData.value.portfolioProductImgOne = '',
-            portfolioProductImgTwo: AddPortfolioData.value.portfolioProductImgTwo = '',
-            portfolioProductImgThree: AddPortfolioData.value.portfolioProductImgThree = '',
-            portfolioProductImgFour: AddPortfolioData.value.portfolioProductImgFour = '',
-            portfolioProductImgFive: AddPortfolioData.value.portfolioProductImgFive = '',
-            portfolioProductImgSix: AddPortfolioData.value.portfolioProductImgSix = '',
-            portfolioProductImgSeven: AddPortfolioData.value.portfolioProductImgSeven = '',
-            portfolioProductImgEight: AddPortfolioData.value.portfolioProductImgEight = '',
-            portfolioProductImgNine: AddPortfolioData.value.portfolioProductImgNine = '',
-            portfolioProductImgTen: AddPortfolioData.value.portfolioProductImgTen = '',
-            portfolioNextCategory: AddPortfolioData.value.portfolioNextCategory = '',
-            portfolioNextImg: AddPortfolioData.value.portfolioNextImg = '',
         })
 
         console.log("portfolio is added");
@@ -263,80 +101,22 @@ const usePortfolios = () => {
                 portfolioNumber,
                 portfolioCategory,
                 portfolioProduct,
-                portfolioShortDescription,
-                portfolioFrontImg,
-                portfolioLandingImg,
+                portfolioImg,
                 portfolioYear,
                 portfolioDescription,
                 portfolioStatus,
                 portfolioTech,
-                portfolioFirstProblem,
-                portfolioFirstSolution,
-                portfolioFirstImgOne,
-                portfolioFirstImgTwo,
-                portfolioFirstImgThree,
-                portfolioSecondProblem,
-                portfolioSecondSolution,
-                portfolioSecondImgOne,
-                portfolioSecondImgTwo,
-                portfolioSecondImgThree,
-                portfolioThirdProblem,
-                portfolioThirdSolution,
-                portfolioThirdImgOne,
-                portfolioThirdImgTwo,
-                portfolioThirdImgThree,
-                portfolioProductImgOne,
-                portfolioProductImgTwo,
-                portfolioProductImgThree,
-                portfolioProductImgFour,
-                portfolioProductImgFive,
-                portfolioProductImgSix,
-                portfolioProductImgSeven,
-                portfolioProductImgEight,
-                portfolioProductImgNine,
-                portfolioProductImgTen,
-                portfolioNextCategory,
-                portfolioNextImg,
             } = portfolioToUpdate;
     
             await updateDoc(doc(portfolioDataRef, portfolioToUpdate.id), {
                 portfolioNumber,
                 portfolioCategory,
                 portfolioProduct,
-                portfolioShortDescription,
-                portfolioFrontImg,
-                portfolioLandingImg,
+                portfolioImg,
                 portfolioYear,
                 portfolioDescription,
                 portfolioStatus,
                 portfolioTech,
-                portfolioFirstProblem,
-                portfolioFirstSolution,
-                portfolioFirstImgOne,
-                portfolioFirstImgTwo,
-                portfolioFirstImgThree,
-                portfolioSecondProblem,
-                portfolioSecondSolution,
-                portfolioSecondImgOne,
-                portfolioSecondImgTwo,
-                portfolioSecondImgThree,
-                portfolioThirdProblem,
-                portfolioThirdSolution,
-                portfolioThirdImgOne,
-                portfolioThirdImgTwo,
-                portfolioThirdImgThree,
-                portfolioProductImgOne,
-                portfolioProductImgTwo,
-                portfolioProductImgThree,
-                portfolioProductImgFour,
-                portfolioProductImgFive,
-                portfolioProductImgSix,
-                portfolioProductImgSeven,
-                portfolioProductImgEight,
-                portfolioProductImgNine,
-                portfolioProductImgTen,
-                portfolioNextCategory,
-                portfolioNextImg,
             });
         }
     }
@@ -347,28 +127,7 @@ const usePortfolios = () => {
     const storage = getStorage();
 
     // Create a variables to store the image link
-    const portfolioFrontImg = ref(''); 
-    const portfolioLandingImg = ref(''); 
-    const portfolioFirstImgOne = ref(''); 
-    const portfolioFirstImgTwo = ref('');    
-    const portfolioFirstImgThree = ref(''); 
-    const portfolioSecondImgOne = ref(''); 
-    const portfolioSecondImgTwo = ref(''); 
-    const portfolioSecondImgThree = ref(''); 
-    const portfolioThirdImgOne = ref(''); 
-    const portfolioThirdImgTwo = ref(''); 
-    const portfolioThirdImgThree = ref(''); 
-    const portfolioProductImgOne = ref(''); 
-    const portfolioProductImgTwo = ref(''); 
-    const portfolioProductImgThree = ref(''); 
-    const portfolioProductImgFour = ref(''); 
-    const portfolioProductImgFive = ref(''); 
-    const portfolioProductImgSix = ref(''); 
-    const portfolioProductImgSeven = ref(''); 
-    const portfolioProductImgEight = ref(''); 
-    const portfolioProductImgNine = ref(''); 
-    const portfolioProductImgTen = ref(''); 
-    const portfolioNextImg = ref(''); 
+    const portfolioImg = ref(''); 
 
 
     const uploadImg = async(event) => {
@@ -423,27 +182,7 @@ const usePortfolios = () => {
             
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                 console.log('File available at', downloadURL);
-                portfolioFrontImg.value = downloadURL
-                portfolioLandingImg.value = downloadURL
-                portfolioFirstImgTwo.value = downloadURL
-                portfolioFirstImgThree.value = downloadURL
-                portfolioSecondImgOne.value = downloadURL
-                portfolioSecondImgTwo.value = downloadURL
-                portfolioSecondImgThree.value = downloadURL
-                portfolioThirdImgOne.value = downloadURL
-                portfolioThirdImgTwo.value = downloadURL
-                portfolioThirdImgThree.value = downloadURL
-                portfolioProductImgOne.value = downloadURL
-                portfolioProductImgTwo.value = downloadURL
-                portfolioProductImgThree.value = downloadURL
-                portfolioProductImgFour.value = downloadURL
-                portfolioProductImgFive.value = downloadURL
-                portfolioProductImgSix.value = downloadURL
-                portfolioProductImgSeven.value = downloadURL
-                portfolioProductImgEight.value = downloadURL
-                portfolioProductImgNine.value = downloadURL
-                portfolioProductImgTen.value = downloadURL
-                portfolioNextImg.value = downloadURL
+                portfolioImg.value = downloadURL
             });
             }
             

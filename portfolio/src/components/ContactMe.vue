@@ -1,32 +1,40 @@
 <template>
-    <div class="flex flex-col contact">
-        <div>
-            <div class="ten-percent flex flex-col pb-16  secondary-bg">
-                <button
+    <div class="flex flex-col">
+        <div class="secondary-bg contact">
+            <button
                     id="floatyClose"
                     @click="$emit('close')"
-                    class="pt-6 flex flex-col justify-start dark-headline text-xl exit-btn"
+                    class="pt-6 pl-6 flex flex-col justify-start black-headline text-2xl exit-btn"
                 >
                 X
                 </button>
-                <h2 class="dark-headline text-5xl pt-10 pb-10">Please contact me on:</h2>
-                
-                <div class="flex gap-16">
-                    <a href="https://www.linkedin.com/in/laerke-nicole/" target="_blank">
-                        <div class="flex gap-2">
-                            <img :src="linkedin" alt="linkedin" class="h-6">
-                            <p class="dark-text linkedin">/laerke-nicole</p>
-                        </div> 
-                    </a>
-                        
+
+            <!-- content -->
+            <div class="flex justify-center items-center slide-down-container">
+                <div class="ten-percent flex flex-col w-2/4 pb-16 slide-down">
+                    <h2 class="dark-headline text-5xl pt-10 pb-14">Contact me on:</h2>
                     
-                    <div class="flex gap-2">
-                        <img :src="mail" alt="mail" class="h-6">
-                        <p class="black-text">laenie01@easv365.dk</p>
+                    <div class="flex flex-col gap-6">
+                        <a href="https://www.linkedin.com/in/laerke-nicole/" target="_blank">
+                            <div class="flex gap-2">
+                                <img :src="linkedin" alt="linkedin" class="h-6">
+                                <p class="black-text linkedin">/laerke-nicole</p>
+                            </div> 
+                        </a>
+                            
+                        
+                        <div class="flex gap-2">
+                            <img :src="mail" alt="mail" class="h-6">
+                            <p class="black-text">laenie01@easv365.dk</p>
+                        </div>
                     </div>
+                </div> 
+
+                <div class="w-2/4 flex justify-center items-center">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fgraphic_me.svg?alt=media&token=0a897f27-feef-419f-8102-65ee2a4bf647" alt="" class="cat-contact">
                 </div>
-              
-            </div> 
+            </div>
+            
         </div>
     </div>
 </template>
@@ -35,17 +43,19 @@
 import { onMounted } from 'vue'
 
 // logo 
-let linkedin = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/skills-logo%2Flinkedin.svg?alt=media&token=38e8195e-1a01-41a5-b2c2-7b704b46821d';
-let mail = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/skills-logo%2Fmail.svg?alt=media&token=e9cd44f2-459e-4fa6-a0d7-08c37738d86e';
+let linkedin = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Socials%2FLinkedIn.svg?alt=media&token=b93c955e-e058-417a-b8b0-cfef6580e485';
+let mail = 'https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Socials%2FMail.svg?alt=media&token=c6f97646-6f13-4879-a614-c74e889eddff';
 
 </script>
 
 <style scoped>
-.contact {
-    height: 100vh;
-}
-
 .linkedin:hover {
     text-decoration: underline;
 }
+
+.cat-contact {
+    height: 60vh;
+    margin-top: -20px;
+}
+
 </style>

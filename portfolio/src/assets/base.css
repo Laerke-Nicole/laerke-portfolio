@@ -4,7 +4,7 @@
   --primary-color: #796796;
   --secondary-color: #dad1ed;
   --tertiary-color: #caeaa9;
-  --quaternary-color: #fff5e8;
+  --quaternary-color: #FCF7FF;
   --black-color: #0F0F0F;
 
   /* hover color */
@@ -12,9 +12,8 @@
   --secondary-hover: #911111;
 
   /*color for text*/
-  --light-body: #dad1ed;
-  --dark-body: #3b393d;
-
+  --light-body: #FCF7FF;
+  --dark-body: #48464a;
 }
 
 /* font */

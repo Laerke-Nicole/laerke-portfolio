@@ -123,6 +123,10 @@ p {
     color: var(--tertiary-color);
 }
 
+.black-headline {
+    color: var(--black-color);
+}
+
 .black-text {
     color: var(--dark-body);
 }
@@ -162,3 +166,26 @@ p {
 .round-corner {
     border-radius: 20px;
 }
+
+
+
+/* animation to make text slide down */
+.slide-down-container {
+    overflow: hidden;
+  }
+  
+  .slide-down {
+    opacity: 0;
+    animation: slideDown 1s ease forwards;
+  }
+  
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

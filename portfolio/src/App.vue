@@ -92,11 +92,11 @@ function myFunction() {
 
       <!-- links in navigation -->
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
-        <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>ABOUT ME</p></RouterLink>
-        <RouterLink to="/" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>WORK</p></RouterLink>
+        <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline"><p>ABOUT ME</p></RouterLink>
+        <RouterLink to="/" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline"><p>WORK</p></RouterLink>
         
         <div>
-          <button @click="isOpen = true" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>CONTACT ME</p></button>
+          <button @click="isOpen = true" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline"><p>CONTACT ME</p></button>
             <teleport to="body">
               <div class="modal" v-if="isOpen">
                 <ContactMe @close="isOpen = false">
@@ -106,10 +106,10 @@ function myFunction() {
             </teleport>
         </div>
 
-        <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>CV <span aria-hidden="true">&nearr;</span></p></a>
+        <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline"><p>CV <span aria-hidden="true">&nearr;</span></p></a>
         <!-- <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">Om mig</RouterLink> -->
-        <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>ADMIN</p></RouterLink></div>
-        <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50"><p>LOG OUT</p></RouterLink></div>
+        <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline"><p>ADMIN</p></RouterLink></div>
+        <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline"><p>LOG OUT</p></RouterLink></div>
       </PopoverGroup>
     </nav>
 
@@ -120,11 +120,6 @@ function myFunction() {
 
         <!-- top part with Kantens logo -->
         <div class="flex items-center justify-between">
-
-          <!-- logo -->
-          <RouterLink to='/' class="logo-hamburgerbar -m-1.5 p-1.5">
-            <img class="h-8 w-auto" src="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/logos%2Flogo-dark.svg?alt=media&token=ba702079-f71d-43f3-9c5e-ee67049d4bbc&_gl=1*xvdzn3*_ga*MTk3MzI2MTY1LjE2ODIwNzA2MjE.*_ga_CW55HF8NVT*MTY4NTgwNTc4MC40Mi4xLjE2ODU4MDYwMDEuMC4wLjA." alt="my logo" />
-          </RouterLink>
 
           <!-- x button to close menu -->
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
@@ -137,9 +132,9 @@ function myFunction() {
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">ABOUT ME</RouterLink>
-              <RouterLink to="/" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50" @click="mobileMenuOpen = false">WORK</RouterLink>
-              <button @click="isOpen = true, mobileMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">CONTACT ME</button>
+              <RouterLink to="/about" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline" @click="mobileMenuOpen = false">ABOUT ME</RouterLink>
+              <RouterLink to="/" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline" @click="mobileMenuOpen = false">WORK</RouterLink>
+              <button @click="isOpen = true, mobileMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline">CONTACT ME</button>
               <teleport to="body">
                 <div class="modal" v-if="isOpen">
                   <ContactMe @close="isOpen = false">
@@ -148,9 +143,9 @@ function myFunction() {
                 </div>
               </teleport>
               
-              <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">CV <span aria-hidden="true">&nearr;</span></a>
-              <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">ADMIN</RouterLink></div>
-              <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50">LOG OUT</RouterLink></div>
+              <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline">CV <span aria-hidden="true">&nearr;</span></a>
+              <div v-if="isLoggedIn"><RouterLink to="/navguard" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline">ADMIN</RouterLink></div>
+              <div v-if="isLoggedIn"><RouterLink to="/" @click="logOut" class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 font-headline">LOG OUT</RouterLink></div>
             </div>
           </div>
         </div>
@@ -173,28 +168,37 @@ function myFunction() {
       <div class="flex justify-start pt-4 pl-4">
           <img :src="star" alt="star" class="h-8">
         </div>
-      <div class="ten-percent">
-        <!-- <h1>Lad os arbejde sammen!</h1> -->
-        <h4 class="light-headline text-center text-6xl pb-10" v-motion-pop-visible>THANK YOU!</h4>
 
-        <!-- links in footer -->
-        <div>
-            <ul class="flex white-text justify-around">
-              <RouterLink to="/about"><li>About me</li></RouterLink>
-              <RouterLink to="/"><li>Work</li></RouterLink>
-              <div>
-                <button @click="isOpen = true"><li>Contact me</li></button>
-                  <teleport to="body">
-                    <div class="modal" v-if="isOpen">
-                      <ContactMe @close="isOpen = false">
+      <!-- info -->
+      <div class="ten-percent flex">
 
-                      </ContactMe>
-                    </div>
-                  </teleport>
-                </div>
-              <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank"><li>CV &nearr;</li></a>
-              
-            </ul>
+        <!-- cat on moon -->
+        <div class="w-2/4 cat-moon">
+          <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Cats%2FCat%20on%20moon.svg?alt=media&token=c124e917-ab29-4126-9c29-369cfebf2527" alt="">
+        </div>
+
+        <div class="w-2/4 flex flex-col justify-center">
+          <h4 class="light-headline text-6xl pb-6" v-motion-pop-visible>THANK YOU!</h4>
+
+          <!-- links in footer -->
+          <div>
+              <ul class="flex flex-col white-text gap-2">
+                <RouterLink to="/about"><li>About me</li></RouterLink>
+                <RouterLink to="/"><li>Work</li></RouterLink>
+                <div>
+                  <button @click="isOpen = true"><li>Contact me</li></button>
+                    <teleport to="body">
+                      <div class="modal" v-if="isOpen">
+                        <ContactMe @close="isOpen = false">
+
+                        </ContactMe>
+                      </div>
+                    </teleport>
+                  </div>
+                <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank"><li>CV &nearr;</li></a>
+                
+              </ul>
+          </div>
         </div>
       </div>
 
@@ -292,19 +296,8 @@ nav a.router-link-exact-active  {
 }
 
 /* footer */
-footer .footerMyName h2 {
-  color: var(--white-headline);
-  font-style: normal;
-  font-weight: 400; 
-  display: flex;
-  flex-direction: column;
-}
-
-footer .button {
-  display: flex;
-  align-items: center;  
-  justify-content: center;
-  margin: 0 auto 45px auto;
+.cat-moon {
+  margin: -40px 0;
 }
 
 footer ul {
@@ -317,26 +310,6 @@ footer li {
 
 footer li:hover {
   text-decoration: underline;
-}
-
-.mail {
-  display: flex;
-  color: var(--white-headline);
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  gap: 18px;
-  justify-content: center;
-  padding-top: 32px;
-}
-
-.mail hr {
-  display: block;
-  border-width: 0;
-  height: 0.5px;
-  width: 62%;
-  background-color: var(--red-headline);
-  align-self: center;
 }
 /* footer end */
 
@@ -356,11 +329,11 @@ footer li:hover {
 }
 
 .modal > div {
-  background-color: var(--extra-white);
-  border-radius: 10px;
-  padding: 45px 20px;
-  width: 90%;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  width: 93%;
   max-height: 80%;
+  /* height: 65vh; */
   top: 40px;
   left: 40px;
   position: absolute;
