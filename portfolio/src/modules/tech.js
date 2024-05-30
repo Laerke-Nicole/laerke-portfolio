@@ -14,34 +14,34 @@ const tech = ref([
         tech: 'Illustrator'
     },
     {
-        tech: 'xd'
+        tech: 'XD'
     },
     {
-        tech: 'html'
+        tech: 'HTML'
     },
     {
-        tech: 'css'
+        tech: 'CSS'
     },
     {
-        tech: 'javascript'
+        tech: 'JavaScript'
     },
     {
-        tech: 'vue'
+        tech: 'Vue'
     },
     {
-        tech: 'php'
+        tech: 'PHP'
     },
     {
-        tech: 'typescript'
+        tech: 'Typescript'
     },
     {
-        tech: 'bootstrap'
+        tech: 'Bootstrap'
     },
     {
-        tech: 'wordpress'
+        tech: 'WordPress'
     },
     {
-        tech: 'tailwind'
+        tech: 'Tailwind'
     }
 ])
 

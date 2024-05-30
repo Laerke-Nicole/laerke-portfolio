@@ -170,23 +170,23 @@ function myFunction() {
         </div>
 
       <!-- info -->
-      <div class="ten-percent flex">
+      <div class="three-percent flex">
 
         <!-- cat on moon -->
         <div class="w-2/4 cat-moon">
           <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Cats%2FCat%20on%20moon.svg?alt=media&token=c124e917-ab29-4126-9c29-369cfebf2527" alt="">
         </div>
 
-        <div class="w-2/4 flex flex-col justify-center">
-          <h4 class="light-headline text-6xl pb-6" v-motion-pop-visible>THANK YOU!</h4>
+        <div class="w-2/4 flex flex-col justify-center text-right">
+          <h4 class="light-headline text-5xl pb-6">THANK YOU!</h4>
 
           <!-- links in footer -->
-          <div>
+          <div class="flex justify-end text-right">
               <ul class="flex flex-col white-text gap-2">
-                <RouterLink to="/about"><li>About me</li></RouterLink>
-                <RouterLink to="/"><li>Work</li></RouterLink>
+                <RouterLink to="/about"><li>ABOUT ME</li></RouterLink>
+                <RouterLink to="/"><li>WORK</li></RouterLink>
                 <div>
-                  <button @click="isOpen = true"><li>Contact me</li></button>
+                  <button @click="isOpen = true"><li>CONTACT ME</li></button>
                     <teleport to="body">
                       <div class="modal" v-if="isOpen">
                         <ContactMe @close="isOpen = false">
@@ -196,6 +196,7 @@ function myFunction() {
                     </teleport>
                   </div>
                 <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank"><li>CV &nearr;</li></a>
+                <a href="https://www.linkedin.com/in/laerke-nicole/" target="_blank"><li>LINKEDIN &nearr;</li></a>
                 
               </ul>
           </div>

@@ -16,7 +16,71 @@
         </div>
       </div>
     </section>
+
+
+    <!-- filter -->
+    <section>
+            <div class="flex justify-evenly items-center gap-4 pt-4 pb-4 three-percent">
+                <div class="relative group">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/filter%2F14.jpg?alt=media&token=7e46a91b-2d26-4c85-9b33-ae8e4f0beae9" alt="">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="white-text font-headline">CLIENT WORK</span>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/filter%2F15.jpg?alt=media&token=48ec5b97-39e3-4d13-85bb-efc6465f1118" alt="">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="white-text font-headline">CASE STUDIES</span>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/filter%2F8.jpg?alt=media&token=7c178997-08b8-424a-b9ae-e837aaf138ff" alt="">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="white-text font-headline">PERSONAL WORK</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="flex justify-evenly items-center gap-4 pt-4 pb-4 three-percent">
+                <div class="relative group">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/filter%2F14.jpg?alt=media&token=7e46a91b-2d26-4c85-9b33-ae8e4f0beae9" alt="">
+                    <div class="flex flex-col absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="white-text font-headline">Title</span>
+                        <span class="white-text font-headline">Short description</span>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/filter%2F15.jpg?alt=media&token=48ec5b97-39e3-4d13-85bb-efc6465f1118" alt="">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="white-text font-headline">CASE STUDIES</span>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/filter%2F8.jpg?alt=media&token=7c178997-08b8-424a-b9ae-e837aaf138ff" alt="">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="white-text font-headline">PERSONAL WORK</span>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/filter%2F14.jpg?alt=media&token=7e46a91b-2d26-4c85-9b33-ae8e4f0beae9" alt="">
+                    <div class="flex flex-col absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="white-text font-headline">Title</span>
+                        <span class="white-text font-headline">Short description</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     
+
     <!-- portfolio section -->
     <div class="flex flex-col flex-nowrap overflow-hidden w-full gap-y-44 quaternary-bg pt-44" id="work">
 
@@ -24,12 +88,12 @@
       <div v-for="portfolio in portfolios" :key="portfolio" class="portfolio-item flex flex-col items-start secondary-bg w-full">
 
         <!-- container for projects -->
-        <div class="portfolio-content flex justify-between ten-percent w-full pt-10 pb-12 gap-16" id="portfolio-view">
+        <div class="portfolio-content flex justify-between six-percent w-full pt-10 pb-12 gap-16" id="portfolio-view">
 
           <!-- left side -->
           <div>
             <div>
-              <h1 class="title dark-headline text-5xl pb-4">{{ portfolio.portfolioProduct }}</h1>
+              <h3 class="title dark-headline text-5xl pb-4">{{ portfolio.portfolioProduct }}</h3>
               <div>
                 <p class="short pb-8">{{ portfolio.portfolioDescription }}</p>
               </div>

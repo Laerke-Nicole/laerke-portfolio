@@ -109,6 +109,13 @@ p {
     padding-left: 6%;
 }
 
+.three-percent {
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+
+
 
 /* classes for text colors  */
 .dark-headline {
@@ -152,6 +159,7 @@ p {
 .quaternary-bg {
     background-color: var(--quaternary-color);
 }
+
 
 
 /* font family */

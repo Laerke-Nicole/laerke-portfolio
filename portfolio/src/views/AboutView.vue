@@ -11,12 +11,15 @@
           <h1 class="dark-headline text-6xl pb-20">Hello,<br>I'm Lærke</h1>
             <div class="w-2/3">
               <p class="black-text pb-4">I'm a multimedia designer from Denmark who's main passion is in front-end development and graphic design.</p>
-              <p class="black-text">I have an eye for detail and consider myself to be a bit perfectionist.</p>
+              <p class="black-text pb-2">I have an eye for detail and consider myself to be a bit perfectionist.</p>
+              <p class="font-headline dark-headline">laenie01@easv365.dk</p>
             </div>
         </div>
           
       </div>
     </section>
+
+
       
       <!-- text sliding animation -->
       <div class="services secondary-bg">
@@ -49,6 +52,7 @@
             <h4 v-motion-slide-visible-once-bottom>Web design & development</h4>
             <h4 v-motion-slide-visible-once-bottom>UI/UX design</h4>
             <h4 v-motion-slide-visible-once-bottom>Graphic design</h4>
+            <h4 v-motion-slide-visible-once-bottom>Illustrations</h4>
             <h4 v-motion-slide-visible-once-bottom>Video editing</h4>
             <h4 v-motion-slide-visible-once-bottom>Record videos</h4>
             <h4 v-motion-slide-visible-once-bottom>Photo editing</h4>
@@ -56,13 +60,12 @@
             <h4 v-motion-slide-visible-once-bottom>User Experience</h4>
             <h4 v-motion-slide-visible-once-bottom>Digital marketing</h4>
             <h4 v-motion-slide-visible-once-bottom>Create VR game</h4>
-            <h4 v-motion-slide-visible-once-bottom>3D modelling</h4>
           </div>
         </div>
     </div>
 
 
-    <section class="flex ten-percent pt-16">
+    <!-- <section class="flex ten-percent pt-16">
         <div class="w-6/12 flex flex-col pl-24"> 
           <h4 class="dark-headline text-5xl pb-14">Please check out my CV to see more about me</h4>
           <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank">
@@ -75,7 +78,7 @@
         <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Me%2Fcat%20sitting.svg?alt=media&token=20ce2dd9-01eb-4595-9c4a-e2b11f2829b0" alt="">
       </div>  
       
-    </section>
+    </section> -->
 
   </main>
 </template>
@@ -154,6 +157,10 @@ window.scrollTo(0, 0)
 }
 /* services end */
 
+/* what i do */
+.what-i-do{
+  padding-right: 20%;
+}
 
 /* responsive */
 @media only screen and (max-width: 970px) {
