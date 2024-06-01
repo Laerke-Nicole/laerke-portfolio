@@ -170,19 +170,19 @@ function myFunction() {
         </div>
 
       <!-- info -->
-      <div class="three-percent flex">
+      <div class="ten-percent flex">
 
         <!-- cat on moon -->
-        <div class="w-2/4 cat-moon">
+        <div class="w-2/4 cat-moon three-percent">
           <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Cats%2FCat%20on%20moon.svg?alt=media&token=c124e917-ab29-4126-9c29-369cfebf2527" alt="">
         </div>
 
         <div class="w-2/4 flex flex-col justify-center text-right">
-          <h4 class="light-headline text-5xl pb-6">THANK YOU!</h4>
+          <h4 class="light-headline text-2xl pb-4">THANK YOU!</h4>
 
           <!-- links in footer -->
           <div class="flex justify-end text-right">
-              <ul class="flex flex-col white-text gap-2">
+              <ul class="flex flex-col white-text gap-1 text-sm">
                 <RouterLink to="/about"><li>ABOUT ME</li></RouterLink>
                 <RouterLink to="/"><li>WORK</li></RouterLink>
                 <div>

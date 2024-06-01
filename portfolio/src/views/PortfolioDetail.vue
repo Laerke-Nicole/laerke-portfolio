@@ -9,7 +9,7 @@
                     </div>
 
                     <div class="w-1/2 secondary-bg flex slide-down-container">
-                        <div class="flex flex-col gap-2 pl-16 pr-16 justify-center slide-down">
+                        <div class="flex flex-col gap-2 pl-8 pr-20 justify-center slide-down">
                             <h1 class="title dark-headline text-5xl pb-2">{{ portfolio.portfolioProduct }}</h1>
 
                             <div>

@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
     transition: color 0.5s, background-color 0.5s;
     line-height: 1.6;
-    font-family: "condor", sans-serif;
+    font-family: "aktiv-grotesk", sans-serif;
     font-style: normal;
     list-style-type: none;
     font-weight: 400;
@@ -25,6 +25,14 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     font-size: 16px;
+}
+
+.bold-p {
+    font-weight: 700;
+}
+
+.more-bold-p {
+    font-weight: 900;
 }
 
 /* making all p responsive for smaller screens */
@@ -158,6 +166,10 @@ p {
 
 .quaternary-bg {
     background-color: var(--quaternary-color);
+}
+
+.black-bg {
+    background-color: var(--black-color);
 }
 
 
