@@ -170,23 +170,16 @@ function myFunction() {
         </div>
 
       <!-- info -->
-      <div class="ten-percent flex">
-
-        <!-- cat on moon -->
-        <div class="w-2/4 cat-moon three-percent">
-          <img src="https://firebasestorage.googleapis.com/v0/b/laerke-nielsen-portfolio.appspot.com/o/Cats%2FCat%20on%20moon.svg?alt=media&token=c124e917-ab29-4126-9c29-369cfebf2527" alt="">
-        </div>
-
-        <div class="w-2/4 flex flex-col justify-center text-right">
-          <h4 class="light-headline text-2xl pb-4">THANK YOU!</h4>
+      <div class="ten-percent flex justify-center">
+        <div class="flex flex-col text-center ten-percent">
+          <h4 class="light-headline text-4xl pb-3">THANK YOU!</h4>
+          <p class="text-sm white-text pb-6">Let's chat!</p>
 
           <!-- links in footer -->
-          <div class="flex justify-end text-right">
-              <ul class="flex flex-col white-text gap-1 text-sm">
-                <RouterLink to="/about"><li>ABOUT ME</li></RouterLink>
-                <RouterLink to="/"><li>WORK</li></RouterLink>
+          <div class="flex justify-center">
+              <div class="flex flex-col white-text text-sm">
                 <div>
-                  <button @click="isOpen = true"><li>CONTACT ME</li></button>
+                  <button @click="isOpen = true" class="btn-3">Contact me</button>
                     <teleport to="body">
                       <div class="modal" v-if="isOpen">
                         <ContactMe @close="isOpen = false">
@@ -195,10 +188,7 @@ function myFunction() {
                       </div>
                     </teleport>
                   </div>
-                <a href="https://firebasestorage.googleapis.com/v0/b/laerke-nicole-portfolio.appspot.com/o/cv%2FL%C3%A6rke-Nielsen-CV%20(ENG).pdf?alt=media&token=bd49b556-eba3-4565-9b87-d2ad49960c1d" target="_blank"><li>CV &nearr;</li></a>
-                <a href="https://www.linkedin.com/in/laerke-nicole/" target="_blank"><li>LINKEDIN &nearr;</li></a>
-                
-              </ul>
+                </div>
           </div>
         </div>
       </div>

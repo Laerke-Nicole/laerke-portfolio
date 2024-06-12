@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .bold-p {
@@ -47,7 +47,7 @@ p {
     background-color: var(--primary-color);
     padding: 10px 40px;
     color: var(--quaternary-color);
-    font-size: 16px;
+    font-size: 14px;
     border: 0;
     transition: 0.3s;
     border-radius: 20px;
@@ -64,7 +64,7 @@ p {
     background-color: var(--secondary-color);
     padding: 10px 40px;
     color: var(--black-color);
-    font-size: 16px;
+    font-size: 14px;
     transition: 0.3s;
     border-radius: 20px;
 }
@@ -78,7 +78,7 @@ p {
     background-color: var(--tertiary-color);
     padding: 10px 40px;
     color: var(--black-color);
-    font-size: 16px;
+    font-size: 14px;
     transition: 0.3s;
     border-radius: 20px;
 }
@@ -180,7 +180,7 @@ p {
 }
 
 .font-text {
-    font-family: var(--t-font);
+    font-family: "aktiv-grotesk", sans-serif;
 }
 
 .round-corner {
